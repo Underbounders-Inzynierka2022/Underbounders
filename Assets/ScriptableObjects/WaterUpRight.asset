@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aca27f35ef6444aef37f4ec39abc9, type: 3}
+  m_Name: WaterUpRight
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: a4740086d25eb1c4e9f4aab65ac844f2, type: 2}
+  tileId: 0
+  upSideDescription: 4
+  rightSideDescription: 4
+  downSideDescription: 1
+  leftSideDescription: 2
+  upRestrictions:
+  - kindOfSide: 1
+    chance: 0
+  - kindOfSide: 2
+    chance: 0
+  - kindOfSide: 3
+    chance: 0
+  - kindOfSide: 4
+    chance: 1
+  rightRestrictions:
+  - kindOfSide: 1
+    chance: 0
+  - kindOfSide: 2
+    chance: 0
+  - kindOfSide: 3
+    chance: 0
+  - kindOfSide: 4
+    chance: 1
+  downRestrictions:
+  - kindOfSide: 1
+    chance: 1
+  - kindOfSide: 2
+    chance: 0
+  - kindOfSide: 3
+    chance: 0
+  - kindOfSide: 4
+    chance: 0
+  leftRestrictions:
+  - kindOfSide: 1
+    chance: 0
+  - kindOfSide: 2
+    chance: 1
+  - kindOfSide: 3
+    chance: 0
+  - kindOfSide: 4
+    chance: 0
+  spawnable: 0

@@ -697,28 +697,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemap: {fileID: 1796380205}
   _tiles:
-  - {fileID: 11400000, guid: 6a3a7f05c9615cd4ea3efae85494e589, type: 2}
-  - {fileID: 11400000, guid: 63a90dc184a63e341acd34ce7f9ba8e4, type: 2}
-  - {fileID: 11400000, guid: 169c1f7edcc1c3441b2bc6514c3d7f48, type: 2}
-  - {fileID: 11400000, guid: 9eaeb700a9e0d0e499fc771fd6b4c4f4, type: 2}
-  - {fileID: 11400000, guid: 177c8af12265289478e7f6e9abdd9aeb, type: 2}
-  - {fileID: 11400000, guid: efea317f55b69ce4a94dc4e555fe5d93, type: 2}
-  - {fileID: 11400000, guid: a9832819b4e8cb34da96a31b4c24c331, type: 2}
-  - {fileID: 11400000, guid: 7f23a52054373004abe6b2619b39a0eb, type: 2}
-  - {fileID: 11400000, guid: f7b28c5f61237244c94e670151a9c250, type: 2}
-  - {fileID: 11400000, guid: 059a19f04ddd0204aa6d5b50e2c46f43, type: 2}
-  - {fileID: 11400000, guid: 81d03655db2a5b143991925ccf7bc178, type: 2}
-  - {fileID: 11400000, guid: ca7add88154eba642b87702dfcc09574, type: 2}
-  - {fileID: 11400000, guid: 1c1c6582d438cce43a1a679792b1f47b, type: 2}
-  - {fileID: 11400000, guid: 4331accd1dbd3904092619538d986b05, type: 2}
-  - {fileID: 11400000, guid: b97db6b7f25646549b12355d036d036a, type: 2}
-  - {fileID: 11400000, guid: 29d3085557ffeff47838ebad1f3666c3, type: 2}
-  - {fileID: 11400000, guid: bed973b00f9600a42896a65f9cff423d, type: 2}
-  - {fileID: 11400000, guid: dac9a77715d947848ab22d2ee63fe07e, type: 2}
-  - {fileID: 11400000, guid: b9ec6209dbe20e6428a828fb8c4bd18d, type: 2}
-  - {fileID: 11400000, guid: aa2a72b4281bab84fa6784787f64519e, type: 2}
-  x: 50
-  y: 25
+  - {fileID: 11400000, guid: bf58fb59b1811444b896b11f7b5c49d2, type: 2}
+  - {fileID: 11400000, guid: 365d2b3db95381e4da8e69d2ba4f51b8, type: 2}
+  - {fileID: 11400000, guid: 48dc999be346c114e8ec2679d9a840a0, type: 2}
+  - {fileID: 11400000, guid: bcb704be3997e0944bb2dda0177ffb1e, type: 2}
+  - {fileID: 11400000, guid: 261618bf17809b34690b14c43a919307, type: 2}
+  - {fileID: 11400000, guid: 5618a11b204a9304a84fb2cd239df1fa, type: 2}
+  - {fileID: 11400000, guid: 6eb7d1f82d5910e4895e8f16fed3d55e, type: 2}
+  - {fileID: 11400000, guid: 7fadd8d14a75d7c4d8e0aa613a5b9e9f, type: 2}
+  - {fileID: 11400000, guid: 3016019cf65cd2b4cbb8802fc6071054, type: 2}
+  - {fileID: 11400000, guid: 1c126c0395306af4e94c96ca31a3693b, type: 2}
+  x: 4
+  y: 4
 --- !u!4 &1430133010
 Transform:
   m_ObjectHideFlags: 0

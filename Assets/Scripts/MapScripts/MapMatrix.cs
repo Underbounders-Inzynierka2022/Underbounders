@@ -1,48 +1,121 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MapMatrix<T>
+public class MapMatrix<T> where T : ITileKind<T>
 {
-    public int x { set; get; }
+    private int x;
 
-    public int y { set; get; }
+    private int y;
 
-    private List<Dictionary<T, float>> map;
+    private Dictionary<T, float>[,] map;
 
-    MapMatrix(int x, int y, List<T> intializator)
+    public MapMatrix(int x, int y, List<T> intializator)
     {
-        map = new List<Dictionary<T, float>>();
-        float initialChance = 1 / intializator.Count;
+        this.x = x;
+        this.y = y;
+        map = new Dictionary<T, float>[x, y];
+        float initialChance = 100 / intializator.Count;
         for (int i = 0; i < x; i++)
         {
             for (int j = 0; j < y; j++)
             {
-                map[i * y + j] = new Dictionary<T, float>();
+                map[i, j] = new Dictionary<T, float>();
                 foreach (var tile in intializator)
                 {
-                    map[i * y + j].Add(tile, initialChance);
+                    map[i, j].Add(tile, initialChance);
                 }
             }
         }
     }
 
-    Dictionary<T, float> PickRandomTile()
+    public (int, int) PickRandomTile()
     {
         var lowestList = GetLowestCountList();
-        return lowestList[Random.Range(0, lowestList.Count - 1)];
+        var dictionary = lowestList[UnityEngine.Random.Range(0, lowestList.Count - 1)];
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                if (map[i, j] == dictionary)
+                    return (i, j);
+            }
+        }
+        return (-1, -1);
     }
 
-    T PickTileValue(Dictionary<T, float> tile)
+    public void PickTileValue(int i, int j)
     {
-        int t = HelperFunctions.RandomWeighted(tile.Values.ToList());
-        return tile.Keys.ToList()[t];
+        if (i >= 0 && i < x && j >= 0 && j <= y)
+        {
+            int chosenTile = HelperFunctions.RandomWeighted(map[i, j].Values.ToList());
+            var chosenTileKind = map[i, j].ToList()[chosenTile];
+            map[i, j] = new Dictionary<T, float>();
+            map[i, j].Add(chosenTileKind.Key, 1f);
+            UpdateTilesAround(i, j);
+        }
     }
 
-    List<Dictionary<T, float>> GetLowestCountList()
+    public List<Dictionary<T, float>> GetLowestCountList()
     {
-        int min = map.Select(x => x.Count).Where(x => x > 1).Min();
-        return map.Where(x => x.Count == min).ToList();
+        var list = map.Cast<Dictionary<T, float>>().ToList();
+        int min = list.Select(ts => ts.Count).Where(c => c > 1).Min();
+        return list.Where(ts => ts.Count == min).ToList();
+    }
+
+    private void UpdateTilesAround(int i, int j)
+    {
+
+        if (map[i, j].Count == 1)
+        {
+            if (j > 0)
+                map[i, j - 1] = map[i, j].First().Key.FilterTiles(map[i, j - 1], Direction.up);
+            if (j < y - 1)
+                map[i, j + 1] = map[i, j].First().Key.FilterTiles(map[i, j + 1], Direction.down);
+            if (i > 0)
+                map[i - 1, j] = map[i, j].First().Key.FilterTiles(map[i - 1, j], Direction.left);
+            if (i < x - 1)
+                map[i + 1, j] = map[i, j].First().Key.FilterTiles(map[i + 1, j], Direction.rigth);
+        }
+
+    }
+
+    public void RemoveImposiblePairs()
+    {
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                List<T> impossiblekeys = map[i, j].Where(t => t.Value <= 0f).Select(t => t.Key).ToList();
+                foreach (var key in impossiblekeys)
+                    map[i, j].Remove(key);
+            }
+        }
+    }
+
+    public bool AreAllTilesSet()
+    {
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                if (map[i, j].Count > 1)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public T GetTile(int i, int j)
+    {
+        if (i >= 0 && j >= 0 && i < x && j < y)
+        {
+            var result = map[i, j];
+            return result.FirstOrDefault().Key;
+        }
+
+        return default(T);
     }
 }

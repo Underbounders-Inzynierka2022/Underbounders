@@ -5,6 +5,8 @@ using UnityEngine;
 
 public static class HelperFunctions
 {
+
+
     public static int RandomWeighted(List<float> weights)
     {
         float weightTotal = weights.Sum();
