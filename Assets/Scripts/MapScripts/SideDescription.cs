@@ -6,6 +6,12 @@ public enum SideDescription
     DownWaterAndGroundUp,
     Water,
     Ground,
-    Other
+    Other,
+    UpWaterAndGroundDownCorner,
+    DownWaterAndGroundUpCorner,
+    WaterGround,
+    GroundWater,
+    CrackedGournd,
+    
 
 }

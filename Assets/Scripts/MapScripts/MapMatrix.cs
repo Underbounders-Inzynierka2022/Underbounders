@@ -77,7 +77,15 @@ public class MapMatrix<T> where T : ITileKind<T>
             if (i > 0)
                 map[i - 1, j] = map[i, j].First().Key.FilterTiles(map[i - 1, j], Direction.left);
             if (i < x - 1)
-                map[i + 1, j] = map[i, j].First().Key.FilterTiles(map[i + 1, j], Direction.rigth);
+                map[i + 1, j] = map[i, j].First().Key.FilterTiles(map[i + 1, j], Direction.right);
+            if (j > 0 && i > 0)
+                map[i-1, j - 1] = map[i, j].First().Key.FilterTiles(map[i-1, j - 1], Direction.upLeft);
+            if (j < y - 1 && i > 0)
+                map[i-1, j + 1] = map[i, j].First().Key.FilterTiles(map[i-1, j + 1], Direction.downLeft);
+            if (j > 0 && i < x -1)
+                map[i + 1, j - 1] = map[i, j].First().Key.FilterTiles(map[i + 1, j - 1], Direction.upRight);
+            if (j < x - 1 && i < x-1)
+                map[i + 1, j + 1] = map[i, j].First().Key.FilterTiles(map[i + 1, j + 1], Direction.downRight);
         }
 
     }

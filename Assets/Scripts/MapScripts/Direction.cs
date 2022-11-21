@@ -3,5 +3,9 @@
     up,
     left,
     down,
-    rigth
+    right,
+    upRight,
+    upLeft,
+    downLeft,
+    downRight
 }
