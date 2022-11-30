@@ -12,12 +12,12 @@ public class MapMatrix<T> where T : ITileKind<T>
 
     private Dictionary<T, float>[,] map;
 
-    public MapMatrix(int x, int y, List<T> intializator)
+    public MapMatrix(int x, int y, IEnumerable<T> intializator)
     {
         this.x = x;
         this.y = y;
         map = new Dictionary<T, float>[x, y];
-        float initialChance = 100 / intializator.Count;
+        float initialChance = 100 / intializator.Count();
         for (int i = 0; i < x; i++)
         {
             for (int j = 0; j < y; j++)
@@ -27,6 +27,21 @@ public class MapMatrix<T> where T : ITileKind<T>
                 {
                     map[i, j].Add(tile, initialChance);
                 }
+            }
+        }
+    }
+
+    public MapMatrix(int x, int y, List<Dictionary<T,float>> initialValues)
+    {
+        this.x = x;
+        this.y = y;
+        map = new Dictionary<T, float>[x, y];
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                map[i, j] = initialValues.First().ToDictionary(x => x.Key, x => x.Value);
+                initialValues.RemoveAt(0);
             }
         }
     }
@@ -54,7 +69,7 @@ public class MapMatrix<T> where T : ITileKind<T>
             var chosenTileKind = map[i, j].ToList()[chosenTile];
             map[i, j] = new Dictionary<T, float>();
             map[i, j].Add(chosenTileKind.Key, 1f);
-            UpdateTilesAround(i, j);
+           UpdateTilesAround(i, j);
         }
     }
 

@@ -30,7 +30,7 @@ public class TileSO : ScriptableObject, ITileKind<TileSO>
     public List<TileDictionaryPair> downLeftRestrictions;
     public List<TileDictionaryPair> downRightRestrictions;
 
-    public Dictionary<ObstacleType, float> secondLayerRestrictions;
+    public List<ObstacleDictionaryPair> secondLayerRestrictions;
 
     public bool spawnable;
 

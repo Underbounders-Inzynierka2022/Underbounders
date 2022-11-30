@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1852,9 +1852,9 @@ TextureImporter:
       grass_38: -145977806
       grass_21: -1492819093
       grass_54: 921756023
-      grass_14: -125029691
-      grass_35: -753164684
       grass_61: -264275751
+      grass_35: -753164684
+      grass_14: -125029691
       grass_19: 1346733563
       grass_42: -2018372739
       grass_51: -1261819666

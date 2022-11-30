@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d045b6174f771a445ba834115e5ef554, type: 3}
+  m_Name: Empty
+  m_EditorClassIdentifier: 
+  tile: {fileID: 2884010948196503450, guid: 9463ad4a74e84c6428dd486e2a6c7ef6, type: 3}
+  obstacleType: 0
+  UpRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.06
+  - obstacle: 2
+    chance: 0.06
+  - obstacle: 3
+    chance: 0.06
+  - obstacle: 4
+    chance: 0.06
+  - obstacle: 5
+    chance: 0.06
+  - obstacle: 6
+    chance: 0.06
+  - obstacle: 7
+    chance: 0.06
+  - obstacle: 8
+    chance: 0.06
+  DownRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.06
+  - obstacle: 2
+    chance: 0.06
+  - obstacle: 3
+    chance: 0.06
+  - obstacle: 4
+    chance: 0.06
+  - obstacle: 5
+    chance: 0.06
+  - obstacle: 6
+    chance: 0.06
+  - obstacle: 7
+    chance: 0.06
+  - obstacle: 8
+    chance: 0.06
+  LeftRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.06
+  - obstacle: 2
+    chance: 0.06
+  - obstacle: 3
+    chance: 0.06
+  - obstacle: 4
+    chance: 0.06
+  - obstacle: 5
+    chance: 0.06
+  - obstacle: 6
+    chance: 0.06
+  - obstacle: 7
+    chance: 0.06
+  - obstacle: 8
+    chance: 0.06
+  RightRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.06
+  - obstacle: 2
+    chance: 0.06
+  - obstacle: 3
+    chance: 0.06
+  - obstacle: 4
+    chance: 0.06
+  - obstacle: 5
+    chance: 0.06
+  - obstacle: 6
+    chance: 0.06
+  - obstacle: 7
+    chance: 0.06
+  - obstacle: 8
+    chance: 0.06
+  spawnable: 1
