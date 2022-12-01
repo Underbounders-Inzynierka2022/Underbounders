@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (_attack)
         {
             _sword.Attack(_direction);
@@ -43,13 +45,20 @@ public class PlayerController : MonoBehaviour
         {
             if (TryMove(movementInput))
             {
-                if (movementInput.x < 0)
+                switch (_direction)
                 {
-                    animator.Play("player_go_left");
-                }
-                else if (movementInput.x > 0)
-                {
-                    animator.Play("player_go_right");
+                    case Direction.left:
+                        animator.Play("player_go_left");
+                        break;
+                    case Direction.right:
+                        animator.Play("player_go_right");
+                        break;
+                    case Direction.up:
+                        animator.Play("player_go_up");
+                        break;
+                    case Direction.down:
+                        animator.Play("player_go_down");
+                        break;
                 }
             }
         }
@@ -57,11 +66,17 @@ public class PlayerController : MonoBehaviour
         {
             switch (_direction)
             {
+                case Direction.left:
+                    animator.Play("player_idle_left");
+                    break;
                 case Direction.right:
                     animator.Play("player_idle_right");
                     break;
-                case Direction.left:
-                    animator.Play("player_idle_left");
+                case Direction.up:
+                    animator.Play("player_idle_up");
+                    break;
+                case Direction.down:
+                    animator.Play("player_idle_down");
                     break;
             }
         }
@@ -83,14 +98,29 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
-        if(movementInput.x < 0)
+        if(Math.Abs(movementInput.x)>= Math.Abs(movementInput.y))
         {
-            _direction = Direction.left;
-        }
-        else if(movementInput.x > 0)
+            if (movementInput.x < 0)
+            {
+                _direction = Direction.left;
+            }
+            else if (movementInput.x > 0)
+            {
+                _direction = Direction.right;
+            }
+        } 
+        else if(Math.Abs(movementInput.x) < Math.Abs(movementInput.y))
         {
-            _direction = Direction.right;
+            if (movementInput.y < 0)
+            {
+                _direction = Direction.down;
+            }
+            else if (movementInput.y > 0)
+            {
+                _direction = Direction.up;
+            }
         }
+
     }
 
     void OnFire()
@@ -98,11 +128,17 @@ public class PlayerController : MonoBehaviour
         _attack = true;
         switch (_direction)
         {
+            case Direction.left:
+                animator.Play("player_sword_left");
+                break;
             case Direction.right:
                 animator.Play("player_sword_right");
                 break;
-            case Direction.left:
-                animator.Play("player_sword_left");
+            case Direction.up:
+                animator.Play("player_sword_up");
+                break;
+            case Direction.down:
+                animator.Play("player_sword_down");
                 break;
         }
         Invoke("SetAttack", 0.34f);

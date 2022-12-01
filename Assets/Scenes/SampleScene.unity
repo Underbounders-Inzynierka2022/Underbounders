@@ -1243,7 +1243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b05fe953a1cda47b1e46417aec61fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilemap: {fileID: 1796380205}
+  _tilesTilemap: {fileID: 1796380205}
+  _obstaclesTilemap: {fileID: 1099706087}
+  _layout: {fileID: 1847546216}
   _tiles:
   - {fileID: 11400000, guid: 48dc999be346c114e8ec2679d9a840a0, type: 2}
   - {fileID: 11400000, guid: bf58fb59b1811444b896b11f7b5c49d2, type: 2}
@@ -1269,6 +1271,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b81ed8ebbfe0404791630ef023b63c1, type: 2}
   - {fileID: 11400000, guid: f050c5bb9655619428d29304f1156245, type: 2}
   - {fileID: 11400000, guid: 796a1dbb794d33843b02bc475cba5115, type: 2}
+  _obstacles:
+  - {fileID: 11400000, guid: c8986d950469faa408e77d4d5b4123af, type: 2}
+  - {fileID: 11400000, guid: 46a953deec0bc434d8f2620ef3856e41, type: 2}
+  - {fileID: 11400000, guid: 92b9601ae018bf848ad7491a2b51b33a, type: 2}
+  - {fileID: 11400000, guid: 722ac1399b796a54fa93fc8c0d32d17b, type: 2}
+  - {fileID: 11400000, guid: 82ffc80a13e57c144b19f8809621c7a7, type: 2}
+  - {fileID: 11400000, guid: 9348f16a1c31fa347912c46546ba8390, type: 2}
+  - {fileID: 11400000, guid: 6c8e72af3f474f9408f19472e547f28c, type: 2}
+  - {fileID: 11400000, guid: 27c29acd320939347988de96eac490f9, type: 2}
+  - {fileID: 11400000, guid: c8f93d7708844e649a87827b37c13f9e, type: 2}
   x: 40
   y: 40
 --- !u!4 &1430133010
@@ -6047,6 +6059,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1981236438654646037, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1880011557, guid: cba515b930dd4984e854bb8cebf11036, type: 3}
     - target: {fileID: 2033090363638393905, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Camera
       value: 
