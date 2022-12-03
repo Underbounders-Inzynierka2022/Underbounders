@@ -21,12 +21,13 @@ public class SpriteSwitcherOnStep : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Triggered");
+       if(col.CompareTag("Player"))
         _renderer.sprite = _onRune;
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        _renderer.sprite = _offRune;
+        if (col.CompareTag("Player"))
+            _renderer.sprite = _offRune;
     }
 }

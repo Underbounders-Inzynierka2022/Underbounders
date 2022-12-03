@@ -940,7 +940,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &1099706087
@@ -5932,7 +5932,7 @@ Transform:
   - {fileID: 1099706084}
   - {fileID: 1796380203}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1929549044
 PrefabInstance:
@@ -6055,22 +6055,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1426023338183829956, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1981236438654646037, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1880011557, guid: cba515b930dd4984e854bb8cebf11036, type: 3}
+      objectReference: {fileID: -544916128, guid: ab83ea878820e294d86d000e92827132, type: 3}
     - target: {fileID: 2033090363638393905, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3083521499936626753, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 37c30ab37df14d64cb1d256436bcf8e4, type: 2}
+    - target: {fileID: 2454528145429251606, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
+      propertyPath: _posOffset
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3775767541054453660, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: moveSpeed
       value: 3
@@ -6083,37 +6079,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4689405407273580874, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6988349048132084235, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7782542352332526867, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Size.x
-      value: 0.08520827
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782542352332526867, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Size.y
-      value: 0.029781163
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782542352332526867, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.016304255
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782542352332526867, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.15637392
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782542352332526867, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 8650743366703252066, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8650743366703252066, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6154,10 +6130,6 @@ PrefabInstance:
     - target: {fileID: 8650743366703252066, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727148163546968649, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_BodyType
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
