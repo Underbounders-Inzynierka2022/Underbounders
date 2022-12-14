@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private List<RaycastHit2D> collisions = new List<RaycastHit2D>();
     private Direction _direction = Direction.right;
     private bool _attack = false;
-    [SerializeField] private float _moveSpeed = 1f;
+    [SerializeField] private PlayerSO player;
     [SerializeField] private ContactFilter2D _moveFilter;
     [SerializeField] private float _collisionOffSet = 0.05f;
     [SerializeField] private SwordHitbox _sword;
@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -85,10 +86,10 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 Direction)
     {
-        int countOfColisions = rigidbody.Cast(movementInput, _moveFilter, collisions, _moveSpeed * Time.fixedDeltaTime + _collisionOffSet);
+        int countOfColisions = rigidbody.Cast(movementInput, _moveFilter, collisions, player.speed * Time.fixedDeltaTime + _collisionOffSet);
         if (countOfColisions == 0 || collisions.Any(c=> c.collider.isTrigger))
         {
-            rigidbody.MovePosition(rigidbody.position + movementInput * _moveSpeed * Time.fixedDeltaTime);
+            rigidbody.MovePosition(rigidbody.position + movementInput * player.speed * Time.fixedDeltaTime);
             return true;
         }
 

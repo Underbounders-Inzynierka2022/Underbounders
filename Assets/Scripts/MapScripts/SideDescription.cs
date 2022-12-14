@@ -12,6 +12,10 @@ public enum SideDescription
     WaterGround,
     GroundWater,
     CrackedGournd,
-    
-
+    PartGrass,
+    Grass,
+    GrassWater,
+    WaterGrass,
+    CrackedWater,
+    WaterCracked
 }

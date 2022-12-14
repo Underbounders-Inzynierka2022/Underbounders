@@ -10,5 +10,10 @@ public class PlayerSO : ScriptableObject
     public float attackSpeed = 1.4f;
     public float defence = 1.4f;
 
+    public float baseSpeed = 1.4f;
+
     public List<ItemSO> equipment;
+
+    public float CurrentHealth = 5f;
+    public float MaxHealth = 5f;
 }

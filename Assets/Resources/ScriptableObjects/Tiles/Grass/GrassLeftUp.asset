@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aca27f35ef6444aef37f4ec39abc9, type: 3}
+  m_Name: GrassLeftUp
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: c031388064afa9d49b0074da7938611f, type: 2}
+  tileId: 0
+  upSide: {fileID: 11400000, guid: 8236392b3f9fa1247a8a7210a54b4b84, type: 2}
+  leftSide: {fileID: 11400000, guid: 8236392b3f9fa1247a8a7210a54b4b84, type: 2}
+  rightSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
+  downSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
+  upLeftCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
+  upRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
+  downLeftCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
+  downRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
+  secondLayerRestrictions:
+  - obstacle: 0
+    chance: 0.7
+  - obstacle: 1
+    chance: 0
+  - obstacle: 2
+    chance: 0
+  - obstacle: 3
+    chance: 0.25
+  - obstacle: 4
+    chance: 0.05
+  - obstacle: 5
+    chance: 0.05
+  - obstacle: 6
+    chance: 0
+  - obstacle: 7
+    chance: 0.15
+  - obstacle: 8
+    chance: 0.2
+  spawnable: 0

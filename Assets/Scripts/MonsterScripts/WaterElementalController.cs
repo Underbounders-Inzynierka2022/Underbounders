@@ -1,0 +1,103 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+
+public class WaterElementalController : MonoBehaviour
+{
+    [SerializeField] private Direction _direction;
+    [SerializeField] private Animator _animator;
+
+    [SerializeField] private GameObject _projectile;
+
+    [SerializeField] private float _timeToSpawn;
+
+
+    private GameObject _player;
+    private bool _detected;
+    private float _currTimeToSpawn;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        switch (_direction)
+        {
+            case Direction.right:
+                _animator.SetInteger("Direction", 0);
+                break;
+            case Direction.left:
+                _animator.SetInteger("Direction", 1);
+                break;
+            case Direction.up:
+                _animator.SetInteger("Direction", 2);
+                break;
+            case Direction.down:
+                _animator.SetInteger("Direction", 3);
+                break;
+            default:
+                _animator.SetInteger("Direction",0);
+                break;
+        }
+
+        _animator.Play("WaterElemental_hidden");
+        _currTimeToSpawn = _timeToSpawn;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (_detected)
+        {
+            if(_currTimeToSpawn <= 0)
+            {
+                var dir = _player.transform.position - transform.position;
+                float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg - 90;
+                var instance = Instantiate(_projectile, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.Euler(0, 0, -angle));
+                instance.GetComponent<ProjectileController>().Target = _player.transform.position + dir.normalized * 2f;
+                _currTimeToSpawn = _timeToSpawn;
+            }
+            else
+            {
+                _currTimeToSpawn -= 1f;
+            }
+        }
+    }
+
+    public void Spawn()
+    {
+        _animator.Play("WaterElemental_spawn");
+    }
+
+    public void Despawn()
+    {
+        _animator.Play("WaterElemental_despawn");
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            Spawn();
+            _detected = true;
+            _player = col.gameObject;
+        }
+            
+    }
+
+     void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            Despawn();
+            _detected = false;
+        }
+            
+    }
+
+
+}

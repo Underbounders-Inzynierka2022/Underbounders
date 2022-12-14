@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:GroupBox style="margin-left: 10px; margin-right: 0; margin-top: 10px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-direction: row;">
+        <BarsElements.Bar doc-name="UI/SpecialBar" sprite-base-name="Sprites/SpecialBar" sprite-name="SpecialBar_" focusable="false" name="SpecialBar" />
+        <ui:GroupBox style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <BarsElements.Bar sprite-base-name="Sprites/liveBar" sprite-name="liveBar_" name="HealthBar" doc-name="UI/HealthBar" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            <BarsElements.Bar doc-name="UI/SecondaryBar" sprite-base-name="Sprites/secondaryBar" sprite-name="secondaryBar_" name="SecondaryBar" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>
