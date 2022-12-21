@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d045b6174f771a445ba834115e5ef554, type: 3}
+  m_Name: FireRune
+  m_EditorClassIdentifier: 
+  tile: {fileID: 1262906434008799132, guid: b5822bec5541c82479371733140f6465, type: 3}
+  obstacleType: 1
+  UpRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.08
+  - obstacle: 2
+    chance: 0.04
+  - obstacle: 3
+    chance: 0.1
+  - obstacle: 4
+    chance: 0.1
+  - obstacle: 5
+    chance: 0.02
+  - obstacle: 6
+    chance: 0.02
+  - obstacle: 7
+    chance: 0.02
+  - obstacle: 8
+    chance: 0.02
+  DownRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.08
+  - obstacle: 2
+    chance: 0.04
+  - obstacle: 3
+    chance: 0.1
+  - obstacle: 4
+    chance: 0.1
+  - obstacle: 5
+    chance: 0.02
+  - obstacle: 6
+    chance: 0.02
+  - obstacle: 7
+    chance: 0.02
+  - obstacle: 8
+    chance: 0.02
+  LeftRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.08
+  - obstacle: 2
+    chance: 0.04
+  - obstacle: 3
+    chance: 0.1
+  - obstacle: 4
+    chance: 0.1
+  - obstacle: 5
+    chance: 0.02
+  - obstacle: 6
+    chance: 0.02
+  - obstacle: 7
+    chance: 0.02
+  - obstacle: 8
+    chance: 0.02
+  RightRestrictions:
+  - obstacle: 0
+    chance: 0.6
+  - obstacle: 1
+    chance: 0.08
+  - obstacle: 2
+    chance: 0.04
+  - obstacle: 3
+    chance: 0.1
+  - obstacle: 4
+    chance: 0.1
+  - obstacle: 5
+    chance: 0.02
+  - obstacle: 6
+    chance: 0.02
+  - obstacle: 7
+    chance: 0.02
+  - obstacle: 8
+    chance: 0.02
+  spawnableMonsters:
+  - monster: 4
+    chance: 1
+  - monster: 1
+    chance: 0
+  - monster: 2
+    chance: 0
+  - monster: 3
+    chance: 1
+  - monster: 0
+    chance: 0

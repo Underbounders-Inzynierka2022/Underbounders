@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Inventory.uss?fileID=7433441132597879392&amp;guid=014b3caaf37707c4198896101a2f63d2&amp;type=3#Inventory" />
+    <ui:GroupBox style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; justify-content: center; height: 180px; background-image: url(&apos;project://database/Assets/Sprites/bgUi.png?fileID=21300000&amp;guid=45232041a5c00714c843be5d54a2be05&amp;type=3#bgUi&apos;); width: 320px;">
+        <ui:GroupBox style="height: 60px; width: 60px; margin-left: auto; margin-right: 6px; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: absolute; right: 2px; flex-direction: row;" />
+        <ui:GroupBox style="padding-left: 60px; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+            <ui:GroupBox style="width: 60px; height: 14px; margin-left: 0; margin-right: auto; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; left: 0; position: relative; top: 0; -unity-font: none; justify-content: flex-start;" />
+            <ui:GroupBox style="flex-direction: row; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+                <ui:Label text="0" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+                <ui:Label text="Attack Power" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:Label text="0" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+                <ui:Label text="Attack speed" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; font-size: 8px;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:Label text="0" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+                <ui:Label text="Defence" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:Label text="0" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+                <ui:Label text="Spped" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); -unity-font-definition: none; font-size: 8px;" />
+            </ui:GroupBox>
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>

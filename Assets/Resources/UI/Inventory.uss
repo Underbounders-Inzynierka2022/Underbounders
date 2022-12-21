@@ -1,0 +1,10 @@
+.slotContainer {
+    width: 14px;
+    height: 14px;
+    margin: 1px;
+}
+.slotIcon {
+    padding: 15px;
+    flex-shrink: 0;
+    flex-grow: 1;
+}

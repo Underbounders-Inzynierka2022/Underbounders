@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
+  m_Name: WaterElemental
+  m_EditorClassIdentifier: 
+  monster: {fileID: 3097321871947507022, guid: e391330d215c8bd449a17842a71aa8b9, type: 3}
+  monsterType: 0
+  UpRestrictions:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0
+  - monster: 2
+    chance: 0
+  - monster: 3
+    chance: 0
+  - monster: 4
+    chance: 1
+  DownRestrictions:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0
+  - monster: 2
+    chance: 0
+  - monster: 3
+    chance: 0
+  - monster: 4
+    chance: 1
+  LeftRestrictions:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0
+  - monster: 2
+    chance: 0
+  - monster: 3
+    chance: 0
+  - monster: 4
+    chance: 1
+  RightRestrictions:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0
+  - monster: 2
+    chance: 0
+  - monster: 3
+    chance: 0
+  - monster: 4
+    chance: 1
