@@ -9,14 +9,19 @@ TagManager:
   - Detector
   - Projectile
   - PlayerHitbox
+  - MeleeEnemy
+  - Turret
+  - Item
+  - Chest
+  - Time
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -45,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UIlayer
+    uniqueID: 1146243569
     locked: 0

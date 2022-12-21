@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ContactFilter2D _moveFilter;
     [SerializeField] private float _collisionOffSet = 0.05f;
     [SerializeField] private SwordHitbox _sword;
+    [SerializeField] private GameObject secondary;
+    [SerializeField] private PlayerStatsController statsController;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +28,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FixedUpdate()
     {
+        if (GameStateController.instance.isPaused)
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
 
         if (_attack)
         {
@@ -84,12 +86,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private bool TryMove(Vector2 Direction)
+    public bool TryMove(Vector2 Direction)
     {
-        int countOfColisions = rigidbody.Cast(movementInput, _moveFilter, collisions, player.speed * Time.fixedDeltaTime + _collisionOffSet);
-        if (countOfColisions == 0 || collisions.Any(c=> c.collider.isTrigger))
+        int countOfColisions = rigidbody.Cast(Direction, _moveFilter, collisions, player.speed * Time.fixedDeltaTime + _collisionOffSet);
+        if (countOfColisions == 0 || collisions.Any(c => c.collider.isTrigger))
         {
-            rigidbody.MovePosition(rigidbody.position + movementInput * player.speed * Time.fixedDeltaTime);
+            rigidbody.MovePosition(rigidbody.position + Direction * player.speed * Time.fixedDeltaTime);
             return true;
         }
 
@@ -98,6 +100,12 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
+        if (GameStateController.instance.isPaused)
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
+            
         movementInput = movementValue.Get<Vector2>();
         if(Math.Abs(movementInput.x)>= Math.Abs(movementInput.y))
         {
@@ -126,6 +134,8 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
+        if (GameStateController.instance.isPaused || _attack)
+            return;
         _attack = true;
         switch (_direction)
         {
@@ -146,8 +156,28 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    void OnSecondary()
+    {
+        if (GameStateController.instance.isPaused)
+            return;
+        if (statsController.UseSecondary())
+            Instantiate(secondary, transform.position, transform.rotation);
+    }
+
     void SetAttack()
     {
         _attack = !_attack; 
+    }
+
+    private void OnPause()
+    {
+        if (GameStateController.instance.isPaused)
+        {
+            GameStateController.instance.UnloadPauseMenu();
+        }
+        else
+        {
+            GameStateController.instance.LoadPauseMenu();
+        }
     }
 }

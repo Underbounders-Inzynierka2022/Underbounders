@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b05fe953a1cda47b1e46417aec61fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 40
+  y: 40
+  seed: 23
   _tilesTilemap: {fileID: 0}
   _obstaclesTilemap: {fileID: 0}
+  _wallsTilemap: {fileID: 0}
   _layout: {fileID: 0}
   _tiles:
   - {fileID: 11400000, guid: 48dc999be346c114e8ec2679d9a840a0, type: 2}
@@ -104,5 +108,40 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c8e72af3f474f9408f19472e547f28c, type: 2}
   - {fileID: 11400000, guid: 27c29acd320939347988de96eac490f9, type: 2}
   - {fileID: 11400000, guid: c8f93d7708844e649a87827b37c13f9e, type: 2}
-  x: 40
-  y: 40
+  _monsters:
+  - {fileID: 11400000, guid: d024360134b13ef4f99632f4a2c53d5b, type: 2}
+  - {fileID: 11400000, guid: eb7098f1869727a4a87f98a2647f132f, type: 2}
+  - {fileID: 11400000, guid: 91942c7d240eec4409825ffcbb64c5ba, type: 2}
+  - {fileID: 11400000, guid: badbb6f581ef21e4f926a6e603bf33a2, type: 2}
+  - {fileID: 11400000, guid: 92f90472056fe1c4fb5e27304f9b18c1, type: 2}
+  DoorsTiles:
+  - {fileID: 11400000, guid: bf58fb59b1811444b896b11f7b5c49d2, type: 2}
+  - {fileID: 11400000, guid: 365d2b3db95381e4da8e69d2ba4f51b8, type: 2}
+  - {fileID: 11400000, guid: 699da950c3c864a4dbaf74a7f252e039, type: 2}
+  - {fileID: 11400000, guid: 813aab652c9535b4686412b3b1d44330, type: 2}
+  - {fileID: 11400000, guid: 295e916baf8ccdb468e119fc2508dcff, type: 2}
+  - {fileID: 11400000, guid: 9bf107ee6ef4fe84e89d754b162ab3b5, type: 2}
+  - {fileID: 11400000, guid: 33c6ce44c231a004798c46aceb8fcaff, type: 2}
+  - {fileID: 11400000, guid: 2b81ed8ebbfe0404791630ef023b63c1, type: 2}
+  - {fileID: 11400000, guid: 1aee1f39d2ab7ab4e8d25a557348fd96, type: 2}
+  - {fileID: 11400000, guid: d44d6ec9c808c8a4a9b48be392c267ba, type: 2}
+  - {fileID: 11400000, guid: f050c5bb9655619428d29304f1156245, type: 2}
+  - {fileID: 11400000, guid: 31ce22c9fd1095048bb880e269629931, type: 2}
+  - {fileID: 11400000, guid: 61dde1d9f1df86441a1ba7e3243dd51e, type: 2}
+  - {fileID: 11400000, guid: a61bd6cdd66e90647a33c524c6e84598, type: 2}
+  - {fileID: 11400000, guid: 624d6bbf18881c145bcdf55e8de1f38a, type: 2}
+  - {fileID: 11400000, guid: 24a5e91864b094a4d852527201b4ba41, type: 2}
+  - {fileID: 11400000, guid: f97160f5d8e6788439c955653860359d, type: 2}
+  EmptyObstacle: {fileID: 11400000, guid: 46a953deec0bc434d8f2620ef3856e41, type: 2}
+  EmptySpawn: {fileID: 11400000, guid: d024360134b13ef4f99632f4a2c53d5b, type: 2}
+  isDoorOnSide: 00010001
+  borderTileUp:
+  - {fileID: 11400000, guid: c05fdb1fa6ed2164aa30f75d641516e5, type: 2}
+  - {fileID: 11400000, guid: 4b223a454a3ff824cbd924f7382b0ed1, type: 2}
+  - {fileID: 11400000, guid: c4cd670dad5fa7448b53aff7307bdd0c, type: 2}
+  borderTileSide:
+  - {fileID: 11400000, guid: 8037d26df9dc09146afe9a666af8a264, type: 2}
+  - {fileID: 11400000, guid: c954dc1c4264d4443989fca0d8b330fc, type: 2}
+  doors:
+  - {fileID: 4164935326997379245, guid: e48de9b5acfc0fa4ebf09f6c98032d2d, type: 3}
+  - {fileID: 4164935326997379245, guid: e5c4d45c25675f14f99a431c78f2732b, type: 3}

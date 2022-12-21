@@ -6,6 +6,7 @@ public class SwordHitbox : MonoBehaviour
 {
     [SerializeField] private Collider2D _collider;
     [SerializeField] private float _posOffset;
+    [SerializeField] private PlayerSO playerStats;
 
     private Vector3 _righAttackAngleOffset;
 
@@ -72,5 +73,27 @@ public class SwordHitbox : MonoBehaviour
     {
         _collider.enabled = false;
         
+    }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (GameStateController.instance.isPaused)
+            return;
+        var healthControllers = col.GetComponents<MonsterDamage>();
+        if (healthControllers.Length > 0)
+        {
+            foreach(var healthController in healthControllers)
+            {
+                if (col.CompareTag("Turret"))
+                {
+                    healthController.OnHit(playerStats.attack);
+                }
+                else if (col.CompareTag("MeleeEnemy"))
+                {
+                    Vector2 direction = (col.transform.position - transform.parent.transform.position).normalized;
+                    healthController.OnHit(playerStats.attack, direction * (playerStats.knocbackMultiplier / 6f));
+                }
+            }
+        }
     }
 }

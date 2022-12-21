@@ -1,6 +1,10 @@
 
 public enum MonsterType 
 {
-    Grasshopper
+   WaterElemental,
+   GrassSlime,
+   IceSlime,
+   FireSlime,
+   Empty
     
 }

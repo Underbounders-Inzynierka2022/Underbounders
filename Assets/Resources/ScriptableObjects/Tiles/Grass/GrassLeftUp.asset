@@ -19,8 +19,8 @@ MonoBehaviour:
   rightSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   downSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   upLeftCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
-  upRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
-  downLeftCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
+  upRightCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
+  downLeftCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
   downRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   secondLayerRestrictions:
   - obstacle: 0
@@ -41,4 +41,14 @@ MonoBehaviour:
     chance: 0.15
   - obstacle: 8
     chance: 0.2
-  spawnable: 0
+  spawnableMonsters:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0.1
+  - monster: 2
+    chance: 0.02
+  - monster: 3
+    chance: 0.02
+  - monster: 4
+    chance: 1

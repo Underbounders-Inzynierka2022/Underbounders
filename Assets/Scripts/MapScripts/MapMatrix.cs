@@ -44,6 +44,14 @@ public class MapMatrix<T> where T : ITileKind<T>
                 initialValues.RemoveAt(0);
             }
         }
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                UpdateTilesAround(i, j);
+                RemoveImposiblePairs();
+            }
+        }
     }
 
     public (int, int) PickRandomTile()
@@ -99,7 +107,7 @@ public class MapMatrix<T> where T : ITileKind<T>
                 map[i-1, j + 1] = map[i, j].First().Key.FilterTiles(map[i-1, j + 1], Direction.downLeft);
             if (j > 0 && i < x -1)
                 map[i + 1, j - 1] = map[i, j].First().Key.FilterTiles(map[i + 1, j - 1], Direction.upRight);
-            if (j < x - 1 && i < x-1)
+            if (j < y - 1 && i < x-1)
                 map[i + 1, j + 1] = map[i, j].First().Key.FilterTiles(map[i + 1, j + 1], Direction.downRight);
         }
 

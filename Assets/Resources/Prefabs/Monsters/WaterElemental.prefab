@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -8990843012793098870}
   - component: {fileID: 4224216701125382703}
   - component: {fileID: 5595513869659975360}
+  - component: {fileID: 245984903193060247}
   m_Layer: 0
   m_Name: WaterElemental
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -166,6 +167,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &245984903193060247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097321871947507022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cce3945b165854eba637a2498d2b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 8.9
+  seeHealth: 0
+  duration: 0.025
+  flashMaterial: {fileID: 2100000, guid: f309c2446ce9f8543b7bf58f88a36eaa, type: 2}
+  renderer: {fileID: -8724961406031810997}
 --- !u!1 &9162516296454396201
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +250,7 @@ MonoBehaviour:
   _animator: {fileID: -8990843012793098870}
   _projectile: {fileID: 2623570967666599390, guid: 4ee98cb36858a8b41a94d0d4ca373ce8, type: 3}
   _timeToSpawn: 80
+  damage: {fileID: 245984903193060247}
 --- !u!50 &7742490661091407245
 Rigidbody2D:
   serializedVersion: 4

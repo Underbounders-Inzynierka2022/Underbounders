@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1017992372134629756}
   - component: {fileID: 7310755066440669508}
   - component: {fileID: -8733557798789501492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalChest
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,12 +46,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0376c2d28059295409c6e8e4b869178e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isChestOpen: 0
   _chestClosed: {fileID: -1048807942, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
   _chestOpen: {fileID: 1502724692, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
-  _isChestOpen: 0
   _collider: {fileID: 7310755066440669508}
   _renderer: {fileID: -8733557798789501492}
   _swordHitboxTag: SwordHit
+  items:
+  - item: {fileID: 9129910651344811460, guid: f4488c3cff4144144814d8ddbda5b3ef, type: 3}
+    chance: 0.3
+  - item: {fileID: 9129910651344811460, guid: 2786395daa652d7488cd144f45e3aba1, type: 3}
+    chance: 0.1
 --- !u!61 &7310755066440669508
 BoxCollider2D:
   m_ObjectHideFlags: 0

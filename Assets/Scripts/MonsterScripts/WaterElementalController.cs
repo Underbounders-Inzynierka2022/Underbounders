@@ -5,52 +5,36 @@ using UnityEngine.Tilemaps;
 
 public class WaterElementalController : MonoBehaviour
 {
-    [SerializeField] private Direction _direction;
+    [SerializeField] private Direction _direction = Direction.right;
     [SerializeField] private Animator _animator;
 
     [SerializeField] private GameObject _projectile;
 
     [SerializeField] private float _timeToSpawn;
 
+    [SerializeField] private MonsterDamage damage;
 
     private GameObject _player;
     private bool _detected;
     private float _currTimeToSpawn;
 
-    // Start is called before the first frame update
     void Start()
     {
-        switch (_direction)
-        {
-            case Direction.right:
-                _animator.SetInteger("Direction", 0);
-                break;
-            case Direction.left:
-                _animator.SetInteger("Direction", 1);
-                break;
-            case Direction.up:
-                _animator.SetInteger("Direction", 2);
-                break;
-            case Direction.down:
-                _animator.SetInteger("Direction", 3);
-                break;
-            default:
-                _animator.SetInteger("Direction",0);
-                break;
-        }
-
+        _animator.SetInteger("Direction", 0);
         _animator.Play("WaterElemental_hidden");
         _currTimeToSpawn = _timeToSpawn;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
+        if (GameStateController.instance.isPaused)
+            return;
+        if (damage.Health <= 0)
+        {
+            Despawn();
+            Destroy(transform.parent.gameObject, .4f);
+            _detected = false;
+        }
         if (_detected)
         {
             if(_currTimeToSpawn <= 0)
@@ -58,6 +42,7 @@ public class WaterElementalController : MonoBehaviour
                 var dir = _player.transform.position - transform.position;
                 float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg - 90;
                 var instance = Instantiate(_projectile, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.Euler(0, 0, -angle));
+                RotateWaterElemental(dir);
                 instance.GetComponent<ProjectileController>().Target = _player.transform.position + dir.normalized * 2f;
                 _currTimeToSpawn = _timeToSpawn;
             }
@@ -66,6 +51,7 @@ public class WaterElementalController : MonoBehaviour
                 _currTimeToSpawn -= 1f;
             }
         }
+
     }
 
     public void Spawn()
@@ -80,6 +66,8 @@ public class WaterElementalController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (GameStateController.instance.isPaused)
+            return;
         if (col.CompareTag("Player"))
         {
             Spawn();
@@ -91,6 +79,8 @@ public class WaterElementalController : MonoBehaviour
 
      void OnTriggerExit2D(Collider2D col)
     {
+        if (GameStateController.instance.isPaused)
+            return;
         if (col.CompareTag("Player"))
         {
             Despawn();
@@ -99,5 +89,36 @@ public class WaterElementalController : MonoBehaviour
             
     }
 
+    private void RotateWaterElemental(Vector2 dir)
+    {
+        if(Mathf.Abs(dir.x) >= Mathf.Abs(dir.y))
+        {
+            if(dir.x > 0)
+            {
+                _animator.Play("WatterElemental_idle_right");
+                _animator.SetInteger("Direction", 0);
+            }
+            else
+            {
+                _animator.Play("WatterElemental_idle_left");
+                _animator.SetInteger("Direction", 1);
+            }
+        }
+        else
+        {
+            if (dir.y > 0)
+            {
+                _animator.Play("WatterElemental_idle_up");
+                _animator.SetInteger("Direction", 2);
+            }
+            else
+            {
+                _animator.Play("WatterElemental_idle_down");
+                _animator.SetInteger("Direction", 3);
+            }
+        }
+        
+        
+    }
 
 }

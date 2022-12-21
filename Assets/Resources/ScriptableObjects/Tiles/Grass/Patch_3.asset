@@ -41,4 +41,14 @@ MonoBehaviour:
     chance: 0.15
   - obstacle: 8
     chance: 0.2
-  spawnable: 0
+  spawnableMonsters:
+  - monster: 0
+    chance: 0
+  - monster: 1
+    chance: 0.1
+  - monster: 2
+    chance: 0.02
+  - monster: 3
+    chance: 0.02
+  - monster: 4
+    chance: 1

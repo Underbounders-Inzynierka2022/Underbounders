@@ -26,9 +26,7 @@ public class TileSO : ScriptableObject, ITileKind<TileSO>
     [Header("Second layer restrictions")]
     public List<ObstacleDictionaryPair> secondLayerRestrictions;
 
-    public bool spawnable;
-
-    public Dictionary<string, float> spawnableMosnters;
+    public List<MonsterDictionaryPair> spawnableMonsters;
 
     public Dictionary<TileSO, float> FilterTiles(Dictionary<TileSO, float> tileToFilter, Direction dir)
     {

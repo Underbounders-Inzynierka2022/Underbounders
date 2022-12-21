@@ -15,9 +15,7 @@ public class ObstacleSO : ScriptableObject, ITileKind<ObstacleSO>
     public List<ObstacleDictionaryPair> LeftRestrictions;
     public List<ObstacleDictionaryPair> RightRestrictions;
 
-    public bool spawnable;
-
-    public Dictionary<string, string> SpawnRates;
+    public List<MonsterDictionaryPair> spawnableMonsters;
 
     public Dictionary<ObstacleSO, float> FilterTiles(Dictionary<ObstacleSO, float> tilesToFilter, Direction dir)
     {

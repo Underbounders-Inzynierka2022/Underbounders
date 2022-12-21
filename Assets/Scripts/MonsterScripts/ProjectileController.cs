@@ -6,20 +6,10 @@ public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     public Vector3 Target { get; set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
+        if (GameStateController.instance.isPaused)
+            return;
         var currState = _animator.GetCurrentAnimatorStateInfo(0);
         if (!currState.IsName("projectile_spawn")&&!currState.IsName("projectile_despawn"))
             transform.position = Vector3.MoveTowards(transform.position, Target, .01f);
@@ -27,6 +17,8 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        if (GameStateController.instance.isPaused)
+            return;
         if (col.CompareTag("Detector"))
             Despwan();
 
@@ -34,13 +26,17 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (GameStateController.instance.isPaused)
+            return;
         if (col.CompareTag("PlayerHitbox"))
             Despwan();
     }
 
     private void Despwan()
     {
+        if (GameStateController.instance.isPaused)
+            return;
         _animator.Play("projectile_despawn");
-        Destroy(this.gameObject, .24f);
+        Destroy(this.gameObject, .30f);
     }
 }

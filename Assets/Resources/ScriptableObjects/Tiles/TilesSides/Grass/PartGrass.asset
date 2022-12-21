@@ -23,9 +23,9 @@ MonoBehaviour:
   - kindOfSide: 15
     chance: 0.1
   - kindOfSide: 11
-    chance: 0.5
+    chance: 0.7
   - kindOfSide: 12
-    chance: 0.4
+    chance: 1
   - kindOfSide: 13
     chance: 0.1
   - kindOfSide: 3
