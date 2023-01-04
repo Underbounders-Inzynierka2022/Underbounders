@@ -3301,7 +3301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1209801257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,7 +3348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1267075405
 Transform:
   m_ObjectHideFlags: 0
@@ -3934,6 +3934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  isSwitching: 0
   roomKinds:
   - {fileID: 11400000, guid: 1bb0e7c0f3568464c9bf21fde10b90e3, type: 2}
   - {fileID: 11400000, guid: 08d637f2028ab38438230c34e3c7df9d, type: 2}
