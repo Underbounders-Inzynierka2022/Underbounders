@@ -401,7 +401,7 @@ MonoBehaviour:
   aiUpdateDelay: 0.9
   slimeKind: IceSlime
   animator: {fileID: 7339981150041947367}
-  speed: 0.09
+  speed: 0.1
   damage: {fileID: 2586459967096805754}
 --- !u!114 &2586459967096805754
 MonoBehaviour:

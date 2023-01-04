@@ -416,7 +416,7 @@ MonoBehaviour:
   contextSolver: {fileID: 2756837754432476003}
   aiData: {fileID: 4377393712521861371}
   delay: 0.05
-  aiUpdateDelay: 0.9
+  aiUpdateDelay: 0.89
   slimeKind: FireSlime
   animator: {fileID: 7269014434446361829}
   speed: 0.09
