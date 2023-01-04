@@ -49,6 +49,7 @@ public class PlayerDamage : MonoBehaviour, IDammageable
         if (playerVars.CurrentHealth > 0)  playerVars.CurrentHealth -= 1f;
         healthBar.value = (int)Mathf.Ceil(playerVars.CurrentHealth);
         Flash();
+        if (playerVars.CurrentHealth == 0) GameStateController.instance.OnGameEnd();
     }
     void Start()
     {
