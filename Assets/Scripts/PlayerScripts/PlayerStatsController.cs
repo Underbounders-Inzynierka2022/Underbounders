@@ -81,6 +81,8 @@ public class PlayerStatsController : MonoBehaviour
         playerStats.knocbackMultiplier = playerStats.baseKnocbackMultiplier;
         playerStats.equipment = new List<ItemSO>();
         playerStats.inventory = new List<ItemSO>();
+        healthBar.value = (int)Mathf.Ceil(playerStats.CurrentHealth);
+        secondaryBar.value = playerStats.secondaryAmmo;
     }
 
     public float GetHealth()
@@ -103,5 +105,7 @@ public class PlayerStatsController : MonoBehaviour
         playerStats.knocbackMultiplier = playerStats.baseKnocbackMultiplier;
         playerStats.equipment = new List<ItemSO>();
         playerStats.inventory = new List<ItemSO>();
+        healthBar.value = (int)Mathf.Ceil(playerStats.CurrentHealth);
+        secondaryBar.value = playerStats.secondaryAmmo;
     }
 }

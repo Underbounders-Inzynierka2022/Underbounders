@@ -66,6 +66,7 @@ public class MapGeneration : MonoBehaviour
         GenerateOutSide();
         GenerateInside();
         isDone = true;
+
     }
 
     private void GenerateOutSide()
@@ -323,8 +324,8 @@ public class MapGeneration : MonoBehaviour
 
         if (i == x / 2 - 1 || i == x / 2 || i == x / 2 + 1 || i == x / 2 + 2)
         {
-            if ((j == 0 || j == 1) && isDoorOnSide[2]) return true;
-            if ((j == y - 1 || j == x - 2) && isDoorOnSide[0]) return true;
+            if ((j == 0 || j == 1) && isDoorOnSide[1]) return true;
+            if ((j == y - 1 || j == x - 2) && isDoorOnSide[3]) return true;
         }
 
         return false;

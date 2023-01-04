@@ -43,7 +43,7 @@ public class WaterElementalController : MonoBehaviour
                 float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg - 90;
                 var instance = Instantiate(_projectile, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.Euler(0, 0, -angle));
                 RotateWaterElemental(dir);
-                instance.GetComponent<ProjectileController>().Target = _player.transform.position + dir.normalized * 2f;
+                instance.GetComponent<ProjectileController>().Target = _player.transform.position + dir.normalized * 5f;
                 _currTimeToSpawn = _timeToSpawn;
             }
             else

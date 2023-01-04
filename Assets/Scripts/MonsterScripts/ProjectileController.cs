@@ -8,8 +8,8 @@ public class ProjectileController : MonoBehaviour
     public Vector3 Target { get; set; }
     private void FixedUpdate()
     {
-        if (GameStateController.instance.isPaused)
-            return;
+        //if (GameStateController.instance.isPaused)
+            //return;
         var currState = _animator.GetCurrentAnimatorStateInfo(0);
         if (!currState.IsName("projectile_spawn")&&!currState.IsName("projectile_despawn"))
             transform.position = Vector3.MoveTowards(transform.position, Target, .01f);
@@ -34,8 +34,6 @@ public class ProjectileController : MonoBehaviour
 
     private void Despwan()
     {
-        if (GameStateController.instance.isPaused)
-            return;
         _animator.Play("projectile_despawn");
         Destroy(this.gameObject, .30f);
     }

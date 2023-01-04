@@ -9,7 +9,7 @@ public class DoorsController : MonoBehaviour
     [SerializeField] private Collider2D doorCoolidder;
 
     public Direction dir;
-
+    private bool isOpen = false;
     void FixedUpdate()
     {
         CheckFoeOpen();
@@ -17,10 +17,13 @@ public class DoorsController : MonoBehaviour
 
     private void CheckFoeOpen()
     {
+        if (isOpen) return;
         if(GameObject.FindGameObjectsWithTag("Turret").Length == 0 && GameObject.FindGameObjectsWithTag("MeleeEnemy").Length == 0)
         {
+            isOpen = true;
             renderer.sprite = openSprite;
             doorCoolidder.isTrigger = true;
+            GameStateController.instance.isSwitching = false;
         }
     }
 

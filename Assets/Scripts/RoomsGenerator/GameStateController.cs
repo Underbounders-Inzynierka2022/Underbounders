@@ -12,6 +12,7 @@ public class GameStateController : MonoBehaviour
     public static GameStateController instance;
     public Room[][] rooms;
     public bool isPaused = false;
+    public bool isSwitching = false;
     [SerializeField] private List<RoomSO> roomKinds;
     [SerializeField] private GameObject LoadScreen;
     [SerializeField] private GameObject MainMenu;
@@ -23,8 +24,9 @@ public class GameStateController : MonoBehaviour
     public Room currentRoom;
     private (int x, int y) currentRoomPos;
     private (int x, int y) playerPos;
-    private int seed = 465564927;
-    private int boundary = 5;
+    private int seed = -740281645;
+    [SerializeField] private int dungeonWallSize = 5;
+    
 
     float timer = 0f;
 
@@ -56,25 +58,25 @@ public class GameStateController : MonoBehaviour
     private void InitializeMatrix()
     {
         _initialMatrix = new List<Dictionary<RoomSO, float>>();
-        for (int i = 0; i < boundary; i++)
+        for (int i = 0; i < dungeonWallSize; i++)
         {
-            for (int j = 0; j < boundary; j++)
+            for (int j = 0; j < dungeonWallSize; j++)
             {
                 if (j == 0 && i == 0)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorUp))));
-                else if (j == 49 && i == 0)
+                else if (j == dungeonWallSize - 1 && i == 0)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorDown))));
-                else if (j == 49 && i == boundary-1)
-                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight && x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorDown))));
-                else if (j == 0 && i == boundary - 1)
+                else if (j == dungeonWallSize - 1 && i == dungeonWallSize-1)
+                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorDown))));
+                else if (j == 0 && i == dungeonWallSize - 1)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorUp))));
                 else if (j == 0)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorUp))));
                 else if (i == 0)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft))));
-                else if (j == boundary - 1)
+                else if (j == dungeonWallSize - 1)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorDown))));
-                else if (i == boundary - 1)
+                else if (i == dungeonWallSize - 1)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight))));
                 else _initialMatrix.Add(roomKinds.ToDictionary(x => x, x => 100f / (float)roomKinds.Count));
             }
@@ -84,7 +86,7 @@ public class GameStateController : MonoBehaviour
     public void GenerateWorld()
     {
         Random.InitState(seed);
-        var roomsMap = new MapMatrix<RoomSO>(boundary, boundary, _initialMatrix);
+        var roomsMap = new MapMatrix<RoomSO>(dungeonWallSize, dungeonWallSize, _initialMatrix);
         while (roomsMap.AreAllTilesSet())
         {
             (int i, int j) tileCords = roomsMap.PickRandomTile();
@@ -92,11 +94,11 @@ public class GameStateController : MonoBehaviour
             roomsMap.RemoveImposiblePairs();
 
         }
-        rooms = new Room[boundary][];
-        for (int i = 0; i < boundary; i++)
+        rooms = new Room[dungeonWallSize][];
+        for (int i = 0; i < dungeonWallSize; i++)
         {
-            rooms[i] = new Room[boundary];
-            for (int j = 0; j < boundary; j++)
+            rooms[i] = new Room[dungeonWallSize];
+            for (int j = 0; j < dungeonWallSize; j++)
             {
                 int localSeed = Random.Range(int.MinValue, int.MaxValue);
                 int x = Random.Range(10,41);
@@ -145,9 +147,9 @@ public class GameStateController : MonoBehaviour
         MainMenu.SetActive(false);
         yield return new WaitForFixedUpdate();
         GenerateWorld();
-        for(int i = 0; i< boundary; i++)
+        for(int i = 0; i< dungeonWallSize; i++)
         {
-            for(int j = 0; j < boundary; j++)
+            for(int j = 0; j < dungeonWallSize; j++)
             {
                 rooms[i][j].chestOpened = SaveData.current.rooms.First(x => x.roomPosx == i && x.roomPosy == j).chestOpened;
                 rooms[i][j].IsConquered = SaveData.current.rooms.First(x => x.roomPosx == i && x.roomPosy == j).isConquered;
@@ -184,12 +186,15 @@ public class GameStateController : MonoBehaviour
 
     public void SwitchRooms(Direction dir)
     {
+        if (isSwitching) return;
+        isSwitching = true;
         currentRoom.IsConquered = true;
         if (CheckConquere()){
             GameWon.SetActive(true);
             var text = GameObject.FindGameObjectWithTag("Time");
             int minutes = (int)(timer / 60);
-            text.GetComponent<TextMeshPro>().SetText($"{minutes}:{(int)(timer - minutes*60)}"); 
+            text.GetComponent<TextMeshProUGUI>().SetText($"{minutes.ToString("D3")}:{((int)(timer - minutes*60)).ToString("D2")}");
+            bars.rootVisualElement.style.visibility = Visibility.Hidden;
             MapClear();
             return;
         }
@@ -213,9 +218,9 @@ public class GameStateController : MonoBehaviour
 
     private bool CheckConquere()
     {
-        for (int i = 0; i<50;i++)
+        for (int i = 0; i<dungeonWallSize;i++)
         {
-            for (int j = 0; j < 50; j++)
+            for (int j = 0; j < dungeonWallSize; j++)
             {
                 if (!rooms[i][j].IsConquered && rooms[i][j].roomKind != null)
                     return false;
@@ -227,9 +232,10 @@ public class GameStateController : MonoBehaviour
     public IEnumerator GenerateNextRoom(Direction dir)
     {
         LoadScreen.SetActive(true);
+        isPaused = true;
         yield return new WaitForFixedUpdate();
         currentRoom = rooms[currentRoomPos.x][currentRoomPos.y];
-        isPaused = true;
+        
         MapClear();
         MapGeneration.instance.isChestOpen = currentRoom.chestOpened;
         MapGeneration.instance.isDoorOnSide = currentRoom.GetRoomsDoorsAsArray();
@@ -262,6 +268,7 @@ public class GameStateController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         isPaused = false;
         timer = 0;
+        isSwitching = false;
     }
 
 
@@ -310,9 +317,9 @@ public class GameStateController : MonoBehaviour
         SaveData.current.player.Health = PlayerStatsController.instance.GetHealth();
         SaveData.current.player.SecondaryAmmo = PlayerStatsController.instance.GetAmmo();
         SaveData.current.rooms = new List<RoomsDataSave>();
-        for (int i = 0; i < boundary; i++)
+        for (int i = 0; i < dungeonWallSize; i++)
         {
-            for (int j = 0; j < boundary;j++)
+            for (int j = 0; j < dungeonWallSize;j++)
             {
                 RoomsDataSave room = new RoomsDataSave();
                 room.chestOpened = rooms[i][j].chestOpened;
