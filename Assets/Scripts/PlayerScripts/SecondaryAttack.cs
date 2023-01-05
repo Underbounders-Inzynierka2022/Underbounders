@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Evaporation bombs controller
+/// </summary>
 public class SecondaryAttack : MonoBehaviour
 {
     [SerializeField] private int flashCount;
     [SerializeField] private float flashDuration;
     [SerializeField] private Material flashMaterial;
     [SerializeField] private SpriteRenderer renderer;
-
     [SerializeField] private float radius;
     [SerializeField] private float damage;
 
@@ -21,6 +23,12 @@ public class SecondaryAttack : MonoBehaviour
         StartCoroutine(Detonate());
     }
 
+    /// <summary>
+    /// Flashing coroutine handling bomb lifespan with flashing
+    /// </summary>
+    /// <returns>
+    /// Coroutines enumerator
+    /// </returns>
     private IEnumerator Detonate()
     {
         for(int i = 0; i<flashCount; i++)
@@ -36,6 +44,9 @@ public class SecondaryAttack : MonoBehaviour
         Destroy(gameObject, 0.02f);
     }
 
+    /// <summary>
+    /// Deals damage to monsters and player
+    /// </summary>
     private void DealDamage()
     {
         var colliders = Physics2D.OverlapCircleAll(transform.position, radius);

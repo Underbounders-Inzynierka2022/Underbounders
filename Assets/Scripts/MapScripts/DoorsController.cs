@@ -23,7 +23,7 @@ public class DoorsController : MonoBehaviour
             isOpen = true;
             renderer.sprite = openSprite;
             doorCoolidder.isTrigger = true;
-            GameStateController.instance.isSwitching = false;
+            GameStateController.instance.isSwitchingRoom = false;
         }
     }
 

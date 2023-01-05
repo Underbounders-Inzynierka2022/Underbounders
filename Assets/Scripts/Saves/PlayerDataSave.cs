@@ -1,8 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+/// <summary>
+/// Class responsible of containing current player data
+/// </summary>
 [Serializable]
 public class PlayerDataSave
 {

@@ -1,14 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
+/// <summary>
+/// Class responsible of containing current dungeon data
+/// </summary>
 [Serializable]
 public class RoomsDataSave
 {
-    public int roomPosx;
-    public int roomPosy;
+    public int RoomPosx { get; set; }
+    public int RoomPosy { get; set; }
 
-    public List<(int x, int y)> chestOpened;
-    public bool isConquered;
+    public List<(int x, int y)> ChestOpened { get; set; }
+    public bool IsConquered { get; set; }
 }

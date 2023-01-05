@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 
 public class PlayerStatsController : MonoBehaviour
 {
-    public static PlayerStatsController instance;
-    [SerializeField] private PlayerSO playerStats;
+    public static PlayerStatsController Instance;
 
+    [SerializeField] private PlayerSO playerStats;
     [SerializeField] private UIDocument ui;
     [SerializeField] private Grid _layout;
 
@@ -18,7 +18,7 @@ public class PlayerStatsController : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Start()

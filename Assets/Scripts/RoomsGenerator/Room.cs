@@ -1,34 +1,36 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Room 
+/// <summary>
+/// Class containing all rooms data from particular room in the dungeon
+/// </summary>
+public class Room
 {
-    public int x, y;
-    public int seed;
+    public int x { get; set; }
+    public int y { get; set; }
+    public int Seed { get; set; }
 
-    public List<(int x, int y)> chestOpened;
+    public List<(int x, int y)> ChestOpened { get; set; }
 
-    public RoomSO roomKind;
+    public RoomSO RoomKind { get; set; }
     public bool IsConquered { get; set; }
 
     public Room(int i, int j, RoomSO roomKind, int seed)
     {
         x = i;
         y = j;
-        this.roomKind = roomKind;
-        this.seed = seed;
+        this.RoomKind = roomKind;
+        this.Seed = seed;
         IsConquered = false;
-        chestOpened = new List<(int, int)>();
+        ChestOpened = new List<(int, int)>();
     }
 
     public bool[] GetRoomsDoorsAsArray()
     {
         var arr = new bool[4];
-        arr[0] = roomKind.IsDoorRight;
-        arr[1] = roomKind.IsDoorUp;
-        arr[2] = roomKind.IsDoorLeft;
-        arr[3] = roomKind.IsDoorDown;
+        arr[0] = RoomKind.IsDoorRight;
+        arr[1] = RoomKind.IsDoorUp;
+        arr[2] = RoomKind.IsDoorLeft;
+        arr[3] = RoomKind.IsDoorDown;
         return arr;
     }
 }

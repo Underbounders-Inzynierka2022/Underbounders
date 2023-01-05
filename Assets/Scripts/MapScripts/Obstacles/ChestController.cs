@@ -38,7 +38,7 @@ public class ChestController : MonoBehaviour
     {
         ChangeSprite();
         SpawnItem();
-        GameStateController.instance.currentRoom.chestOpened.Add(chestPos);
+        GameStateController.instance.currentRoom.ChestOpened.Add(chestPos);
     }
 
     public void SpawnItem()

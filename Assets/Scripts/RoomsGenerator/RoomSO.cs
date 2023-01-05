@@ -1,7 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object representing kind of room by describing its sides
+/// </summary>
 [CreateAssetMenu]
 public class RoomSO : ScriptableObject, ITileKind<RoomSO>
 {
@@ -11,7 +13,18 @@ public class RoomSO : ScriptableObject, ITileKind<RoomSO>
     public bool IsDoorRight;
 
     
-
+    /// <summary>
+    /// Filteres tiles from certain neighbouring field
+    /// </summary>
+    /// <param name="tilesToFilter">
+    /// Tiles posiblities aligned in neighborhood
+    /// </param>
+    /// <param name="dir">
+    /// Determines which side is considered in comparations
+    /// </param>
+    /// <returns>
+    /// Filtered rooms list
+    /// </returns>
     public Dictionary<RoomSO, float> FilterTiles(Dictionary<RoomSO, float> tilesToFilter, Direction dir)
     {
         var filtered = new Dictionary<RoomSO, float>();

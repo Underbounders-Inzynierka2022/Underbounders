@@ -1,31 +1,32 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
+/// <summary>
+/// Class holding save data of the game
+/// </summary>
 [Serializable]
 public class SaveData 
 {
-    private static SaveData _current;
-    public static SaveData current
+    private static SaveData s_current;
+    public static SaveData Current
     {
         get
         {
-            if(_current is null)
+            if(s_current is null)
             {
-                _current = new SaveData();
+                s_current = new SaveData();
             }
-            return _current;
+            return s_current;
         }
 
         set {
-            _current = value;
+            s_current = value;
         }
     }
 
-    public PlayerDataSave player { get; set; }
+    public PlayerDataSave Player { get; set; }
     public int Seed { get; set; }
-    public List<RoomsDataSave> rooms;
+    public List<RoomsDataSave> Rooms { get; set; }
     public (int x, int y) CurrentRoom { get; set; }
-    public float timer { get; set; }
+    public float Timer { get; set; }
 }
