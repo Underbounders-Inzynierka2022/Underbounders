@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e8a911f4fe0bc40b58e901c6fee9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 3479892726564881940}
+  animator: {fileID: 3479892726564881940}

@@ -13,7 +13,7 @@ public class ObstacleAvoidingBehaviour : SteeringBehaviour
 
     public override (float[] danger, float[] intrest) GetSteering(float[] danger, float[] intrest, AIData aiData)
     {
-        foreach(var col in aiData.obstacles)
+        foreach(var col in aiData.Obstacles)
         {
             Vector2 dirToObs = col.ClosestPoint(transform.position) - (Vector2)transform.position;
             float distToObs = dirToObs.magnitude;

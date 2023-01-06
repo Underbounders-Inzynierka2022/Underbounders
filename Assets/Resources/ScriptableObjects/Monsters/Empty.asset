@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
-  monster: {fileID: 0}
-  monsterType: 4
+  Monster: {fileID: 0}
+  MonsterType: 4
   UpRestrictions:
   - monster: 4
     chance: 1

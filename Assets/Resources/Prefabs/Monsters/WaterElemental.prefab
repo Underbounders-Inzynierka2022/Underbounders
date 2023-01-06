@@ -246,10 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a448f8287a2a8994fa55ed9936da7287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: 3
-  _animator: {fileID: -8990843012793098870}
-  _projectile: {fileID: 2623570967666599390, guid: 4ee98cb36858a8b41a94d0d4ca373ce8, type: 3}
-  _timeToSpawn: 80
+  direction: 3
+  animator: {fileID: -8990843012793098870}
+  projectile: {fileID: 2623570967666599390, guid: 4ee98cb36858a8b41a94d0d4ca373ce8, type: 3}
+  timeToSpawn: 50
   damage: {fileID: 245984903193060247}
 --- !u!50 &7742490661091407245
 Rigidbody2D:

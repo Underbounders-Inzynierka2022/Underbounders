@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
   m_Name: GrassSlime
   m_EditorClassIdentifier: 
-  monster: {fileID: 2913254718457399067, guid: 591b6ab2f0f5c454abdd00c7a2bd3c0d, type: 3}
-  monsterType: 1
+  Monster: {fileID: 2913254718457399067, guid: 591b6ab2f0f5c454abdd00c7a2bd3c0d, type: 3}
+  MonsterType: 1
   UpRestrictions:
   - monster: 1
     chance: 0.8

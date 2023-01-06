@@ -1,8 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+/// <summary>
+/// Dictionary holding monster type and its probability
+/// </summary>
 [Serializable]
 public class MonsterDictionaryPair
 {

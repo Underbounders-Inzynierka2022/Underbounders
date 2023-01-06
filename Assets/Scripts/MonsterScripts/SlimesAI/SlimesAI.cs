@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class controling all behaviours of slimes
+/// </summary>
 public class SlimesAI : MonoBehaviour
 {
     [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
@@ -16,20 +19,19 @@ public class SlimesAI : MonoBehaviour
 
     private Direction _direction;
     private bool _follow = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         InvokeRepeating("PerformDetection", 0, delay);
         _direction = Direction.left;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameStateController.instance.isPaused)
         {
             StopAllCoroutines();
-            aiData.currentTarget = null;
+            aiData.CurrentTarget = null;
             _follow = false;
             StartCoroutine(Wait());
             return;
@@ -39,7 +41,7 @@ public class SlimesAI : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if(aiData.currentTarget != null)
+        if(aiData.CurrentTarget != null)
         {
             if (!_follow)
             {
@@ -48,14 +50,16 @@ public class SlimesAI : MonoBehaviour
             }
         }else if(aiData.GetTargetsCount() > 0)
         {
-            aiData.currentTarget = aiData.targets[0];
+            aiData.CurrentTarget = aiData.Targets[0];
         }
         else
         {
             PlayIdle();
         }
     }
-
+    /// <summary>
+    /// Performs detecting by all of the detectors
+    /// </summary>
     private void PerformDetection()
     {
         foreach(var detector in detectors)
@@ -63,14 +67,21 @@ public class SlimesAI : MonoBehaviour
             detector.Detect(aiData);
         }
     }
-
+    /// <summary>
+    /// Plays slime idle animation for particular slime kind and direction
+    /// </summary>
     private void PlayIdle()
     {
         string animationName = "_idle_";
         animator.Play($"{slimeKind}{animationName}{_direction.ToString()}");
 
     }
-
+    /// <summary>
+    /// Moves slime towards target
+    /// </summary>
+    /// <param name="target">
+    /// Target position
+    /// </param>
     private void Move(Vector2 target)
     {
         Vector2 dir = -(Vector2)transform.position + target;
@@ -100,16 +111,23 @@ public class SlimesAI : MonoBehaviour
         }
         PlayRun();
     }
-
+    /// <summary>
+    /// Plays running slime animation for particular slime kind and direction
+    /// </summary>
     private void PlayRun()
     {
         string animationName = "_run_";
         animator.Play($"{slimeKind}{animationName}{_direction.ToString()}");
     }
-
+    /// <summary>
+    /// Chase player with delay in form of coroutine in semi infinite loop
+    /// </summary>
+    /// <returns>
+    /// Coroutines enumerator
+    /// </returns>
     private IEnumerator Chase()
     {
-        if (aiData.currentTarget == null)
+        if (aiData.CurrentTarget == null)
         {
             PlayIdle();
             _follow = false;
@@ -123,7 +141,12 @@ public class SlimesAI : MonoBehaviour
             StartCoroutine(Chase());
         }
     }
-
+    /// <summary>
+    /// Provides waiting after pause in form of coroutine
+    /// </summary>
+    /// <returns>
+    /// Coroutines IEnumerator
+    /// </returns>
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(5f);

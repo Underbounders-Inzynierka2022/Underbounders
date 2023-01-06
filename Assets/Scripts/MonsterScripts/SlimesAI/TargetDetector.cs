@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Detector implementation for targets
+/// </summary>
 public class TargetDetector : Detector
 {
     [SerializeField] private float detectionRadius = 2;
-
     [SerializeField] private LayerMask obstacleLayerMask, playerLayerMask;
-
     [SerializeField] private bool showGizmos = false;
 
-    private List<Transform> targets;
+    private List<Transform> _targets;
 
+    /// <summary>
+    /// Detects player in monster vicinity
+    /// </summary>
+    /// <param name="aiData">
+    /// Data stored for the ai
+    /// </param>
     public override void Detect(AIData aiData)
     {
         Collider2D playerColl  = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayerMask);
@@ -21,34 +28,31 @@ public class TargetDetector : Detector
             Vector2 dir = (playerColl.transform.position - transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detectionRadius, obstacleLayerMask);
 
-            //Debug.DrawRay(transform.position, dir * detectionRadius, Color.cyan);
-
             if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
             {
-                
-                targets = new List<Transform>() { playerColl.transform };
+                _targets = new List<Transform>() { playerColl.transform };
             }
             else
             {
-                targets = null;
+                _targets = null;
             }
 
         }
         else
         {
-            targets = null;
+            _targets = null;
         }
-        aiData.targets = targets;
+        aiData.Targets = _targets;
     }
 
     private void OnDrawGizmos()
     {
         if (!showGizmos)
             return;
-        if (Application.isPlaying && targets != null && targets.Count > 0)
+        if (Application.isPlaying && _targets != null && _targets.Count > 0)
         {
             Gizmos.color = Color.magenta;
-            foreach (var col in targets)
+            foreach (var col in _targets)
             {
                 Gizmos.DrawSphere(col.transform.position, 0.002f);
             }

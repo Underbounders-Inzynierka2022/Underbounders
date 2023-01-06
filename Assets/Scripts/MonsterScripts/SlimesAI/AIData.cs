@@ -1,26 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Targets and obstacles positions container
+/// </summary>
 public class AIData: MonoBehaviour
 {
+    public List<Transform> Targets { get; set; }
+    public Collider2D[] Obstacles { get; set; }
 
-    public List<Transform> targets = null;
-    public Collider2D[] obstacles = null;
+    public Transform CurrentTarget { get; set; }
 
-    public Transform currentTarget;
-
-    public int GetTargetsCount() => targets is null ? 0 : targets.Count;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int GetTargetsCount() => Targets is null ? 0 : Targets.Count;
 }

@@ -7,9 +7,21 @@ using UnityEngine;
 [CreateAssetMenu]
 public class RoomSO : ScriptableObject, ITileKind<RoomSO>
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public bool IsDoorUp;
+    /// <summary>
+    /// 
+    /// </summary>
     public bool IsDoorDown;
+    /// <summary>
+    /// 
+    /// </summary>
     public bool IsDoorLeft;
+    /// <summary>
+    /// 
+    /// </summary>
     public bool IsDoorRight;
 
     

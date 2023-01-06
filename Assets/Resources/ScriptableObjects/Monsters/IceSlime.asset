@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
   m_Name: IceSlime
   m_EditorClassIdentifier: 
-  monster: {fileID: 6651258758872180727, guid: 8c3451426cf8e4c449abc07aee4eb18b, type: 3}
-  monsterType: 2
+  Monster: {fileID: 6651258758872180727, guid: 8c3451426cf8e4c449abc07aee4eb18b, type: 3}
+  MonsterType: 2
   UpRestrictions:
   - monster: 2
     chance: 0.8

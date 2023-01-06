@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
   m_Name: WaterElemental
   m_EditorClassIdentifier: 
-  monster: {fileID: 3097321871947507022, guid: e391330d215c8bd449a17842a71aa8b9, type: 3}
-  monsterType: 0
+  Monster: {fileID: 3097321871947507022, guid: e391330d215c8bd449a17842a71aa8b9, type: 3}
+  MonsterType: 0
   UpRestrictions:
   - monster: 0
     chance: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602cb5109fa2a048a805bdd91807f09, type: 3}
   m_Name: FireSlime
   m_EditorClassIdentifier: 
-  monster: {fileID: 8398166877371744003, guid: cc1957e2a10296e4d9dd4f34a5574802, type: 3}
-  monsterType: 3
+  Monster: {fileID: 8398166877371744003, guid: cc1957e2a10296e4d9dd4f34a5574802, type: 3}
+  MonsterType: 3
   UpRestrictions:
   - monster: 3
     chance: 0.8

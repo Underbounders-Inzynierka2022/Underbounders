@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Pick up behaviour for items
+/// </summary>
 public class PickUp : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +16,15 @@ public class PickUp : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Virtual method describing picking up the item
+    /// </summary>
+    /// <param name="playerStatsController">
+    /// Player stats controller of player, that picks up item
+    /// </param>
+    /// <returns>
+    /// <see langword="true"/> if the item was used, <see langword="false"/> if the item wasn't used
+    /// </returns>
     public virtual bool OnPickUp(PlayerStatsController playerStatsController)
     {
         return false;

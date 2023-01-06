@@ -41,7 +41,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4252630837048733830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6666185d39b0d14fafac85ee71aab51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 4689405407273580874}
-  _posOffset: 0.05
+  collider: {fileID: 4689405407273580874}
+  posOffset: 0
   playerStats: {fileID: 11400000, guid: afb584dc984bd3c4caef0d54a0f47a24, type: 2}
 --- !u!50 &8727148163546968649
 Rigidbody2D:
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: afb584dc984bd3c4caef0d54a0f47a24, type: 2}
-  _moveFilter:
+  moveFilter:
     useTriggers: 0
     useLayerMask: 0
     useDepth: 0
@@ -254,8 +254,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _collisionOffSet: 0.005
-  _sword: {fileID: 2454528145429251606}
+  collisionOffSet: 1e-18
+  sword: {fileID: 2454528145429251606}
   secondary: {fileID: 5913661118171579787, guid: c9e6b43d0a074ea41ae65d1c30f8ffe2, type: 3}
   statsController: {fileID: 4436827846318349113}
 --- !u!50 &3083521499936626753
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: afb584dc984bd3c4caef0d54a0f47a24, type: 2}
   ui: {fileID: 0}
-  _layout: {fileID: 0}
+  layout: {fileID: 0}
 --- !u!1 &8939331950165348536
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 6726211180772519218}
   - component: {fileID: 1246031848772253504}
   - component: {fileID: 3364452913139635617}
+  - component: {fileID: 674781185771712618}
   m_Layer: 0
   m_Name: PlayerHitbox
   m_TagString: PlayerHitbox
@@ -402,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5f26b033814e54ca4b6fecb143a4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerDamage: {fileID: 8622667931986592119}
-  _swordCollider: {fileID: 4689405407273580874}
+  playerDamage: {fileID: 8622667931986592119}
+  swordCollider: {fileID: 4689405407273580874}
 --- !u!70 &3364452913139635617
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -417,6 +418,27 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01735435, y: 0.13867386}
-  m_Size: {x: 0.045265086, y: 0.11422953}
+  m_Offset: {x: -0.01735435, y: 0.105389476}
+  m_Size: {x: 0.045265086, y: 0.12570572}
   m_Direction: 0
+--- !u!50 &674781185771712618
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939331950165348536}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

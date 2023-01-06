@@ -17,6 +17,29 @@ public class SwordHitbox : MonoBehaviour
         _righAttackAngleOffset = transform.localEulerAngles;
         _rightAttackPosition = transform.localPosition;
     }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (GameStateController.instance.isPaused)
+            return;
+        var healthControllers = col.GetComponents<MonsterDamage>();
+        if (healthControllers.Length > 0)
+        {
+            foreach (var healthController in healthControllers)
+            {
+                if (col.CompareTag("Turret"))
+                {
+                    healthController.OnHit(playerStats.attack);
+                }
+                else if (col.CompareTag("MeleeEnemy"))
+                {
+                    Vector2 direction = (col.transform.position - transform.parent.transform.position).normalized;
+                    healthController.OnHit(playerStats.attack, direction * (playerStats.knocbackMultiplier / 6f));
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Control attack i regards to direction
     /// </summary>
@@ -95,27 +118,5 @@ public class SwordHitbox : MonoBehaviour
     {
         collider.enabled = false;
         
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (GameStateController.instance.isPaused)
-            return;
-        var healthControllers = col.GetComponents<MonsterDamage>();
-        if (healthControllers.Length > 0)
-        {
-            foreach(var healthController in healthControllers)
-            {
-                if (col.CompareTag("Turret"))
-                {
-                    healthController.OnHit(playerStats.attack);
-                }
-                else if (col.CompareTag("MeleeEnemy"))
-                {
-                    Vector2 direction = (col.transform.position - transform.parent.transform.position).normalized;
-                    healthController.OnHit(playerStats.attack, direction * (playerStats.knocbackMultiplier / 6f));
-                }
-            }
-        }
     }
 }

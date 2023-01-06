@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Scapped items Scriptable object, left for future
+/// </summary>
 [CreateAssetMenu]
 public class ItemSO : ScriptableObject
 {

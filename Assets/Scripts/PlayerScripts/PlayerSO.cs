@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Players Scriptable object containing player stats
+/// </summary>
 [CreateAssetMenu]
 public class PlayerSO: ScriptableObject
 {

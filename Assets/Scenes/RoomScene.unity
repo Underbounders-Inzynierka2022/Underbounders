@@ -3301,7 +3301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1209801257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,7 +3348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1267075405
 Transform:
   m_ObjectHideFlags: 0
@@ -3449,32 +3449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1365215245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8939331950165348536, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-  m_PrefabInstance: {fileID: 5140393227010864589}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1365215249
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365215245}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1366870281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,7 +3908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  isSwitching: 0
+  isSwitchingRoom: 0
   roomKinds:
   - {fileID: 11400000, guid: 1bb0e7c0f3568464c9bf21fde10b90e3, type: 2}
   - {fileID: 11400000, guid: 08d637f2028ab38438230c34e3c7df9d, type: 2}
@@ -3947,12 +3921,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37968b8a2e2096142ae3d9237ad9f927, type: 2}
   - {fileID: 11400000, guid: 6197c2a000336a84cafbc2e2735658c7, type: 2}
   - {fileID: 11400000, guid: 01086fee43aa0224fa69ae602bd6ee72, type: 2}
-  LoadScreen: {fileID: 896966231}
-  MainMenu: {fileID: 1956035120}
-  PauseMenu: {fileID: 423613172}
-  bars: {fileID: 1209801257}
-  GameOver: {fileID: 1267075404}
-  GameWon: {fileID: 1686477487}
+  loadScreen: {fileID: 896966231}
+  mainMenu: {fileID: 1956035120}
+  pauseMenu: {fileID: 423613172}
+  statusBars: {fileID: 1209801257}
+  gameOver: {fileID: 1267075404}
+  gameWon: {fileID: 1686477487}
   dungeonWallSize: 2
 --- !u!4 &1514483361
 Transform:
@@ -10207,25 +10181,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2033090363638393905, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2454528145429251606, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: _posOffset
       value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 3364452913139635617, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Size.y
-      value: 0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 3775767541054453660, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: moveSpeed
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3775767541054453660, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: collisionOffSet
-      value: 1e-18
       objectReference: {fileID: 0}
     - target: {fileID: 4252630837048733830, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Layer
@@ -10236,13 +10198,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1209801257}
     - target: {fileID: 4436827846318349113, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
+      propertyPath: layout
+      value: 
+      objectReference: {fileID: 1847546216}
+    - target: {fileID: 4436827846318349113, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: _layout
       value: 
       objectReference: {fileID: 1847546216}
-    - target: {fileID: 4689405407273580874, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6988349048132084235, guid: e8243efabed70e3488c3e5bb97df1660, type: 3}
       propertyPath: m_Name
       value: Player

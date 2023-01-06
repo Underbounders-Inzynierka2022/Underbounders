@@ -5,26 +5,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
+/// <summary>
+/// Controls movement and on map input of the player
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 movementInput;
-    private Rigidbody2D rigidbody;
-    private Animator animator;
-    private List<RaycastHit2D> collisions = new List<RaycastHit2D>();
-    private Direction _direction = Direction.right;
-    private bool _attack = false;
     [SerializeField] private PlayerSO player;
-    [SerializeField] private ContactFilter2D _moveFilter;
-    [SerializeField] private float _collisionOffSet = 0.05f;
-    [SerializeField] private SwordHitbox _sword;
+    [SerializeField] private ContactFilter2D moveFilter;
+    [SerializeField] private float collisionOffSet = 0.05f;
+    [SerializeField] private SwordHitbox sword;
     [SerializeField] private GameObject secondary;
     [SerializeField] private PlayerStatsController statsController;
 
-    // Start is called before the first frame update
+    
+    private Rigidbody2D _rigidbody;
+    private Animator _animator;
+    private Vector2 _movementInput;
+    private Direction _direction = Direction.right;
+    private List<RaycastHit2D> _collisions = new List<RaycastHit2D>();
+    private bool _attack = false;
+
+
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
 
     }
 
@@ -33,142 +38,92 @@ public class PlayerController : MonoBehaviour
     {
         if (GameStateController.instance.isPaused)
         {
-            movementInput = Vector2.zero;
+            _movementInput = Vector2.zero;
             return;
         }
 
         if (_attack)
         {
-            _sword.Attack(_direction);
+            sword.Attack(_direction);
             return;
         }
-        _sword.AttackFinish();
+        sword.AttackFinish();
 
-        if (movementInput != Vector2.zero)
+        if (_movementInput != Vector2.zero)
         {
-            if (TryMove(movementInput))
-            {
-                switch (_direction)
-                {
-                    case Direction.left:
-                        animator.Play("player_go_left");
-                        break;
-                    case Direction.right:
-                        animator.Play("player_go_right");
-                        break;
-                    case Direction.up:
-                        animator.Play("player_go_up");
-                        break;
-                    case Direction.down:
-                        animator.Play("player_go_down");
-                        break;
-                }
-            }
+            if (TryMove(_movementInput))
+                PlayAnimationInDirection("player_go_");  
         }
         else 
         {
-            switch (_direction)
-            {
-                case Direction.left:
-                    animator.Play("player_idle_left");
-                    break;
-                case Direction.right:
-                    animator.Play("player_idle_right");
-                    break;
-                case Direction.up:
-                    animator.Play("player_idle_up");
-                    break;
-                case Direction.down:
-                    animator.Play("player_idle_down");
-                    break;
-            }
+            PlayAnimationInDirection("player_idle_");
         }
 
     }
 
-    public bool TryMove(Vector2 Direction)
-    {
-        int countOfColisions = rigidbody.Cast(Direction, _moveFilter, collisions, player.speed * Time.fixedDeltaTime + _collisionOffSet);
-        if (countOfColisions == 0 || collisions.Any(c => c.collider.isTrigger))
-        {
-            rigidbody.MovePosition(rigidbody.position + Direction * player.speed * Time.fixedDeltaTime);
-            return true;
-        }
-
-        return false;
-    }
-
-    void OnMove(InputValue movementValue)
+    /// <summary>
+    /// Divides movement and  saves movement from input
+    /// </summary>
+    /// <param name="movementValue">
+    /// Movement input 
+    /// </param>
+    private void OnMove(InputValue movementValue)
     {
         if (GameStateController.instance.isPaused)
         {
-            movementInput = Vector2.zero;
+            _movementInput = Vector2.zero;
             return;
         }
             
-        movementInput = movementValue.Get<Vector2>();
-        if(Math.Abs(movementInput.x)>= Math.Abs(movementInput.y))
+        _movementInput = movementValue.Get<Vector2>();
+        if(Math.Abs(_movementInput.x)>= Math.Abs(_movementInput.y))
         {
-            if (movementInput.x < 0)
+            if (_movementInput.x < 0)
             {
                 _direction = Direction.left;
             }
-            else if (movementInput.x > 0)
+            else if (_movementInput.x > 0)
             {
                 _direction = Direction.right;
             }
         } 
-        else if(Math.Abs(movementInput.x) < Math.Abs(movementInput.y))
+        else if(Math.Abs(_movementInput.x) < Math.Abs(_movementInput.y))
         {
-            if (movementInput.y < 0)
+            if (_movementInput.y < 0)
             {
                 _direction = Direction.down;
             }
-            else if (movementInput.y > 0)
+            else if (_movementInput.y > 0)
             {
                 _direction = Direction.up;
             }
         }
 
     }
-
-    void OnFire()
+    /// <summary>
+    /// Makes player attack
+    /// </summary>
+    private void OnFire()
     {
         if (GameStateController.instance.isPaused || _attack)
             return;
         _attack = true;
-        switch (_direction)
-        {
-            case Direction.left:
-                animator.Play("player_sword_left");
-                break;
-            case Direction.right:
-                animator.Play("player_sword_right");
-                break;
-            case Direction.up:
-                animator.Play("player_sword_up");
-                break;
-            case Direction.down:
-                animator.Play("player_sword_down");
-                break;
-        }
-        Invoke("SetAttack", 0.34f);
-        
+        PlayAnimationInDirection("player_sword_");
+        Invoke("EndAttack", (float)(0.48 - player.attackSpeed / 10));
     }
-
-    void OnSecondary()
+    /// <summary>
+    /// Uses secondary attack
+    /// </summary>
+    private void OnSecondary()
     {
         if (GameStateController.instance.isPaused)
             return;
         if (statsController.UseSecondary())
             Instantiate(secondary, transform.position, transform.rotation);
     }
-
-    void SetAttack()
-    {
-        _attack = !_attack; 
-    }
-
+    /// <summary>
+    /// Pauses and unpauses the game
+    /// </summary>
     private void OnPause()
     {
         if (GameStateController.instance.isPaused)
@@ -179,5 +134,44 @@ public class PlayerController : MonoBehaviour
         {
             GameStateController.instance.LoadPauseMenu();
         }
+    }
+
+    /// <summary>
+    /// Moves player if possible 
+    /// </summary>
+    /// <param name="Direction">
+    /// Nonnormalized direction of movement
+    /// </param>
+    /// <returns></returns>
+    private bool TryMove(Vector2 Direction)
+    {
+        int countOfColisions = _rigidbody.Cast(Direction, moveFilter, _collisions, player.speed * Time.fixedDeltaTime + collisionOffSet);
+        if (countOfColisions == 0 || _collisions.Any(c => c.collider.isTrigger))
+        {
+            _rigidbody.MovePosition(_rigidbody.position + Direction * player.speed * Time.fixedDeltaTime);
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /// <summary>
+    /// Ends attack state
+    /// </summary>
+    private void EndAttack()
+    {
+        _attack = false; 
+    }
+
+    /// <summary>
+    /// Plays animation from set in particular direction
+    /// </summary>
+    /// <param name="animationName">
+    /// Name of animation set ended with _
+    /// </param>
+    private void PlayAnimationInDirection(string animationName)
+    {
+        _animator.Play($"{animationName}{_direction.ToString().ToLower()}");
     }
 }

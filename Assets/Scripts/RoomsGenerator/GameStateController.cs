@@ -57,7 +57,7 @@ public class GameStateController : MonoBehaviour
     /// <summary>
     /// Initialize new game coroutine, on click
     /// </summary>
-    public void NewGameOnClick()
+    public void NewGame()
     {
         StartCoroutine(NewGameGeneration());
     }

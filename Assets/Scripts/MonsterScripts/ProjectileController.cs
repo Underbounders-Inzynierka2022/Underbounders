@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Projectile creation, movement and destruction controller
+/// </summary>
 public class ProjectileController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator animator;
     public Vector3 Target { get; set; }
     private void FixedUpdate()
     {
-        //if (GameStateController.instance.isPaused)
-            //return;
-        var currState = _animator.GetCurrentAnimatorStateInfo(0);
+        if (GameStateController.instance.isPaused)
+            return;
+        var currState = animator.GetCurrentAnimatorStateInfo(0);
         if (!currState.IsName("projectile_spawn")&&!currState.IsName("projectile_despawn"))
             transform.position = Vector3.MoveTowards(transform.position, Target, .01f);
     }
@@ -28,13 +29,16 @@ public class ProjectileController : MonoBehaviour
     {
         if (GameStateController.instance.isPaused)
             return;
-        if (col.CompareTag("PlayerHitbox"))
+        if (col.CompareTag("PlayerHitbox") || col.CompareTag("Walls"))
             Despwan();
     }
 
+    /// <summary>
+    /// Destroys projectile with appropriate animation
+    /// </summary>
     private void Despwan()
     {
-        _animator.Play("projectile_despawn");
+        animator.Play("projectile_despawn");
         Destroy(this.gameObject, .30f);
     }
 }

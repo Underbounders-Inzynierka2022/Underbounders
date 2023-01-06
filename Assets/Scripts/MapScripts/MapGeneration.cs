@@ -221,10 +221,10 @@ public class MapGeneration : MonoBehaviour
                 var monsterResult = _matriOfMonsters.GetTile(i, j);
                 if (monsterResult != null)
                 {
-                    if (monsterResult.monsterType != MonsterType.Empty)
+                    if (monsterResult.MonsterType != MonsterType.Empty)
                     {
                         var position = _layout.CellToWorld(new Vector3Int(i + 1, -j + 1, 0));
-                        var instance = Instantiate(monsterResult.monster, position, Quaternion.identity);
+                        var instance = Instantiate(monsterResult.Monster, position, Quaternion.identity);
                         
                     }
                 }
@@ -289,10 +289,10 @@ public class MapGeneration : MonoBehaviour
                 {
                     var dicFromTiles = _matrixOfTiles.GetTile(i, j)?.spawnableMonsters;
                     var dicFromObstacles = _matriOfObstacles.GetTile(i, j)?.spawnableMonsters;
-                    var initialDic = dicFromTiles.ToDictionary(x => _monsters.First(y => y.monsterType == x.monster), x => x.chance);
+                    var initialDic = dicFromTiles.ToDictionary(x => _monsters.First(y => y.MonsterType == x.monster), x => x.chance);
                     foreach (var pair in dicFromObstacles)
                     {
-                        var monsterObject = _monsters.First(y => y.monsterType == pair.monster);
+                        var monsterObject = _monsters.First(y => y.MonsterType == pair.monster);
                         if (initialDic.ContainsKey(monsterObject))
                         {
                             initialDic[monsterObject] = initialDic[monsterObject] * pair.chance;
