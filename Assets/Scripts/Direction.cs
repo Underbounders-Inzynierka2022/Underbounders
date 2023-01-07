@@ -1,4 +1,7 @@
-﻿public enum Direction
+﻿/// <summary>
+/// Directions descriptions
+/// </summary>
+public enum Direction
 {
     up,
     left,

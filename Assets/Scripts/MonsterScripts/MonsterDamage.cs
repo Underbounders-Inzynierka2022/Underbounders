@@ -8,20 +8,53 @@ using UnityEngine;
 /// </summary>
 public class MonsterDamage : MonoBehaviour, IDammageable
 {
+    /// <summary>
+    /// Current monster health
+    /// </summary>
     public float Health{get; set;}
+    /// <summary>
+    /// Determines if monster is targetable
+    /// </summary>
+    public bool Targetable { get; set; }
 
+    /// <summary>
+    /// Maximum amount of health
+    /// </summary>
     [SerializeField] private float maxHealth;
+    /// <summary>
+    /// Health display for debuging
+    /// </summary>
     [SerializeField] private float seeHealth;
+    /// <summary>
+    /// Duration of the flash in seconds
+    /// </summary>
     [SerializeField] private float duration = 0.025f;
+    /// <summary>
+    /// Material to replace during flash
+    /// </summary>
     [SerializeField] private Material flashMaterial;
+    /// <summary>
+    /// Monster sprite renderer
+    /// </summary>
     [SerializeField] private SpriteRenderer renderer;
 
+    /// <summary>
+    /// Monster rigidbody
+    /// </summary>
     private Rigidbody2D _rigidbody;
+    /// <summary>
+    /// Colliders detected in monster vicinity
+    /// </summary>
     private List<RaycastHit2D> _collisions = new List<RaycastHit2D>();
+    /// <summary>
+    /// Default sprite material
+    /// </summary>
     private Material _spriteMaterial;
+    /// <summary>
+    /// Determiness if flash has finished
+    /// </summary>
     private bool _isFinished = true;
 
-    public bool Targetable { get; set; }
 
     void Start()
     {

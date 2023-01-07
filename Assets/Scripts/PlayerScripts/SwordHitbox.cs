@@ -5,11 +5,26 @@ using UnityEngine;
 /// </summary>
 public class SwordHitbox : MonoBehaviour
 {
+    /// <summary>
+    /// Sword hitbox collider
+    /// </summary>
     [SerializeField] private Collider2D collider;
+    /// <summary>
+    /// Collider initial offset to the right
+    /// </summary>
     [SerializeField] private float posOffset;
+    /// <summary>
+    /// Statistics of the player
+    /// </summary>
     [SerializeField] private PlayerSO playerStats;
 
+    /// <summary>
+    /// Angle offset for beginning state of collider
+    /// </summary>
     private Vector3 _righAttackAngleOffset;
+    /// <summary>
+    /// Position offset for beginning state of collider
+    /// </summary>
     private Vector3 _rightAttackPosition;
 
     private void Start()

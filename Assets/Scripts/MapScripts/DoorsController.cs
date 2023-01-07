@@ -1,30 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Doors behaviour controller
+/// </summary>
 public class DoorsController : MonoBehaviour
 {
+    /// <summary>
+    /// Door facing direction
+    /// </summary>
+    public Direction dir { get; set; }
+
+
+    /// <summary>
+    /// Doors sprite renderer
+    /// </summary>
     [SerializeField] private SpriteRenderer renderer;
+    /// <summary>
+    /// Open doors sprtie
+    /// </summary>
     [SerializeField] private Sprite openSprite;
+    /// <summary>
+    /// Doors collider
+    /// </summary>
     [SerializeField] private Collider2D doorCoolidder;
 
-    public Direction dir;
+    /// <summary>
+    /// Determines if door is open
+    /// </summary>
     private bool isOpen = false;
+
     void FixedUpdate()
     {
-        CheckFoeOpen();
-    }
-
-    private void CheckFoeOpen()
-    {
-        if (isOpen) return;
-        if(GameObject.FindGameObjectsWithTag("Turret").Length == 0 && GameObject.FindGameObjectsWithTag("MeleeEnemy").Length == 0)
-        {
-            isOpen = true;
-            renderer.sprite = openSprite;
-            doorCoolidder.isTrigger = true;
-            GameStateController.instance.isSwitchingRoom = false;
-        }
+        CheckForOpen();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,5 +39,20 @@ public class DoorsController : MonoBehaviour
         if (collision.CompareTag("Player"))
             GameStateController.instance.SwitchRooms(dir);
 
+    }
+
+    /// <summary>
+    /// Opens closed doors if all monsters in the room are killed
+    /// </summary>
+    private void CheckForOpen()
+    {
+        if (isOpen) return;
+        if (GameObject.FindGameObjectsWithTag("Turret").Length == 0 && GameObject.FindGameObjectsWithTag("MeleeEnemy").Length == 0)
+        {
+            isOpen = true;
+            renderer.sprite = openSprite;
+            doorCoolidder.isTrigger = true;
+            GameStateController.instance.isSwitchingRoom = false;
+        }
     }
 }

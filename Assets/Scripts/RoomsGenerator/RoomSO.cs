@@ -8,19 +8,19 @@ using UnityEngine;
 public class RoomSO : ScriptableObject, ITileKind<RoomSO>
 {
     /// <summary>
-    /// 
+    /// Determines if there are doors up
     /// </summary>
     public bool IsDoorUp;
     /// <summary>
-    /// 
+    /// Determines if there are doors down
     /// </summary>
     public bool IsDoorDown;
     /// <summary>
-    /// 
+    /// Determines if there are doors left
     /// </summary>
     public bool IsDoorLeft;
     /// <summary>
-    /// 
+    /// Determines if there are doors right
     /// </summary>
     public bool IsDoorRight;
 

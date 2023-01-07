@@ -1,4 +1,6 @@
-
+/// <summary>
+/// Contains all floor tiles names available
+/// </summary>
 public enum SideDescription
 {
     Nothing,

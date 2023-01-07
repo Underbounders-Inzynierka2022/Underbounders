@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,10 +6,22 @@ using UnityEngine;
 /// </summary>
 public class TargetDetector : Detector
 {
+    /// <summary>
+    /// Target detection radius
+    /// </summary>
     [SerializeField] private float detectionRadius = 2;
+    /// <summary>
+    /// Layers of objects containing obstacles
+    /// </summary>
     [SerializeField] private LayerMask obstacleLayerMask, playerLayerMask;
+    /// <summary>
+    /// Debugging option if the editor should shwo gizmos
+    /// </summary>
     [SerializeField] private bool showGizmos = false;
 
+    /// <summary>
+    /// Current list of targets
+    /// </summary>
     private List<Transform> _targets;
 
     /// <summary>

@@ -10,19 +10,54 @@ using System;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    /// <summary>
+    /// Player statistics
+    /// </summary>
     [SerializeField] private PlayerSO player;
+    /// <summary>
+    /// Contact filtering object
+    /// </summary>
     [SerializeField] private ContactFilter2D moveFilter;
+    /// <summary>
+    /// Offset helping to check if player can be moved
+    /// </summary>
     [SerializeField] private float collisionOffSet = 0.05f;
+    /// <summary>
+    /// Sword hitbox controller
+    /// </summary>
     [SerializeField] private SwordHitbox sword;
+    /// <summary>
+    /// Bomb object to spawn
+    /// </summary>
     [SerializeField] private GameObject secondary;
+    /// <summary>
+    /// Player stats controller
+    /// </summary>
     [SerializeField] private PlayerStatsController statsController;
 
-    
+    /// <summary>
+    /// Players rigidbody
+    /// </summary>
     private Rigidbody2D _rigidbody;
+    /// <summary>
+    /// Player animation controller
+    /// </summary>
     private Animator _animator;
+    /// <summary>
+    /// Movement input form keyboard or controller
+    /// </summary>
     private Vector2 _movementInput;
+    /// <summary>
+    /// Direction player is facing
+    /// </summary>
     private Direction _direction = Direction.right;
+    /// <summary>
+    /// Colliders in player vicinity
+    /// </summary>
     private List<RaycastHit2D> _collisions = new List<RaycastHit2D>();
+    /// <summary>
+    /// Determines if player is in attacking state
+    /// </summary>
     private bool _attack = false;
 
 

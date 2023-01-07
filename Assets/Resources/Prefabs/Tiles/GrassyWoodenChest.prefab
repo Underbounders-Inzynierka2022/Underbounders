@@ -124,12 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0376c2d28059295409c6e8e4b869178e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isChestOpen: 0
-  _chestClosed: {fileID: 179631778, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
-  _chestOpen: {fileID: -499318941, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
-  _collider: {fileID: -7295726784437359741}
-  _renderer: {fileID: -3362491520412843333}
-  _swordHitboxTag: SwordHit
+  chestClosed: {fileID: 179631778, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
+  chestOpen: {fileID: -499318941, guid: 7a9a93ce90846c646b4b403cf1f3d420, type: 3}
+  collider: {fileID: -7295726784437359741}
+  renderer: {fileID: -3362491520412843333}
+  swordHitboxTag: SwordHit
   items:
   - item: {fileID: 9129910651344811460, guid: f4488c3cff4144144814d8ddbda5b3ef, type: 3}
     chance: 0.1

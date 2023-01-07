@@ -6,6 +6,12 @@ using System;
 [Serializable]
 public class MonsterDictionaryPair
 {
+    /// <summary>
+    /// Monster type to be restricted
+    /// </summary>
     public MonsterType monster;
+    /// <summary>
+    /// Chance modifier
+    /// </summary>
     public float chance;
 }

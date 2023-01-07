@@ -7,7 +7,13 @@ using UnityEngine;
 /// </summary>
 public class EnemyHitChecker : MonoBehaviour
 {
+    /// <summary>
+    /// Player damage controller
+    /// </summary>
     [SerializeField] private PlayerDamage playerDamage;
+    /// <summary>
+    /// Sword collider, that gives protection
+    /// </summary>
     [SerializeField] private Collider2D swordCollider;
 
     private void OnTriggerEnter2D(Collider2D col)

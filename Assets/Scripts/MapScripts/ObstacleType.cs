@@ -1,5 +1,6 @@
-
-
+/// <summary>
+/// Contains all of obstacles types
+/// </summary>
 public enum ObstacleType
 {
     Empty,

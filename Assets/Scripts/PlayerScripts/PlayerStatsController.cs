@@ -9,13 +9,31 @@ using UnityEngine.UIElements;
 /// </summary>
 public class PlayerStatsController : MonoBehaviour
 {
+    /// <summary>
+    /// Instance of player stats controller
+    /// </summary>
     public static PlayerStatsController Instance;
 
+    /// <summary>
+    /// Player statistics container
+    /// </summary>
     [SerializeField] private PlayerSO playerStats;
+    /// <summary>
+    /// Status bars ui
+    /// </summary>
     [SerializeField] private UIDocument ui;
+    /// <summary>
+    /// Grid for translating postion from grid based to global
+    /// </summary>
     [SerializeField] private Grid layout;
 
+    /// <summary>
+    /// Health status bar element
+    /// </summary>
     private Bar _healthBar;
+    /// <summary>
+    /// Ammunition status bar element
+    /// </summary>
     private Bar _secondaryBar;
 
     private void Awake()
@@ -117,7 +135,7 @@ public class PlayerStatsController : MonoBehaviour
         transform.position = pos;
     }
     /// <summary>
-    /// Sets player stats on the begining of the game with the default values
+    /// Sets player statistics on the begining of the game with the default values
     /// </summary>
     public void SetPlayerBegginningStats()
     {
@@ -133,7 +151,7 @@ public class PlayerStatsController : MonoBehaviour
         _secondaryBar.value = playerStats.secondaryAmmo;
     }
     /// <summary>
-    /// Sets up player stats to default beside health and bombs which comes from save file
+    /// Sets up player statistics to default beside health and bombs which comes from save file
     /// </summary>
     /// <param name="health">
     /// Number of hearths to set up

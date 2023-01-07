@@ -1,46 +1,66 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controlles chest behaviours
+/// </summary>
 public class ChestController : MonoBehaviour
 {
-    public bool _isChestOpen = false;
-    public (int x, int y) chestPos;
-    [SerializeField] private Sprite _chestClosed;
-    [SerializeField] private Sprite _chestOpen;
-    [SerializeField] private Collider2D _collider;
-    [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private string _swordHitboxTag;
-
+    /// <summary>
+    /// Determines if chest is open
+    /// </summary>
+    public bool _isChestOpen { get; set; }
+    /// <summary>
+    /// Position of the chest in the room
+    /// </summary>
+    public (int x, int y) chestPos { get; set; }
+    /// <summary>
+    /// Sprite for closed chest
+    /// </summary>
+    [SerializeField] private Sprite chestClosed;
+    /// <summary>
+    /// Sprite for opened chest
+    /// </summary>
+    [SerializeField] private Sprite chestOpen;
+    /// <summary>
+    /// Chest collider
+    /// </summary>
+    [SerializeField] private Collider2D collider;
+    /// <summary>
+    /// Chest sprite renderer
+    /// </summary>
+    [SerializeField] private SpriteRenderer renderer;
+    /// <summary>
+    /// Sword attack tag
+    /// </summary>
+    [SerializeField] private string swordHitboxTag;
+    /// <summary>
+    /// Possible items to be spawn
+    /// </summary>
     [SerializeField] private List<ItemSpawnRate> items;
-  
 
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _isChestOpen = false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag(_swordHitboxTag))
+        if (col.CompareTag(swordHitboxTag))
             OpenChest();
     }
-
+    /// <summary>
+    /// Open chests with item spawn
+    /// </summary>
     public void OpenChest()
     {
         ChangeSprite();
         SpawnItem();
         GameStateController.instance.currentRoom.ChestOpened.Add(chestPos);
     }
-
+    /// <summary>
+    /// Spawns items from chests
+    /// </summary>
     public void SpawnItem()
     {
         List<int> spawned = new List<int>();
@@ -54,13 +74,13 @@ public class ChestController : MonoBehaviour
 
         
     }
-
+    /// <summary>
+    /// Changes sprite and opens the chest
+    /// </summary>
     public void ChangeSprite() {
 
-        _renderer.sprite = _chestOpen;
-        _collider.enabled = false;
+        renderer.sprite = chestOpen;
+        collider.enabled = false;
         _isChestOpen = true;
     }
-        
-    
 }

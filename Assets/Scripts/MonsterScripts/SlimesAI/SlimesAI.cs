@@ -7,17 +7,50 @@ using UnityEngine;
 /// </summary>
 public class SlimesAI : MonoBehaviour
 {
+    /// <summary>
+    /// Steering behaiours of slimes
+    /// </summary>
     [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
+    /// <summary>
+    /// Obstacles and targets detectors 
+    /// </summary>
     [SerializeField] private List<Detector> detectors;
+    /// <summary>
+    /// Decision controller for steering
+    /// </summary>
     [SerializeField] private ContextSolver contextSolver;
+    /// <summary>
+    /// Data containing targets and obstacles
+    /// </summary>
     [SerializeField] private AIData aiData;
+    /// <summary>
+    /// Delay provided for optimalization
+    /// </summary>
     [SerializeField] private float delay = 0.05f, aiUpdateDelay = 0.9f;
+    /// <summary>
+    /// Kind of slime for animation controller
+    /// </summary>
     [SerializeField] private string slimeKind;
+    /// <summary>
+    /// Slime animation controller
+    /// </summary>
     [SerializeField] private Animator animator;
+    /// <summary>
+    /// Speed of slime
+    /// </summary>
     [SerializeField] private float speed;
+    /// <summary>
+    /// Monster damage controller
+    /// </summary>
     [SerializeField] private MonsterDamage damage;
 
+    /// <summary>
+    /// Direction of slime facing
+    /// </summary>
     private Direction _direction;
+    /// <summary>
+    /// Determines if slime is following target
+    /// </summary>
     private bool _follow = false;
 
     void Start()

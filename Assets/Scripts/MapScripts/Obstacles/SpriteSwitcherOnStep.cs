@@ -1,23 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
+/// <summary>
+/// Switches sprites when stepped on by player
+/// </summary>
 public class SpriteSwitcherOnStep : MonoBehaviour
 {
+    /// <summary>
+    /// Rune sprite in off state
+    /// </summary>
     [SerializeField] private Sprite _offRune;
+    /// <summary>
+    /// Rune sprite if its working
+    /// </summary>
     [SerializeField] private Sprite _onRune;
+    /// <summary>
+    /// Rune sprite renderer
+    /// </summary>
     [SerializeField] private SpriteRenderer _renderer;
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D col)
     {

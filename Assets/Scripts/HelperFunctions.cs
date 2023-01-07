@@ -30,4 +30,19 @@ public static class HelperFunctions
         }
         return result;
     }
+
+    /// <summary>
+    /// All eight directions nomalized for behaviours to use
+    /// </summary>
+    public static List<Vector2> AllDirections => new List<Vector2>()
+        {
+            new Vector2(0,1).normalized,
+            new Vector2(1,1).normalized,
+            new Vector2(1,0).normalized,
+            new Vector2(1,-1).normalized,
+            new Vector2(0,-1).normalized,
+            new Vector2(-1,-1).normalized,
+            new Vector2(-1,0).normalized,
+            new Vector2(-1,1).normalized
+        };
 }

@@ -5,14 +5,38 @@ using UnityEngine;
 /// </summary>
 public class WaterElementalController : MonoBehaviour
 {
+    /// <summary>
+    /// Direction monster is facing
+    /// </summary>
     [SerializeField] private Direction direction = Direction.right;
+    /// <summary>
+    /// Water elemental animation controller
+    /// </summary>
     [SerializeField] private Animator animator;
+    /// <summary>
+    /// Pojectile spawned by water elemental
+    /// </summary>
     [SerializeField] private GameObject projectile;
+    /// <summary>
+    /// Time between projectile spawning
+    /// </summary>
     [SerializeField] private float timeToSpawn;
+    /// <summary>
+    /// Monster damage controller
+    /// </summary>
     [SerializeField] private MonsterDamage damage;
 
+    /// <summary>
+    /// Detected player
+    /// </summary>
     private GameObject _player;
+    /// <summary>
+    /// Determines if player was detected
+    /// </summary>
     private bool _detected;
+    /// <summary>
+    /// Time till next projectile spawn
+    /// </summary>
     private float _currTimeToSpawn;
 
     void Start()

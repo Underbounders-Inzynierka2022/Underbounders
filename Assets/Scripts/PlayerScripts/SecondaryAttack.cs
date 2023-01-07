@@ -6,16 +6,37 @@ using UnityEngine;
 /// </summary>
 public class SecondaryAttack : MonoBehaviour
 {
+    /// <summary>
+    /// Number of flashes till explosion
+    /// </summary>
     [SerializeField] private int flashCount;
+    /// <summary>
+    /// Duration of the flash in seconds
+    /// </summary>
     [SerializeField] private float flashDuration;
+    /// <summary>
+    /// Material to substitute at the time of flash
+    /// </summary>
     [SerializeField] private Material flashMaterial;
+    /// <summary>
+    /// Sprite renderer to apply flash to
+    /// </summary>
     [SerializeField] private SpriteRenderer renderer;
+    /// <summary>
+    /// Radius of damage infliction
+    /// </summary>
     [SerializeField] private float radius;
+    /// <summary>
+    /// Damage that bomb inflicts on monsters
+    /// </summary>
     [SerializeField] private float damage;
 
+    /// <summary>
+    /// Default sprite material of the bomb
+    /// </summary>
     private Material spriteMaterial;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         spriteMaterial = renderer.material;

@@ -1,38 +1,107 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+/// <summary>
+/// Controlls room generation
+/// </summary>
 public class MapGeneration : MonoBehaviour
 {
+    /// <summary>
+    /// Room generation instance of singleton
+    /// </summary>
     public static MapGeneration instance;
-    public bool isDone;
+
+    /// <summary>
+    /// Size of the room
+    /// </summary>
     public int x, y;
+    /// <summary>
+    /// Ramdom generator seed for the room
+    /// </summary>
     public int seed = 23;
-    public List<(int x, int y)> isChestOpen;
-    [SerializeField] private Tilemap _tilesTilemap;
-    [SerializeField] private Tilemap _obstaclesTilemap;
+    /// <summary>
+    /// Determins if the room generation is done
+    /// </summary>
+    public bool isDone { get; set; }
+    /// <summary>
+    /// List of chests opened
+    /// </summary>
+    public List<(int x, int y)> isChestOpen { get; set; }
+    /// <summary>
+    /// Determines on which side the doors should be
+    /// </summary>
+    public bool[] IsDoorOnSide { get; set; }
+    /// <summary>
+    /// Floor tiles tilemap
+    /// </summary>
+    [SerializeField] private Tilemap tilesTilemap;
+    /// <summary>
+    /// Obstacles tilemap
+    /// </summary>
+    [SerializeField] private Tilemap obstaclesTilemap;
+    /// <summary>
+    /// Walls tilemap
+    /// </summary>
     [SerializeField] private Tilemap _wallsTilemap;
+    /// <summary>
+    /// Grid layout to postition nontileable object in the game
+    /// </summary>
     [SerializeField] private Grid _layout;
-    [SerializeField] private List<TileSO> _tiles;
-    [SerializeField] private List<ObstacleSO> _obstacles;
-    [SerializeField] private List<MonsterSO> _monsters;
-
-    [SerializeField] private List<TileSO> DoorsTiles;
-    [SerializeField] private ObstacleSO EmptyObstacle;
-    [SerializeField] private MonsterSO EmptySpawn;
-    public bool[] isDoorOnSide;
-
-    private List<GameObject> currObjects;
-
+    /// <summary>
+    /// Floor tiles available list
+    /// </summary>
+    [SerializeField] private List<TileSO> tiles;
+    /// <summary>
+    /// Obstacles available list
+    /// </summary>
+    [SerializeField] private List<ObstacleSO> obstacles;
+    /// <summary>
+    /// Monsters available list
+    /// </summary>
+    [SerializeField] private List<MonsterSO> monsters;
+    /// <summary>
+    /// Tiles that needs to spawn near the doors
+    /// </summary>
+    [SerializeField] private List<TileSO> doorsTiles;
+    /// <summary>
+    /// Empty obstacle to spawn near the doors
+    /// </summary>
+    [SerializeField] private ObstacleSO emptyObstacle;
+    /// <summary>
+    /// Empty spawn point for area near the doors
+    /// </summary>
+    [SerializeField] private MonsterSO emptySpawn;
+    /// <summary>
+    /// Borders tile for uppe wall
+    /// </summary>
     [SerializeField] private List<Tile> borderTileUp;
+    /// <summary>
+    /// Walls tiles for other sides
+    /// </summary>
     [SerializeField] private List<Tile> borderTileSide;
+    /// <summary>
+    /// Doors tiles
+    /// </summary>
     [SerializeField] private List<GameObject> doors;
 
+    /// <summary>
+    /// Current object to destroy on map unload or reload
+    /// </summary>
+    private List<GameObject> _currObjects;
+    /// <summary>
+    /// Matrix of floor tiles
+    /// </summary>
     private MapMatrix<TileSO> _matrixOfTiles;
-    private MapMatrix<ObstacleSO> _matriOfObstacles;
-    private MapMatrix<MonsterSO> _matriOfMonsters;
+    /// <summary>
+    /// Matrix of obstacles
+    /// </summary>
+    private MapMatrix<ObstacleSO> _matrixOfObstacles;
+    /// <summary>
+    /// Matrix of monsters
+    /// </summary>
+    private MapMatrix<MonsterSO> _matrixOfMonsters;
 
     private void Awake()
     {
@@ -41,23 +110,35 @@ public class MapGeneration : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        currObjects = new List<GameObject>();
-
-
+        _currObjects = new List<GameObject>();
     }
 
+    /// <summary>
+    /// Clears map from all of the tiles
+    /// </summary>
     public void ClearMap()
     {
-        foreach (var objectToDestroy in currObjects)
+        foreach (var objectToDestroy in _currObjects)
             Destroy(objectToDestroy);
-        _tilesTilemap.ClearAllTiles();
-        _obstaclesTilemap.ClearAllTiles();
+        tilesTilemap.ClearAllTiles();
+        obstaclesTilemap.ClearAllTiles();
         _wallsTilemap.ClearAllTiles();
     }
 
+    /// <summary>
+    /// Main world generation function
+    /// </summary>
+    /// <param name="seed">
+    /// Room random generation seed
+    /// </param>
+    /// <param name="x">
+    /// Room number of collumns
+    /// </param>
+    /// <param name="y">
+    /// Room number of rows
+    /// </param>
     public void GenerateRoom(int seed, int x, int y)
     {
         this.x = x;
@@ -69,6 +150,9 @@ public class MapGeneration : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Generates walls and doors
+    /// </summary>
     private void GenerateOutSide()
     {
         SetCorners();
@@ -76,6 +160,9 @@ public class MapGeneration : MonoBehaviour
         SetUpDownWalls();
     }
 
+    /// <summary>
+    /// Sets the corners of the walls in correct roation
+    /// </summary>
     private void SetCorners()
     {
         var pos = new Vector3Int(-1, 3, 0);
@@ -92,16 +179,19 @@ public class MapGeneration : MonoBehaviour
         _wallsTilemap.SetTransformMatrix(pos, Matrix4x4.Rotate(Quaternion.Euler(0, 0, 00f)));
     }
 
+    /// <summary>
+    /// Sets sideway walls and doors
+    /// </summary>
     private void SetSideWalls()
     {
         Vector3Int pos;
         for (int i = 2; i > -y; i--)
         {
-            if ((i == -y / 2 || i == -y / 2 - 1) && isDoorOnSide[0])
+            if ((i == -y / 2 || i == -y / 2 - 1) && IsDoorOnSide[0])
             {
                 pos = new Vector3Int(x + 1, i + 1, 0);
                 var instance = Instantiate(doors[0], _layout.CellToWorld(pos), Quaternion.Euler(0, 0, 0));
-                currObjects.Add(instance);
+                _currObjects.Add(instance);
                 instance.GetComponent<DoorsController>().dir = Direction.right;
             }
             else
@@ -109,11 +199,11 @@ public class MapGeneration : MonoBehaviour
                 pos = new Vector3Int(x, i, 0);
                 _wallsTilemap.SetTile(pos, borderTileSide[0]);
             }
-            if ((i == -y / 2 || i == -y / 2 - 1) && isDoorOnSide[2])
+            if ((i == -y / 2 || i == -y / 2 - 1) && IsDoorOnSide[2])
             {
                 pos = new Vector3Int(0, i + 1, 0);
                 var instance = Instantiate(doors[0], _layout.CellToWorld(pos), Quaternion.Euler(0, 0, 180f));
-                currObjects.Add(instance);
+                _currObjects.Add(instance);
                 instance.GetComponent<DoorsController>().dir = Direction.left;
             }
             else
@@ -125,18 +215,21 @@ public class MapGeneration : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets up upward and downwards walls and door
+    /// </summary>
     private void SetUpDownWalls()
     {
         Vector3Int pos;
         for (int i = 0; i < x; i++)
         {
-            if ((i == x / 2 || i == x / 2 + 1) && isDoorOnSide[1])
+            if ((i == x / 2 || i == x / 2 + 1) && IsDoorOnSide[1])
             {
 
                 pos = new Vector3Int(i + 1, 2, 0);
                 var tempPos = _layout.CellToWorld(pos);
                 var instance = Instantiate(doors[1], new Vector3(tempPos.x, tempPos.y + 0.08f, tempPos.z), Quaternion.Euler(0, 0, 0));
-                currObjects.Add(instance);
+                _currObjects.Add(instance);
                 instance.GetComponent<DoorsController>().dir = Direction.up;
             }
             else
@@ -148,11 +241,11 @@ public class MapGeneration : MonoBehaviour
                 pos = new Vector3Int(i, 1, 0);
                 _wallsTilemap.SetTile(pos, borderTileUp[2]);
             }
-            if ((i == x / 2 || i == x / 2 + 1) && isDoorOnSide[3])
+            if ((i == x / 2 || i == x / 2 + 1) && IsDoorOnSide[3])
             {
                 pos = new Vector3Int(i + 1, -y + 1, 0);
                 var instance = Instantiate(doors[0], _layout.CellToWorld(pos), Quaternion.Euler(0, 0, 270f));
-                currObjects.Add(instance);
+                _currObjects.Add(instance);
                 instance.GetComponent<DoorsController>().dir = Direction.down;
 
             }
@@ -165,25 +258,35 @@ public class MapGeneration : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Manages room generation inside borders
+    /// </summary>
     private void GenerateInside()
     {
         
         var tilesInit = GetInitialFirstLayer();
         _matrixOfTiles = new MapMatrix<TileSO>(x, y, tilesInit);
 
-        ResolveMatrix(_matrixOfTiles);
+        _matrixOfTiles.ResolveMatrix();
 
         var initialObstacles = GetInitialSecondLayer();
-        _matriOfObstacles = new MapMatrix<ObstacleSO>(x, y, initialObstacles);
+        _matrixOfObstacles = new MapMatrix<ObstacleSO>(x, y, initialObstacles);
 
-        ResolveMatrix(_matriOfObstacles);
+        _matrixOfObstacles.ResolveMatrix();
 
         var  initialMonsters = GetInitialThirdLayer();
 
-        _matriOfMonsters = new MapMatrix<MonsterSO>(x, y, initialMonsters);
+        _matrixOfMonsters = new MapMatrix<MonsterSO>(x, y, initialMonsters);
 
-        ResolveMatrix(_matriOfMonsters);
+        _matrixOfMonsters.ResolveMatrix();
 
+        PlaceTiles();
+    }
+    /// <summary>
+    /// Places tiles in correct places in the grid
+    /// </summary>
+    private void PlaceTiles()
+    {
         for (int i = 0; i < x; i++)
         {
             for (int j = 0; j < y; j++)
@@ -192,46 +295,52 @@ public class MapGeneration : MonoBehaviour
                 if (result != null)
                 {
                     Tile tile = result.tile;
-                    _tilesTilemap.SetTile(new Vector3Int(i, -j, 0), tile);
+                    tilesTilemap.SetTile(new Vector3Int(i, -j, 0), tile);
                 }
-                var obstacleResult = _matriOfObstacles.GetTile(i, j);
+                var obstacleResult = _matrixOfObstacles.GetTile(i, j);
                 if (obstacleResult != null)
                 {
                     if (obstacleResult.tile is Tile obstacleTile)
-                        _obstaclesTilemap.SetTile(new Vector3Int(i, -j, 0), obstacleTile);
+                        obstaclesTilemap.SetTile(new Vector3Int(i, -j, 0), obstacleTile);
                     if (obstacleResult.tile is GameObject obstacleObject && obstacleResult.obstacleType != ObstacleType.Empty)
                     {
                         var position = _layout.CellToWorld(new Vector3Int(i + 1, -j + 1, 0));
                         var instance = Instantiate(obstacleObject, position, Quaternion.identity);
-                        currObjects.Add(instance);
-                        
+                        _currObjects.Add(instance);
+
                         var control = instance.GetComponent<ChestController>();
-                        if(control != null)
+                        if (control != null)
                         {
                             control.chestPos = (i, j);
                             if (isChestOpen != null && isChestOpen.Any() && isChestOpen.Any(t => t.x == i && t.y == j))
                             {
-                                    control.ChangeSprite();
+                                control.ChangeSprite();
                             }
                         }
-                        
-                        
+
+
                     }
                 }
-                var monsterResult = _matriOfMonsters.GetTile(i, j);
+                var monsterResult = _matrixOfMonsters.GetTile(i, j);
                 if (monsterResult != null)
                 {
                     if (monsterResult.MonsterType != MonsterType.Empty)
                     {
                         var position = _layout.CellToWorld(new Vector3Int(i + 1, -j + 1, 0));
                         var instance = Instantiate(monsterResult.Monster, position, Quaternion.identity);
-                        
+
                     }
                 }
             }
         }
     }
 
+    /// <summary>
+    /// Creates initial floor tile matrix
+    /// </summary>
+    /// <returns>
+    /// Initial state tile possiblities list for the floor tiles matrix
+    /// </returns>
     private List<Dictionary<TileSO, float>> GetInitialFirstLayer()
     {
         List<Dictionary<TileSO, float>> initialTiles = new List<Dictionary<TileSO, float>>();
@@ -240,19 +349,25 @@ public class MapGeneration : MonoBehaviour
             for (int j = 0; j < y; j++)
             {
                 if (IsDoorOnPosition(i, j))
-                    initialTiles.Add(DoorsTiles.ToDictionary(x => x, x=>1000f/(float)DoorsTiles.Count));
+                    initialTiles.Add(doorsTiles.ToDictionary(x => x, x=>1000f/(float)doorsTiles.Count));
                 else
-                    initialTiles.Add(_tiles.ToDictionary(x => x, x => 1000f / (float)_tiles.Count));
+                    initialTiles.Add(tiles.ToDictionary(x => x, x => 1000f / (float)tiles.Count));
             }
         }
         return initialTiles;
     }
 
+    /// <summary>
+    /// Creates initial obstacles matrix
+    /// </summary>
+    /// <returns>
+    /// Initial state tile possiblities list for the obstacles matrix
+    /// </returns>
     private List<Dictionary<ObstacleSO,float>> GetInitialSecondLayer()
     {
 
         List<Dictionary<ObstacleSO, float>> initialObstacles = new List<Dictionary<ObstacleSO, float>>();
-        var emptyListObstacles = new List<KeyValuePair<ObstacleSO, float>>() { new KeyValuePair<ObstacleSO, float>(EmptyObstacle, 1.0f) };
+        var emptyListObstacles = new List<KeyValuePair<ObstacleSO, float>>() { new KeyValuePair<ObstacleSO, float>(emptyObstacle, 1.0f) };
 
 
         for (int i = 0; i < x; i++)
@@ -262,7 +377,7 @@ public class MapGeneration : MonoBehaviour
                 if (_matrixOfTiles.GetTile(i, j) != null && !IsDoorOnPosition(i, j))
                 {
                     var dic = _matrixOfTiles.GetTile(i, j)?.secondLayerRestrictions;
-                    initialObstacles.Add(dic.ToDictionary(x => _obstacles.First(y => y.obstacleType == x.obstacle), x => x.chance));
+                    initialObstacles.Add(dic.ToDictionary(x => obstacles.First(y => y.obstacleType == x.obstacle), x => x.chance));
                 }
                 else
                 {
@@ -275,24 +390,30 @@ public class MapGeneration : MonoBehaviour
         return initialObstacles;
     }
 
+    /// <summary>
+    /// Creates initial monsters matrix
+    /// </summary>
+    /// <returns>
+    /// Initial state tile possiblities list for the monsters matrix
+    /// </returns>
     private List<Dictionary<MonsterSO, float>> GetInitialThirdLayer()
     {
         List<Dictionary<MonsterSO, float>> initialMonsters = new List<Dictionary<MonsterSO, float>>();
-        var emptyListMonsters = new List<KeyValuePair<MonsterSO, float>>() { new KeyValuePair<MonsterSO, float>(EmptySpawn, 1.0f) };
+        var emptyListMonsters = new List<KeyValuePair<MonsterSO, float>>() { new KeyValuePair<MonsterSO, float>(emptySpawn, 1.0f) };
 
 
         for (int i = 0; i < x; i++)
         {
             for (int j = 0; j < y; j++)
             {
-                if (_matrixOfTiles.GetTile(i, j) != null && _matriOfObstacles.GetTile(i, j) != null && !IsDoorOnPosition(i,j))
+                if (_matrixOfTiles.GetTile(i, j) != null && _matrixOfObstacles.GetTile(i, j) != null && !IsDoorOnPosition(i,j))
                 {
                     var dicFromTiles = _matrixOfTiles.GetTile(i, j)?.spawnableMonsters;
-                    var dicFromObstacles = _matriOfObstacles.GetTile(i, j)?.spawnableMonsters;
-                    var initialDic = dicFromTiles.ToDictionary(x => _monsters.First(y => y.MonsterType == x.monster), x => x.chance);
+                    var dicFromObstacles = _matrixOfObstacles.GetTile(i, j)?.spawnableMonsters;
+                    var initialDic = dicFromTiles.ToDictionary(x => monsters.First(y => y.MonsterType == x.monster), x => x.chance);
                     foreach (var pair in dicFromObstacles)
                     {
-                        var monsterObject = _monsters.First(y => y.MonsterType == pair.monster);
+                        var monsterObject = monsters.First(y => y.MonsterType == pair.monster);
                         if (initialDic.ContainsKey(monsterObject))
                         {
                             initialDic[monsterObject] = initialDic[monsterObject] * pair.chance;
@@ -314,30 +435,32 @@ public class MapGeneration : MonoBehaviour
         return initialMonsters;
     }
 
+    /// <summary>
+    /// Check if the doors should be on the postition
+    /// </summary>
+    /// <param name="i">
+    /// Collumn in the grid
+    /// </param>
+    /// <param name="j">
+    /// Row in the grid
+    /// </param>
+    /// <returns>
+    /// <see langword="true"/> if doors should be added, <see langword="false"/> otherwise
+    /// </returns>
     private bool IsDoorOnPosition(int i, int j)
     {
         if(j == y / 2 - 1 || j == y / 2 || j == y / 2 + 1 || j == y / 2 + 2)
         {
-            if ((i == 0 || i == 1) && isDoorOnSide[2]) return true;
-            if ((i == x - 1|| i == x-2) && isDoorOnSide[0]) return true;
+            if ((i == 0 || i == 1) && IsDoorOnSide[2]) return true;
+            if ((i == x - 1|| i == x-2) && IsDoorOnSide[0]) return true;
         }
 
         if (i == x / 2 - 1 || i == x / 2 || i == x / 2 + 1 || i == x / 2 + 2)
         {
-            if ((j == 0 || j == 1) && isDoorOnSide[1]) return true;
-            if ((j == y - 1 || j == x - 2) && isDoorOnSide[3]) return true;
+            if ((j == 0 || j == 1) && IsDoorOnSide[1]) return true;
+            if ((j == y - 1 || j == x - 2) && IsDoorOnSide[3]) return true;
         }
 
         return false;
     }
-    private static void ResolveMatrix<T>(MapMatrix<T> matrix) where T : ITileKind<T>
-    {
-        while (matrix.AreAllTilesSet())
-        {
-            (int i, int j) tileCords = matrix.PickRandomTile();
-            matrix.PickTileValue(tileCords.i, tileCords.j);
-            matrix.RemoveImposiblePairs();
-        }
-    }
-
 }

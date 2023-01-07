@@ -7,13 +7,26 @@ using UnityEngine;
 /// </summary>
 public class SeekBehaviour : SteeringBehaviour
 {
+    /// <summary>
+    /// Threashold for slime to reach player 
+    /// </summary>
     [SerializeField] private float threashold = 0.5f;
-
+    /// <summary>
+    /// Debuging option for displaying gizmos in editor
+    /// </summary>
     [SerializeField] private bool showGizmo = true;
 
-
+    /// <summary>
+    /// Determines if targets should be switched
+    /// </summary>
     bool _reachedLastTarget = true;
+    /// <summary>
+    /// Current target position
+    /// </summary>
     private Vector2 _targetPositionCache;
+    /// <summary>
+    /// Cached itrest table
+    /// </summary>
     float[] _interestResultTemp = null;
 
     /// <summary>
@@ -57,7 +70,7 @@ public class SeekBehaviour : SteeringBehaviour
         Vector2 dirToTarget = (_targetPositionCache - (Vector2)transform.position);
         for(int i = 0; i < intrest.Length; i++)
         {
-            float result = Vector2.Dot(dirToTarget.normalized, Directions.eightDirections[i]);
+            float result = Vector2.Dot(dirToTarget.normalized, HelperFunctions.AllDirections[i]);
 
             if(result > 0)
             {
@@ -82,7 +95,7 @@ public class SeekBehaviour : SteeringBehaviour
             Gizmos.color = Color.black;
             for (int i = 0; i < _interestResultTemp.Length; i++)
             {
-                Gizmos.DrawRay(transform.position, Directions.eightDirections[i] * _interestResultTemp[i]);
+                Gizmos.DrawRay(transform.position, HelperFunctions.AllDirections[i] * _interestResultTemp[i]);
             }
         }
         else
@@ -90,21 +103,5 @@ public class SeekBehaviour : SteeringBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, 0.1f);
         }
-    }
-    
-
-    public static class Directions
-    {
-        public static List<Vector2> eightDirections = new List<Vector2>()
-        {
-            new Vector2(0,1).normalized,
-            new Vector2(1,1).normalized,
-            new Vector2(1,0).normalized,
-            new Vector2(1,-1).normalized,
-            new Vector2(0,-1).normalized,
-            new Vector2(-1,-1).normalized,
-            new Vector2(-1,0).normalized,
-            new Vector2(-1,1).normalized
-        };
     }
 }

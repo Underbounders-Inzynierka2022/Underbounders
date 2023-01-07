@@ -11,18 +11,51 @@ using UnityEngine.UIElements;
 /// </summary>
 public class PlayerDamage : MonoBehaviour, IDammageable
 {
+    /// <summary>
+    /// Is player able to be targetted by the monsters
+    /// </summary>
     public bool Targetable { get; set; }
 
+    /// <summary>
+    /// Player statistics
+    /// </summary>
     [SerializeField] private PlayerSO playerVars;
+    /// <summary>
+    /// UI containing status bars
+    /// </summary>
     [SerializeField] private UIDocument ui;
+    /// <summary>
+    /// Duration of the flash in seconds
+    /// </summary>
     [SerializeField] private float duration = 0.025f;
+    /// <summary>
+    /// Material to substitute at the time of flash
+    /// </summary>
     [SerializeField] private Material flashMaterial;
+    /// <summary>
+    /// Sprite renderer to apply flash to
+    /// </summary>
     [SerializeField] private SpriteRenderer renderer;
 
+    /// <summary>
+    /// Players rigidbody
+    /// </summary>
     private Rigidbody2D _rigidbody;
+    /// <summary>
+    /// Objects that are in player vicinity
+    /// </summary>
     private List<RaycastHit2D> _collisions = new List<RaycastHit2D>();
+    /// <summary>
+    /// Player sprite default material
+    /// </summary>
     private Material _spriteMaterial;
+    /// <summary>
+    /// Determines if flash coroutine has finished
+    /// </summary>
     private bool _isFinished = true;
+    /// <summary>
+    /// Health status bar element
+    /// </summary>
     private Bar _healthBar;
 
     void Start()

@@ -10,25 +10,79 @@ using TMPro;
 /// </summary>
 public class GameStateController : MonoBehaviour
 {
-    public static GameStateController instance;
-    public bool isPaused = false;
-    public bool isSwitchingRoom = false;
-    public Room[][] rooms;
-    public Room currentRoom;
+    /// <summary>
+    /// Game state controlle instance
+    /// </summary>
+    public static GameStateController instance { get; set; }
+    /// <summary>
+    /// Determines if the game is paused
+    /// </summary>
+    public bool isPaused { get; set; }
+    /// <summary>
+    /// Determines if the game is in process of swithing the rooms
+    /// </summary>
+    public bool isSwitchingRoom { get; set; }
+    /// <summary>
+    /// Rooms matrix
+    /// </summary>
+    public Room[][] rooms { get; set; }
+    /// <summary>
+    /// Current room
+    /// </summary>
+    public Room currentRoom { get; set; }
 
+    /// <summary>
+    /// Available room kinds
+    /// </summary>
     [SerializeField] private List<RoomSO> roomKinds;
+    /// <summary>
+    /// Loading screen object
+    /// </summary>
     [SerializeField] private GameObject loadScreen;
+    /// <summary>
+    /// Main menu object
+    /// </summary>
     [SerializeField] private GameObject mainMenu;
+    /// <summary>
+    /// Pause Menu object
+    /// </summary>
     [SerializeField] private GameObject pauseMenu;
+    /// <summary>
+    /// Status bars with health and ammo
+    /// </summary>
     [SerializeField] private UIDocument statusBars;
+    /// <summary>
+    /// Game over screen object
+    /// </summary>
     [SerializeField] private GameObject gameOver;
+    /// <summary>
+    /// Game won screen game object
+    /// </summary>
     [SerializeField] private GameObject gameWon;
+    /// <summary>
+    /// Defines how big the dungeon is supposed to be as a lenght of square matrix border
+    /// </summary>
     [SerializeField] private int dungeonWallSize = 5;
 
+    /// <summary>
+    /// World seed
+    /// </summary>
     private int seed = -740281645;
+    /// <summary>
+    /// Current room
+    /// </summary>
     private (int x, int y) currentRoomPos;
+    /// <summary>
+    /// Player possition
+    /// </summary>
     private (int x, int y) playerPos;
+    /// <summary>
+    /// Current timer value
+    /// </summary>
     private float timer = 0f;
+    /// <summary>
+    /// Initial matrix for the rooms
+    /// </summary>
     private List<Dictionary<RoomSO, float>> _initialMatrix;
 
 
@@ -44,7 +98,8 @@ public class GameStateController : MonoBehaviour
         InitializeMatrix();
         statusBars.rootVisualElement.style.visibility = Visibility.Hidden;
         mainMenu.SetActive(true);
-        
+        isPaused = false;
+        isSwitchingRoom = false;
     }
 
     void Update()
@@ -376,7 +431,7 @@ public class GameStateController : MonoBehaviour
     {
         if (currentRoom is null) return;
         if (currentRoom.ChestOpened != null) MapGeneration.instance.isChestOpen = currentRoom.ChestOpened;
-        MapGeneration.instance.isDoorOnSide = currentRoom.GetRoomsDoorsAsArray();
+        MapGeneration.instance.IsDoorOnSide = currentRoom.GetRoomsDoorsAsArray();
         MapGeneration.instance.GenerateRoom(currentRoom.Seed, currentRoom.x, currentRoom.y);
     }
 

@@ -1,17 +1,41 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
+/// <summary>
+/// Matrix using wave function collapse to be resolved
+/// </summary>
+/// <typeparam name="T">
+/// Tile reference type of possibility group, it has to implement <see cref="ITileKind{T}"/>
+/// </typeparam>
 public class MapMatrix<T> where T : ITileKind<T>
 {
+    /// <summary>
+    /// Number of collumns
+    /// </summary>
     private int x;
 
+    /// <summary>
+    /// Number of rows
+    /// </summary>
     private int y;
 
+    /// <summary>
+    /// Matrix containing tiles possibilities
+    /// </summary>
     private Dictionary<T, float>[,] map;
 
+    /// <summary>
+    /// This constructor creates matrix with equal number of equally propable possibilities
+    /// </summary>
+    /// <param name="x">
+    /// Number of collumns in the matrix
+    /// </param>
+    /// <param name="y">
+    /// Number of rows in the matrix
+    /// </param>
+    /// <param name="intializator">
+    /// Collection of tiles possibilities
+    /// </param>
     public MapMatrix(int x, int y, IEnumerable<T> intializator)
     {
         this.x = x;
@@ -31,6 +55,18 @@ public class MapMatrix<T> where T : ITileKind<T>
         }
     }
 
+    /// <summary>
+    /// This constructor creates matrix with unequal primary state
+    /// </summary>
+    /// <param name="x">
+    /// Number of collumns in the matrix
+    /// </param>
+    /// <param name="y">
+    /// Number of rows in the matrix
+    /// </param>
+    /// <param name="initialValues">
+    /// List of tiles with its possibilities and its chances
+    /// </param>
     public MapMatrix(int x, int y, List<Dictionary<T,float>> initialValues)
     {
         this.x = x;
@@ -53,7 +89,12 @@ public class MapMatrix<T> where T : ITileKind<T>
             }
         }
     }
-
+    /// <summary>
+    /// Picks random tile from map that has lowest, greater than 0, enthropy
+    /// </summary>
+    /// <returns>
+    /// Position of the chosen tile in the matrix
+    /// </returns>
     public (int, int) PickRandomTile()
     {
         var lowestList = GetLowestCountList();
@@ -68,7 +109,15 @@ public class MapMatrix<T> where T : ITileKind<T>
         }
         return (-1, -1);
     }
-
+    /// <summary>
+    /// Randomly chooses particullar tiles possibility as its only value
+    /// </summary>
+    /// <param name="i">
+    /// Collumn of tile
+    /// </param>
+    /// <param name="j">
+    /// Row of tile
+    /// </param>
     public void PickTileValue(int i, int j)
     {
         if (i >= 0 && i < x && j >= 0 && j <= y)
@@ -80,14 +129,27 @@ public class MapMatrix<T> where T : ITileKind<T>
            UpdateTilesAround(i, j);
         }
     }
-
+    /// <summary>
+    /// Searches for lowest, greater than 0, enthropy tiles from matrix
+    /// </summary>
+    /// <returns>
+    /// List of lowest, greater than 0, enthropy tiles from matrix
+    /// </returns>
     public List<Dictionary<T, float>> GetLowestCountList()
     {
         var list = map.Cast<Dictionary<T, float>>().ToList();
         int min = list.Select(ts => ts.Count).Where(c => c > 1).Min();
         return list.Where(ts => ts.Count == min).ToList();
     }
-
+    /// <summary>
+    /// Update tiles around particular tile
+    /// </summary>
+    /// <param name="i">
+    /// Collumn of the tile
+    /// </param>
+    /// <param name="j">
+    /// Row of the tile
+    /// </param>
     private void UpdateTilesAround(int i, int j)
     {
 
@@ -112,7 +174,9 @@ public class MapMatrix<T> where T : ITileKind<T>
         }
 
     }
-
+    /// <summary>
+    /// Removes impossible candidats per tile from matrix
+    /// </summary>
     public void RemoveImposiblePairs()
     {
         for (int i = 0; i < x; i++)
@@ -125,7 +189,12 @@ public class MapMatrix<T> where T : ITileKind<T>
             }
         }
     }
-
+    /// <summary>
+    /// Checks if there is enthropy equal 0 or contradiction occurs on every tile of the whole matrix 
+    /// </summary>
+    /// <returns>
+    /// <see langword="true"/> if there is enthropy equal 0 or contradiction occurs on every tile of the whole matrix, <see langword="false"/> otherwise
+    /// </returns>
     public bool AreAllTilesSet()
     {
         for (int i = 0; i < x; i++)
@@ -139,6 +208,18 @@ public class MapMatrix<T> where T : ITileKind<T>
         return false;
     }
 
+    /// <summary>
+    /// Returns particular tile from matrix
+    /// </summary>
+    /// <param name="i">
+    /// Column of the tile
+    /// </param>
+    /// <param name="j">
+    /// Row of the tile
+    /// </param>
+    /// <returns>
+    /// Tile <see cref="T"/> from particular cell if exists, default <see cref="T"/> value otherwise
+    /// </returns>
     public T GetTile(int i, int j)
     {
         if (i >= 0 && j >= 0 && i < x && j < y)
@@ -148,5 +229,18 @@ public class MapMatrix<T> where T : ITileKind<T>
         }
 
         return default(T);
+    }
+
+    /// <summary>
+    /// Resolves matrix with wave function collapse algorythm
+    /// </summary>
+    public void ResolveMatrix()
+    {
+        while (AreAllTilesSet())
+        {
+            (int i, int j) tileCords = PickRandomTile();
+            PickTileValue(tileCords.i, tileCords.j);
+            RemoveImposiblePairs();
+        }
     }
 }

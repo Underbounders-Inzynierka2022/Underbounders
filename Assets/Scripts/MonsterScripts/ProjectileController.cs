@@ -5,7 +5,13 @@ using UnityEngine;
 /// </summary>
 public class ProjectileController : MonoBehaviour
 {
+    /// <summary>
+    /// Projectile animation controller
+    /// </summary>
     [SerializeField] private Animator animator;
+    /// <summary>
+    /// Target position
+    /// </summary>
     public Vector3 Target { get; set; }
     private void FixedUpdate()
     {

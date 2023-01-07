@@ -1,20 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ice rune behaviour controller
+/// </summary>
 public class IceRuneControler : MonoBehaviour
 {
+    /// <summary>
+    /// Player statistics
+    /// </summary>
     [SerializeField] private PlayerSO player;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {

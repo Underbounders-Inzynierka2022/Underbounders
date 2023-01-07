@@ -8,13 +8,31 @@ using UnityEngine;
 [CreateAssetMenu]
 public class MonsterSO : ScriptableObject, ITileKind<MonsterSO>
 {
+    /// <summary>
+    /// Monster represented by the tile
+    /// </summary>
     public GameObject Monster;
 
+    /// <summary>
+    /// Monster type of the tile
+    /// </summary>
     public MonsterType MonsterType;
 
+    /// <summary>
+    /// Restrictions to the upward adjacent tile
+    /// </summary>
     public List<MonsterDictionaryPair> UpRestrictions;
+    /// <summary>
+    /// Restrictions to the downward adjacent tile
+    /// </summary>
     public List<MonsterDictionaryPair> DownRestrictions;
+    /// <summary>
+    /// Restrictions to the left adjacent tile
+    /// </summary>
     public List<MonsterDictionaryPair> LeftRestrictions;
+    /// <summary>
+    /// Restrictions to the left adjacent tile
+    /// </summary>
     public List<MonsterDictionaryPair> RightRestrictions;
 
     /// <summary>
