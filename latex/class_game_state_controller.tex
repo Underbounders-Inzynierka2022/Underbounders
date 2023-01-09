@@ -1,0 +1,218 @@
+\hypertarget{class_game_state_controller}{}\doxysection{Game\+State\+Controller Class Reference}
+\label{class_game_state_controller}\index{GameStateController@{GameStateController}}
+
+
+Class managing state of the game, responsible for pausing and etc.  
+
+
+Inheritance diagram for Game\+State\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_state_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_state_controller_adf4006465e86fcbd62cd46310b370442}{New\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Initialize new game coroutine, on click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_a32dc0b21e46ecec9d2bcbdf1cf8e1a6c}{Load\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Loads main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_ad397b6f802de6c20fcc2fcbfb7c0b15b}{Switch\+Rooms}} (\mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Exits rooms and enters new one in given direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_a1856a82f103aba87c4cee5158f53fedc}{Load\+Pause\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Loads pause menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_a1671285140560fcb3c15be39e89da9e1}{Unload\+Pause\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Unloads\+Pause\+Menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_aec8582ed5cb1884663b918fc67036cbe}{On\+Game\+End}} ()
+\begin{DoxyCompactList}\small\item\em Ends game on death of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_a71611b3777b908907559ef1d38b1b4cc}{Save\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Saves game on click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_ac9c2e21720bb15893069d18fb3bc0db2}{Load\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Loads game on click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_ae15c9d56327c4e8591dfb0f44bf1caac}{Exit}} ()
+\begin{DoxyCompactList}\small\item\em Exits game on click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_state_controller_a08312eea3dad25571a8aec4783ff344c}{Map\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears map from any unnecessary object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_game_state_controller}{Game\+State\+Controller}} \mbox{\hyperlink{class_game_state_controller_af061d4143d6147b9b352de3d086f8bf5}{instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Game state controlle instance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_state_controller_ab09a0938354880409ec223f73cefe4bd}{is\+Paused}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Determines if the game is paused. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_state_controller_a8642417e6416789787b6545be64520d4}{is\+Switching\+Room}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Determines if the game is in process of swithing the rooms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_game_state_controller_a6ccfef480825d962b301893805bd3e7f}{rooms}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Rooms matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} \mbox{\hyperlink{class_game_state_controller_ac94ef1f1515f0b650b18627df51b7405}{current\+Room}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class managing state of the game, responsible for pausing and etc. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_state_controller_ae15c9d56327c4e8591dfb0f44bf1caac}\label{class_game_state_controller_ae15c9d56327c4e8591dfb0f44bf1caac}} 
+\index{GameStateController@{GameStateController}!Exit@{Exit}}
+\index{Exit@{Exit}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exits game on click. 
+
+\mbox{\Hypertarget{class_game_state_controller_ac9c2e21720bb15893069d18fb3bc0db2}\label{class_game_state_controller_ac9c2e21720bb15893069d18fb3bc0db2}} 
+\index{GameStateController@{GameStateController}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{LoadGame()}{LoadGame()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Load\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads game on click. 
+
+\mbox{\Hypertarget{class_game_state_controller_a32dc0b21e46ecec9d2bcbdf1cf8e1a6c}\label{class_game_state_controller_a32dc0b21e46ecec9d2bcbdf1cf8e1a6c}} 
+\index{GameStateController@{GameStateController}!LoadMainMenu@{LoadMainMenu}}
+\index{LoadMainMenu@{LoadMainMenu}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{LoadMainMenu()}{LoadMainMenu()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Load\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads main menu. 
+
+\mbox{\Hypertarget{class_game_state_controller_a1856a82f103aba87c4cee5158f53fedc}\label{class_game_state_controller_a1856a82f103aba87c4cee5158f53fedc}} 
+\index{GameStateController@{GameStateController}!LoadPauseMenu@{LoadPauseMenu}}
+\index{LoadPauseMenu@{LoadPauseMenu}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{LoadPauseMenu()}{LoadPauseMenu()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Load\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads pause menu. 
+
+\mbox{\Hypertarget{class_game_state_controller_a08312eea3dad25571a8aec4783ff344c}\label{class_game_state_controller_a08312eea3dad25571a8aec4783ff344c}} 
+\index{GameStateController@{GameStateController}!MapClear@{MapClear}}
+\index{MapClear@{MapClear}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{MapClear()}{MapClear()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Map\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears map from any unnecessary object. 
+
+\mbox{\Hypertarget{class_game_state_controller_adf4006465e86fcbd62cd46310b370442}\label{class_game_state_controller_adf4006465e86fcbd62cd46310b370442}} 
+\index{GameStateController@{GameStateController}!NewGame@{NewGame}}
+\index{NewGame@{NewGame}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{NewGame()}{NewGame()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+New\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize new game coroutine, on click. 
+
+\mbox{\Hypertarget{class_game_state_controller_aec8582ed5cb1884663b918fc67036cbe}\label{class_game_state_controller_aec8582ed5cb1884663b918fc67036cbe}} 
+\index{GameStateController@{GameStateController}!OnGameEnd@{OnGameEnd}}
+\index{OnGameEnd@{OnGameEnd}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{OnGameEnd()}{OnGameEnd()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+On\+Game\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Ends game on death of player. 
+
+\mbox{\Hypertarget{class_game_state_controller_a71611b3777b908907559ef1d38b1b4cc}\label{class_game_state_controller_a71611b3777b908907559ef1d38b1b4cc}} 
+\index{GameStateController@{GameStateController}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{SaveGame()}{SaveGame()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Saves game on click. 
+
+\mbox{\Hypertarget{class_game_state_controller_ad397b6f802de6c20fcc2fcbfb7c0b15b}\label{class_game_state_controller_ad397b6f802de6c20fcc2fcbfb7c0b15b}} 
+\index{GameStateController@{GameStateController}!SwitchRooms@{SwitchRooms}}
+\index{SwitchRooms@{SwitchRooms}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{SwitchRooms()}{SwitchRooms()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Switch\+Rooms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Exits rooms and enters new one in given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Direction that player go towards \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_state_controller_a1671285140560fcb3c15be39e89da9e1}\label{class_game_state_controller_a1671285140560fcb3c15be39e89da9e1}} 
+\index{GameStateController@{GameStateController}!UnloadPauseMenu@{UnloadPauseMenu}}
+\index{UnloadPauseMenu@{UnloadPauseMenu}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{UnloadPauseMenu()}{UnloadPauseMenu()}}
+{\footnotesize\ttfamily void Game\+State\+Controller.\+Unload\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unloads\+Pause\+Menu. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_game_state_controller_ac94ef1f1515f0b650b18627df51b7405}\label{class_game_state_controller_ac94ef1f1515f0b650b18627df51b7405}} 
+\index{GameStateController@{GameStateController}!currentRoom@{currentRoom}}
+\index{currentRoom@{currentRoom}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{currentRoom}{currentRoom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} Game\+State\+Controller.\+current\+Room\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Current room. 
+
+\mbox{\Hypertarget{class_game_state_controller_af061d4143d6147b9b352de3d086f8bf5}\label{class_game_state_controller_af061d4143d6147b9b352de3d086f8bf5}} 
+\index{GameStateController@{GameStateController}!instance@{instance}}
+\index{instance@{instance}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_state_controller}{Game\+State\+Controller}} Game\+State\+Controller.\+instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Game state controlle instance. 
+
+\mbox{\Hypertarget{class_game_state_controller_ab09a0938354880409ec223f73cefe4bd}\label{class_game_state_controller_ab09a0938354880409ec223f73cefe4bd}} 
+\index{GameStateController@{GameStateController}!isPaused@{isPaused}}
+\index{isPaused@{isPaused}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{isPaused}{isPaused}}
+{\footnotesize\ttfamily bool Game\+State\+Controller.\+is\+Paused\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Determines if the game is paused. 
+
+\mbox{\Hypertarget{class_game_state_controller_a8642417e6416789787b6545be64520d4}\label{class_game_state_controller_a8642417e6416789787b6545be64520d4}} 
+\index{GameStateController@{GameStateController}!isSwitchingRoom@{isSwitchingRoom}}
+\index{isSwitchingRoom@{isSwitchingRoom}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{isSwitchingRoom}{isSwitchingRoom}}
+{\footnotesize\ttfamily bool Game\+State\+Controller.\+is\+Switching\+Room\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Determines if the game is in process of swithing the rooms. 
+
+\mbox{\Hypertarget{class_game_state_controller_a6ccfef480825d962b301893805bd3e7f}\label{class_game_state_controller_a6ccfef480825d962b301893805bd3e7f}} 
+\index{GameStateController@{GameStateController}!rooms@{rooms}}
+\index{rooms@{rooms}!GameStateController@{GameStateController}}
+\doxysubsubsection{\texorpdfstring{rooms}{rooms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Game\+State\+Controller.\+rooms\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Rooms matrix. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\mbox{\hyperlink{_game_state_controller_8cs}{Game\+State\+Controller.\+cs}}\end{DoxyCompactItemize}

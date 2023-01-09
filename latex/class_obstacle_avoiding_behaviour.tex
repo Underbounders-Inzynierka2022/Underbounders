@@ -1,0 +1,54 @@
+\hypertarget{class_obstacle_avoiding_behaviour}{}\doxysection{Obstacle\+Avoiding\+Behaviour Class Reference}
+\label{class_obstacle_avoiding_behaviour}\index{ObstacleAvoidingBehaviour@{ObstacleAvoidingBehaviour}}
+Inheritance diagram for Obstacle\+Avoiding\+Behaviour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_obstacle_avoiding_behaviour}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_obstacle_avoiding_behaviour_a5c857ebb294fff72e63cadc637e09541}{override}} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}, float\mbox{[}$\,$\mbox{]} intrest) \mbox{\hyperlink{class_steering_behaviour_a7b18b9cad413aed4b095c873560097e9}{Get\+Steering}}(float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}
+\begin{DoxyCompactList}\small\item\em Calculates steering for all of the obstacles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_steering_behaviour}{Steering\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+abstract float\mbox{[}$\,$\mbox{]} float\mbox{[}$\,$\mbox{]} intrest \mbox{\hyperlink{class_steering_behaviour_a7b18b9cad413aed4b095c873560097e9}{Get\+Steering}} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}, float\mbox{[}$\,$\mbox{]} intrest, \mbox{\hyperlink{class_a_i_data}{AIData}} ai\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_steering_behaviour}{Steering\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+abstract float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}
+\begin{DoxyCompactList}\small\item\em Gets steering for monster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_obstacle_avoiding_behaviour_a5c857ebb294fff72e63cadc637e09541}\label{class_obstacle_avoiding_behaviour_a5c857ebb294fff72e63cadc637e09541}} 
+\index{ObstacleAvoidingBehaviour@{ObstacleAvoidingBehaviour}!override@{override}}
+\index{override@{override}!ObstacleAvoidingBehaviour@{ObstacleAvoidingBehaviour}}
+\doxysubsubsection{\texorpdfstring{override()}{override()}}
+{\footnotesize\ttfamily Obstacle\+Avoiding\+Behaviour.\+override (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{danger,  }\item[{float\mbox{[}$\,$\mbox{]}}]{intrest }\end{DoxyParamCaption})}
+
+
+
+Calculates steering for all of the obstacles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em danger} & Current danger values \\
+\hline
+{\em intrest} & Current intrest values \\
+\hline
+{\em ai\+Data} & AI data containing all of the targets and colliders \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gets steering for monster in form of value from 0 to 1 of dangers in 8 directions and current intrest values 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Monster\+Scripts/\+Slimes\+AI/\mbox{\hyperlink{_obstacle_avoiding_behaviour_8cs}{Obstacle\+Avoiding\+Behaviour.\+cs}}\end{DoxyCompactItemize}

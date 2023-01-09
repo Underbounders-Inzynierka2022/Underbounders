@@ -1,0 +1,201 @@
+\hypertarget{class_map_matrix}{}\doxysection{Map\+Matrix\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_map_matrix}\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+
+
+Matrix using wave function collapse to be resolved.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_matrix_ab4c40d1fb0bdc0547108825112007066}{Map\+Matrix}} (\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} x, \mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} y, IEnumerable$<$ T $>$ intializator)
+\begin{DoxyCompactList}\small\item\em This constructor creates matrix with equal number of equally propable possibilities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_map_matrix_a23273029ba7e08859dec7b5a279b4f63}{Map\+Matrix}} (\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} x, \mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} y, List$<$ Dictionary$<$ T, float $>$ $>$ initial\+Values)
+\begin{DoxyCompactList}\small\item\em This constructor creates matrix with unequal primary state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} \mbox{\hyperlink{class_map_matrix_aebc376edd1fd98d3c39d6edde0f0e683}{Pick\+Random\+Tile}} ()
+\item 
+void \mbox{\hyperlink{class_map_matrix_a51d663913ec8af6b5c8a6cf6001fcdd7}{Pick\+Tile\+Value}} (\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} i, \mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} j)
+\begin{DoxyCompactList}\small\item\em Randomly chooses particullar tiles possibility as its only value. \end{DoxyCompactList}\item 
+List$<$ Dictionary$<$ T, float $>$ $>$ \mbox{\hyperlink{class_map_matrix_a4906e6b7253bc0807bf59277dc47f96f}{Get\+Lowest\+Count\+List}} ()
+\begin{DoxyCompactList}\small\item\em Searches for lowest, greater than 0, enthropy tiles from matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_matrix_a13a512503601320a5232990ffe2c7a2e}{Remove\+Imposible\+Pairs}} ()
+\begin{DoxyCompactList}\small\item\em Removes impossible candidats per tile from matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_matrix_a1cd70b96955f2a07c5497d3312ced885}{Are\+All\+Tiles\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there is enthropy equal 0 or contradiction occurs on every tile of the whole matrix. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_map_matrix_afc8e4f05e4424a069ac7c9ca722c0042}{Get\+Tile}} (\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} i, \mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} j)
+\begin{DoxyCompactList}\small\item\em Returns particular tile from matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_matrix_a0a5690c9dabf38d5984140cacfd0642c}{Resolve\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Resolves matrix with wave function collapse algorythm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}
+\begin{DoxyCompactList}\small\item\em Picks random tile from map that has lowest, greater than 0, enthropy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Matrix using wave function collapse to be resolved. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tile reference type of possibility group, it has to implement ITile\+Kind$<$\+T$>$ \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em \mbox{\hyperlink{interface_i_tile_kind}{ITile\+Kind}}$<$T$>$}]\end{description}
+\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_map_matrix_ab4c40d1fb0bdc0547108825112007066}\label{class_map_matrix_ab4c40d1fb0bdc0547108825112007066}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!MapMatrix@{MapMatrix}}
+\index{MapMatrix@{MapMatrix}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MapMatrix()}{MapMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.\mbox{\hyperlink{class_map_matrix}{Map\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{x,  }\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{y,  }\item[{IEnumerable$<$ T $>$}]{intializator }\end{DoxyParamCaption})}
+
+
+
+This constructor creates matrix with equal number of equally propable possibilities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Number of collumns in the matrix \\
+\hline
+{\em y} & Number of rows in the matrix \\
+\hline
+{\em intializator} & Collection of tiles possibilities \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_map_matrix_a23273029ba7e08859dec7b5a279b4f63}\label{class_map_matrix_a23273029ba7e08859dec7b5a279b4f63}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!MapMatrix@{MapMatrix}}
+\index{MapMatrix@{MapMatrix}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MapMatrix()}{MapMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.\mbox{\hyperlink{class_map_matrix}{Map\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{x,  }\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{y,  }\item[{List$<$ Dictionary$<$ T, float $>$ $>$}]{initial\+Values }\end{DoxyParamCaption})}
+
+
+
+This constructor creates matrix with unequal primary state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Number of collumns in the matrix \\
+\hline
+{\em y} & Number of rows in the matrix \\
+\hline
+{\em initial\+Values} & List of tiles with its possibilities and its chances \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_map_matrix_a1cd70b96955f2a07c5497d3312ced885}\label{class_map_matrix_a1cd70b96955f2a07c5497d3312ced885}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!AreAllTilesSet@{AreAllTilesSet}}
+\index{AreAllTilesSet@{AreAllTilesSet}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AreAllTilesSet()}{AreAllTilesSet()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Are\+All\+Tiles\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if there is enthropy equal 0 or contradiction occurs on every tile of the whole matrix. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if there is enthropy equal 0 or contradiction occurs on every tile of the whole matrix, {\ttfamily false} otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_matrix_a4906e6b7253bc0807bf59277dc47f96f}\label{class_map_matrix_a4906e6b7253bc0807bf59277dc47f96f}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!GetLowestCountList@{GetLowestCountList}}
+\index{GetLowestCountList@{GetLowestCountList}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetLowestCountList()}{GetLowestCountList()}}
+{\footnotesize\ttfamily List$<$ Dictionary$<$ T, float $>$ $>$ \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Get\+Lowest\+Count\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Searches for lowest, greater than 0, enthropy tiles from matrix. 
+
+\begin{DoxyReturn}{Returns}
+List of lowest, greater than 0, enthropy tiles from matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_matrix_afc8e4f05e4424a069ac7c9ca722c0042}\label{class_map_matrix_afc8e4f05e4424a069ac7c9ca722c0042}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!GetTile@{GetTile}}
+\index{GetTile@{GetTile}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetTile()}{GetTile()}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Get\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{i,  }\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Returns particular tile from matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Column of the tile \\
+\hline
+{\em j} & Row of the tile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tile T from particular cell if exists, default T value otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_matrix_aebc376edd1fd98d3c39d6edde0f0e683}\label{class_map_matrix_aebc376edd1fd98d3c39d6edde0f0e683}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!PickRandomTile@{PickRandomTile}}
+\index{PickRandomTile@{PickRandomTile}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PickRandomTile()}{PickRandomTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}} \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Pick\+Random\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_map_matrix_a51d663913ec8af6b5c8a6cf6001fcdd7}\label{class_map_matrix_a51d663913ec8af6b5c8a6cf6001fcdd7}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!PickTileValue@{PickTileValue}}
+\index{PickTileValue@{PickTileValue}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PickTileValue()}{PickTileValue()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Pick\+Tile\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{i,  }\item[{\mbox{\hyperlink{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Randomly chooses particullar tiles possibility as its only value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Collumn of tile \\
+\hline
+{\em j} & Row of tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_map_matrix_a13a512503601320a5232990ffe2c7a2e}\label{class_map_matrix_a13a512503601320a5232990ffe2c7a2e}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!RemoveImposiblePairs@{RemoveImposiblePairs}}
+\index{RemoveImposiblePairs@{RemoveImposiblePairs}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RemoveImposiblePairs()}{RemoveImposiblePairs()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Remove\+Imposible\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes impossible candidats per tile from matrix. 
+
+\mbox{\Hypertarget{class_map_matrix_a0a5690c9dabf38d5984140cacfd0642c}\label{class_map_matrix_a0a5690c9dabf38d5984140cacfd0642c}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!ResolveMatrix@{ResolveMatrix}}
+\index{ResolveMatrix@{ResolveMatrix}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ResolveMatrix()}{ResolveMatrix()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.Resolve\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resolves matrix with wave function collapse algorythm. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}\label{class_map_matrix_a57abd4ccfb53a1aa65635e9437174223}} 
+\index{MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}!int@{int}}
+\index{int@{int}!MapMatrix$<$ T $>$@{MapMatrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{int}{int}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_matrix}{Map\+Matrix}}$<$ T $>$.int}
+
+
+
+Picks random tile from map that has lowest, greater than 0, enthropy. 
+
+\begin{DoxyReturn}{Returns}
+Position of the chosen tile in the matrix 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+Scripts/\mbox{\hyperlink{_map_matrix_8cs}{Map\+Matrix.\+cs}}\end{DoxyCompactItemize}

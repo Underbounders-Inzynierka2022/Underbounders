@@ -2651,7 +2651,9 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 0e68b345cebc75b47b98bd146eb673ca, type: 3}
+      name: _Emission
     nameFileIdTable:
       main03Final_2: 1370065373
       main03Final_116: -293297599
@@ -2700,24 +2702,24 @@ TextureImporter:
       main03Final_14: 308772693
       main03Final_58: 1072984868
       main03Final_46: -1822899093
+      main03Final_107: 201438767
       main03Final_0: -544916128
-      main03Final_75: 1068187605
       main03Final_87: -725714806
       main03Final_66: 406596517
       main03Final_52: -1814192837
+      main03Final_75: 1068187605
       main03Final_101: -345558596
       main03Final_108: 1575354263
       main03Final_31: 1382510877
       main03Final_102: 989078718
       main03Final_106: 662372674
       main03Final_36: 1100914359
-      main03Final_107: 201438767
       main03Final_110: -597777163
       main03Final_35: 488243082
       main03Final_43: 1621138268
+      main03Final_48: -1367568735
       main03Final_30: -1490762077
       main03Final_72: -610323374
-      main03Final_48: -1367568735
       main03Final_99: 1707256724
       main03Final_20: -1557534085
       main03Final_26: 887368404

@@ -1,0 +1,136 @@
+\hypertarget{class_monster_damage}{}\doxysection{Monster\+Damage Class Reference}
+\label{class_monster_damage}\index{MonsterDamage@{MonsterDamage}}
+
+
+Damage controller for monsters.  
+
+
+Inheritance diagram for Monster\+Damage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_monster_damage}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_monster_damage_a038903e2da2f7446669cb7f3bb9e5d6b}{On\+Hit}} (float damage, Vector2 knockback)
+\begin{DoxyCompactList}\small\item\em Deals damage to monster and if it is possible applies knockback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monster_damage_a08ae4c4d6b7e23365286c113c0ea10a3}{On\+Hit}} (float damage)
+\begin{DoxyCompactList}\small\item\em Deals damage to monster. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monster_damage_a9f226cd84d17c04a2a68ed538298108e}{Try\+Move}} (Vector2 direction)
+\begin{DoxyCompactList}\small\item\em Moves player back if it\textquotesingle{}s possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_i_dammageable_aadb129ad0332532b80bf1a4fd44da2e9}{On\+Hit}} (float damage, Vector2 knockback)
+\begin{DoxyCompactList}\small\item\em Deals certain amount of damage with knockback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_dammageable_a5e767ccccf6ad4c885bac164485897fb}{On\+Hit}} (float damage)
+\begin{DoxyCompactList}\small\item\em Deals certain amount of damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_monster_damage_ae77456212f7e7e16725752483f848592}{Health}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current monster health. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_monster_damage_a2a8377a8937d89c7ddd3631a4249a93f}{Targetable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Determines if monster is targetable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{interface_i_dammageable}{IDammageable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_i_dammageable_aded17a5e41fd6474ad369a72bbc8e107}{Targetable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Damage controller for monsters. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_monster_damage_a08ae4c4d6b7e23365286c113c0ea10a3}\label{class_monster_damage_a08ae4c4d6b7e23365286c113c0ea10a3}} 
+\index{MonsterDamage@{MonsterDamage}!OnHit@{OnHit}}
+\index{OnHit@{OnHit}!MonsterDamage@{MonsterDamage}}
+\doxysubsubsection{\texorpdfstring{OnHit()}{OnHit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Monster\+Damage.\+On\+Hit (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})}
+
+
+
+Deals damage to monster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Damage dealt \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_dammageable_a5e767ccccf6ad4c885bac164485897fb}{IDammageable}}.
+
+\mbox{\Hypertarget{class_monster_damage_a038903e2da2f7446669cb7f3bb9e5d6b}\label{class_monster_damage_a038903e2da2f7446669cb7f3bb9e5d6b}} 
+\index{MonsterDamage@{MonsterDamage}!OnHit@{OnHit}}
+\index{OnHit@{OnHit}!MonsterDamage@{MonsterDamage}}
+\doxysubsubsection{\texorpdfstring{OnHit()}{OnHit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Monster\+Damage.\+On\+Hit (\begin{DoxyParamCaption}\item[{float}]{damage,  }\item[{Vector2}]{knockback }\end{DoxyParamCaption})}
+
+
+
+Deals damage to monster and if it is possible applies knockback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Damage used to implement inteface, unused due to how player damage is constructed \\
+\hline
+{\em knockback} & Knockback to the player \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_dammageable_aadb129ad0332532b80bf1a4fd44da2e9}{IDammageable}}.
+
+\mbox{\Hypertarget{class_monster_damage_a9f226cd84d17c04a2a68ed538298108e}\label{class_monster_damage_a9f226cd84d17c04a2a68ed538298108e}} 
+\index{MonsterDamage@{MonsterDamage}!TryMove@{TryMove}}
+\index{TryMove@{TryMove}!MonsterDamage@{MonsterDamage}}
+\doxysubsubsection{\texorpdfstring{TryMove()}{TryMove()}}
+{\footnotesize\ttfamily bool Monster\+Damage.\+Try\+Move (\begin{DoxyParamCaption}\item[{Vector2}]{direction }\end{DoxyParamCaption})}
+
+
+
+Moves player back if it\textquotesingle{}s possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Knockback vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the monster can be moved back moving him, {\ttfamily false} if the knockback was imposible 
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_monster_damage_ae77456212f7e7e16725752483f848592}\label{class_monster_damage_ae77456212f7e7e16725752483f848592}} 
+\index{MonsterDamage@{MonsterDamage}!Health@{Health}}
+\index{Health@{Health}!MonsterDamage@{MonsterDamage}}
+\doxysubsubsection{\texorpdfstring{Health}{Health}}
+{\footnotesize\ttfamily float Monster\+Damage.\+Health\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Current monster health. 
+
+\mbox{\Hypertarget{class_monster_damage_a2a8377a8937d89c7ddd3631a4249a93f}\label{class_monster_damage_a2a8377a8937d89c7ddd3631a4249a93f}} 
+\index{MonsterDamage@{MonsterDamage}!Targetable@{Targetable}}
+\index{Targetable@{Targetable}!MonsterDamage@{MonsterDamage}}
+\doxysubsubsection{\texorpdfstring{Targetable}{Targetable}}
+{\footnotesize\ttfamily bool Monster\+Damage.\+Targetable\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Determines if monster is targetable. 
+
+
+
+Implements \mbox{\hyperlink{interface_i_dammageable_aded17a5e41fd6474ad369a72bbc8e107}{IDammageable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Monster\+Scripts/\mbox{\hyperlink{_monster_damage_8cs}{Monster\+Damage.\+cs}}\end{DoxyCompactItemize}

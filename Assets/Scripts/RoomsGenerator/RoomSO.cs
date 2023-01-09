@@ -47,18 +47,26 @@ public class RoomSO : ScriptableObject, ITileKind<RoomSO>
                 case Direction.down:
                     if (tile.IsDoorUp == IsDoorDown)
                         filtered.Add(tile, tilesToFilter[tile]);
+                    else
+                        filtered.Add(tile, 0);
                     break;
                 case Direction.up:
                     if (tile.IsDoorDown == IsDoorUp)
                         filtered.Add(tile, tilesToFilter[tile]);
+                    else
+                        filtered.Add(tile, 0);
                     break;
                 case Direction.left:
                     if (tile.IsDoorRight == IsDoorLeft)
                         filtered.Add(tile, tilesToFilter[tile]);
+                    else
+                        filtered.Add(tile, 0);
                     break;
                 case Direction.right:
                     if (tile.IsDoorLeft == IsDoorRight)
                         filtered.Add(tile, tilesToFilter[tile]);
+                    else
+                        filtered.Add(tile, 0);
                     break;
                 default:
                     filtered.Add(tile, tilesToFilter[tile]);

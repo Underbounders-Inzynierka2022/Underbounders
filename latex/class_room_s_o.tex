@@ -1,0 +1,108 @@
+\hypertarget{class_room_s_o}{}\doxysection{Room\+SO Class Reference}
+\label{class_room_s_o}\index{RoomSO@{RoomSO}}
+
+
+Scriptable object representing kind of room by describing its sides.  
+
+
+Inheritance diagram for Room\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_room_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ \mbox{\hyperlink{class_room_s_o}{Room\+SO}}, float $>$ \mbox{\hyperlink{class_room_s_o_aec04ee113bb548e5464a87e1fec5af20}{Filter\+Tiles}} (Dictionary$<$ \mbox{\hyperlink{class_room_s_o}{Room\+SO}}, float $>$ tiles\+To\+Filter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Filteres tiles from certain neighbouring field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_i_tile_kind}{ITile\+Kind$<$ Room\+SO $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ T, float $>$ \mbox{\hyperlink{interface_i_tile_kind_a8b13becc9ccab412095749937f9de273}{Filter\+Tiles}} (Dictionary$<$ T, float $>$ tile\+Tofilter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em It filters tiles in certain neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_room_s_o_a5ffef5c2b4889ecd1fc209c3d8774234}{Is\+Door\+Up}}
+\begin{DoxyCompactList}\small\item\em Determines if there are doors up. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_s_o_a78b7dd606ba9ad8fe65be2584651afd7}{Is\+Door\+Down}}
+\begin{DoxyCompactList}\small\item\em Determines if there are doors down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_s_o_a2caee770197cf856007c379ef149a6ef}{Is\+Door\+Left}}
+\begin{DoxyCompactList}\small\item\em Determines if there are doors left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_s_o_a867d7e2c1122bdc22e6f01bfa03f1fac}{Is\+Door\+Right}}
+\begin{DoxyCompactList}\small\item\em Determines if there are doors right. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scriptable object representing kind of room by describing its sides. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_s_o_aec04ee113bb548e5464a87e1fec5af20}\label{class_room_s_o_aec04ee113bb548e5464a87e1fec5af20}} 
+\index{RoomSO@{RoomSO}!FilterTiles@{FilterTiles}}
+\index{FilterTiles@{FilterTiles}!RoomSO@{RoomSO}}
+\doxysubsubsection{\texorpdfstring{FilterTiles()}{FilterTiles()}}
+{\footnotesize\ttfamily Dictionary$<$ \mbox{\hyperlink{class_room_s_o}{Room\+SO}}, float $>$ Room\+SO.\+Filter\+Tiles (\begin{DoxyParamCaption}\item[{Dictionary$<$ \mbox{\hyperlink{class_room_s_o}{Room\+SO}}, float $>$}]{tiles\+To\+Filter,  }\item[{\mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Filteres tiles from certain neighbouring field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles\+To\+Filter} & Tiles posiblities aligned in neighborhood \\
+\hline
+{\em dir} & Determines which side is considered in comparations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered rooms list 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_s_o_a78b7dd606ba9ad8fe65be2584651afd7}\label{class_room_s_o_a78b7dd606ba9ad8fe65be2584651afd7}} 
+\index{RoomSO@{RoomSO}!IsDoorDown@{IsDoorDown}}
+\index{IsDoorDown@{IsDoorDown}!RoomSO@{RoomSO}}
+\doxysubsubsection{\texorpdfstring{IsDoorDown}{IsDoorDown}}
+{\footnotesize\ttfamily bool Room\+SO.\+Is\+Door\+Down}
+
+
+
+Determines if there are doors down. 
+
+\mbox{\Hypertarget{class_room_s_o_a2caee770197cf856007c379ef149a6ef}\label{class_room_s_o_a2caee770197cf856007c379ef149a6ef}} 
+\index{RoomSO@{RoomSO}!IsDoorLeft@{IsDoorLeft}}
+\index{IsDoorLeft@{IsDoorLeft}!RoomSO@{RoomSO}}
+\doxysubsubsection{\texorpdfstring{IsDoorLeft}{IsDoorLeft}}
+{\footnotesize\ttfamily bool Room\+SO.\+Is\+Door\+Left}
+
+
+
+Determines if there are doors left. 
+
+\mbox{\Hypertarget{class_room_s_o_a867d7e2c1122bdc22e6f01bfa03f1fac}\label{class_room_s_o_a867d7e2c1122bdc22e6f01bfa03f1fac}} 
+\index{RoomSO@{RoomSO}!IsDoorRight@{IsDoorRight}}
+\index{IsDoorRight@{IsDoorRight}!RoomSO@{RoomSO}}
+\doxysubsubsection{\texorpdfstring{IsDoorRight}{IsDoorRight}}
+{\footnotesize\ttfamily bool Room\+SO.\+Is\+Door\+Right}
+
+
+
+Determines if there are doors right. 
+
+\mbox{\Hypertarget{class_room_s_o_a5ffef5c2b4889ecd1fc209c3d8774234}\label{class_room_s_o_a5ffef5c2b4889ecd1fc209c3d8774234}} 
+\index{RoomSO@{RoomSO}!IsDoorUp@{IsDoorUp}}
+\index{IsDoorUp@{IsDoorUp}!RoomSO@{RoomSO}}
+\doxysubsubsection{\texorpdfstring{IsDoorUp}{IsDoorUp}}
+{\footnotesize\ttfamily bool Room\+SO.\+Is\+Door\+Up}
+
+
+
+Determines if there are doors up. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Rooms\+Generator/\mbox{\hyperlink{_room_s_o_8cs}{Room\+SO.\+cs}}\end{DoxyCompactItemize}

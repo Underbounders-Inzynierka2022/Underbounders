@@ -248,13 +248,7 @@ public class GameStateController : MonoBehaviour
     {
         Random.InitState(seed);
         var roomsMap = new MapMatrix<RoomSO>(dungeonWallSize, dungeonWallSize, _initialMatrix);
-        while (roomsMap.AreAllTilesSet())
-        {
-            (int i, int j) tileCords = roomsMap.PickRandomTile();
-            roomsMap.PickTileValue(tileCords.i, tileCords.j);
-            roomsMap.RemoveImposiblePairs();
-
-        }
+        roomsMap.ResolveMatrix();
         rooms = new Room[dungeonWallSize][];
         for (int i = 0; i < dungeonWallSize; i++)
         {
@@ -386,13 +380,13 @@ public class GameStateController : MonoBehaviour
             for (int j = 0; j < dungeonWallSize; j++)
             {
                 if (j == 0 && i == 0)
-                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorUp))));
+                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorUp)&& x.IsDoorRight && x.IsDoorDown).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorUp) && x.IsDoorRight && x.IsDoorDown)));
                 else if (j == dungeonWallSize - 1 && i == 0)
-                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorDown))));
+                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorLeft || x.IsDoorDown) && x.IsDoorRight && x.IsDoorUp).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorLeft || x.IsDoorDown) && x.IsDoorRight && x.IsDoorUp)));
                 else if (j == dungeonWallSize - 1 && i == dungeonWallSize - 1)
-                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorDown))));
+                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorDown) && x.IsDoorLeft && x.IsDoorUp).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorDown) && x.IsDoorLeft && x.IsDoorUp)));
                 else if (j == 0 && i == dungeonWallSize - 1)
-                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorUp))));
+                    _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight || x.IsDoorUp) && x.IsDoorLeft && x.IsDoorDown).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight || x.IsDoorUp) && x.IsDoorLeft && x.IsDoorDown)));
                 else if (j == 0)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorUp)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorUp))));
                 else if (i == 0)
@@ -401,6 +395,8 @@ public class GameStateController : MonoBehaviour
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorDown)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorDown))));
                 else if (i == dungeonWallSize - 1)
                     _initialMatrix.Add(roomKinds.Where(x => !(x.IsDoorRight)).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => !(x.IsDoorRight))));
+                else if(dungeonWallSize>3 && i == dungeonWallSize/2 && j == dungeonWallSize/2)
+                    _initialMatrix.Add(roomKinds.Where(x => x.IsDoorRight && x.IsDoorUp && x.IsDoorLeft && x.IsDoorDown).ToDictionary(x => x, x => 100f / (float)roomKinds.Count(x => x.IsDoorRight && x.IsDoorUp && x.IsDoorLeft && x.IsDoorDown)));
                 else _initialMatrix.Add(roomKinds.ToDictionary(x => x, x => 100f / (float)roomKinds.Count));
             }
         }

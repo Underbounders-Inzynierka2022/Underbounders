@@ -1,0 +1,89 @@
+\hypertarget{interface_i_dammageable}{}\doxysection{IDammageable Interface Reference}
+\label{interface_i_dammageable}\index{IDammageable@{IDammageable}}
+
+
+Damage handling interface.  
+
+
+Inheritance diagram for IDammageable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_i_dammageable}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_i_dammageable_aadb129ad0332532b80bf1a4fd44da2e9}{On\+Hit}} (float damage, Vector2 knockback)
+\begin{DoxyCompactList}\small\item\em Deals certain amount of damage with knockback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_dammageable_a5e767ccccf6ad4c885bac164485897fb}{On\+Hit}} (float damage)
+\begin{DoxyCompactList}\small\item\em Deals certain amount of damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_i_dammageable_aded17a5e41fd6474ad369a72bbc8e107}{Targetable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Damage handling interface. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_dammageable_a5e767ccccf6ad4c885bac164485897fb}\label{interface_i_dammageable_a5e767ccccf6ad4c885bac164485897fb}} 
+\index{IDammageable@{IDammageable}!OnHit@{OnHit}}
+\index{OnHit@{OnHit}!IDammageable@{IDammageable}}
+\doxysubsubsection{\texorpdfstring{OnHit()}{OnHit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void IDammageable.\+On\+Hit (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})}
+
+
+
+Deals certain amount of damage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Damamge dealt \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_monster_damage_a08ae4c4d6b7e23365286c113c0ea10a3}{Monster\+Damage}}, and \mbox{\hyperlink{class_player_damage_a8ab1ff02e18830c4c8641ace3c79a527}{Player\+Damage}}.
+
+\mbox{\Hypertarget{interface_i_dammageable_aadb129ad0332532b80bf1a4fd44da2e9}\label{interface_i_dammageable_aadb129ad0332532b80bf1a4fd44da2e9}} 
+\index{IDammageable@{IDammageable}!OnHit@{OnHit}}
+\index{OnHit@{OnHit}!IDammageable@{IDammageable}}
+\doxysubsubsection{\texorpdfstring{OnHit()}{OnHit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void IDammageable.\+On\+Hit (\begin{DoxyParamCaption}\item[{float}]{damage,  }\item[{Vector2}]{knockback }\end{DoxyParamCaption})}
+
+
+
+Deals certain amount of damage with knockback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Damamge dealt \\
+\hline
+{\em knockback} & Knockback to be added to position \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_monster_damage_a038903e2da2f7446669cb7f3bb9e5d6b}{Monster\+Damage}}, and \mbox{\hyperlink{class_player_damage_a00cc768725a0a1e719a529152d3379f4}{Player\+Damage}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_i_dammageable_aded17a5e41fd6474ad369a72bbc8e107}\label{interface_i_dammageable_aded17a5e41fd6474ad369a72bbc8e107}} 
+\index{IDammageable@{IDammageable}!Targetable@{Targetable}}
+\index{Targetable@{Targetable}!IDammageable@{IDammageable}}
+\doxysubsubsection{\texorpdfstring{Targetable}{Targetable}}
+{\footnotesize\ttfamily bool IDammageable.\+Targetable\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_monster_damage_a2a8377a8937d89c7ddd3631a4249a93f}{Monster\+Damage}}, and \mbox{\hyperlink{class_player_damage_a521766d2f36ce64e1c16fe00333a678e}{Player\+Damage}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Common\+Intefaces/\mbox{\hyperlink{_i_dammageable_8cs}{IDammageable.\+cs}}\end{DoxyCompactItemize}

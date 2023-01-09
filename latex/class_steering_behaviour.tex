@@ -1,0 +1,65 @@
+\hypertarget{class_steering_behaviour}{}\doxysection{Steering\+Behaviour Class Reference}
+\label{class_steering_behaviour}\index{SteeringBehaviour@{SteeringBehaviour}}
+
+
+Abstraction for monster steering.  
+
+
+Inheritance diagram for Steering\+Behaviour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steering_behaviour}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract float\mbox{[}$\,$\mbox{]} float\mbox{[}$\,$\mbox{]} intrest \mbox{\hyperlink{class_steering_behaviour_a7b18b9cad413aed4b095c873560097e9}{Get\+Steering}} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}, float\mbox{[}$\,$\mbox{]} intrest, \mbox{\hyperlink{class_a_i_data}{AIData}} ai\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+abstract float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}{danger}}
+\begin{DoxyCompactList}\small\item\em Gets steering for monster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstraction for monster steering. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steering_behaviour_a7b18b9cad413aed4b095c873560097e9}\label{class_steering_behaviour_a7b18b9cad413aed4b095c873560097e9}} 
+\index{SteeringBehaviour@{SteeringBehaviour}!GetSteering@{GetSteering}}
+\index{GetSteering@{GetSteering}!SteeringBehaviour@{SteeringBehaviour}}
+\doxysubsubsection{\texorpdfstring{GetSteering()}{GetSteering()}}
+{\footnotesize\ttfamily abstract float\mbox{[}$\,$\mbox{]} float\mbox{[}$\,$\mbox{]} intrest Steering\+Behaviour.\+Get\+Steering (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{danger,  }\item[{float\mbox{[}$\,$\mbox{]}}]{intrest,  }\item[{\mbox{\hyperlink{class_a_i_data}{AIData}}}]{ai\+Data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}\label{class_steering_behaviour_ae205c957897e3c35c44706d8c67486f1}} 
+\index{SteeringBehaviour@{SteeringBehaviour}!danger@{danger}}
+\index{danger@{danger}!SteeringBehaviour@{SteeringBehaviour}}
+\doxysubsubsection{\texorpdfstring{danger}{danger}}
+{\footnotesize\ttfamily abstract float \mbox{[}$\,$\mbox{]} Steering\+Behaviour.\+danger}
+
+
+
+Gets steering for monster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em danger} & Current dangers values \\
+\hline
+{\em intrest} & Current intrest values \\
+\hline
+{\em ai\+Data} & Current data for steering with positions of obstacles and targets \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gets steering for monster in form of value from 0 to 1 of intrest in 8 directions and same number of values of danger in tuple 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Monster\+Scripts/\+Slimes\+AI/\mbox{\hyperlink{_steering_behaviour_8cs}{Steering\+Behaviour.\+cs}}\end{DoxyCompactItemize}

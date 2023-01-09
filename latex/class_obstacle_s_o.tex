@@ -1,0 +1,144 @@
+\hypertarget{class_obstacle_s_o}{}\doxysection{Obstacle\+SO Class Reference}
+\label{class_obstacle_s_o}\index{ObstacleSO@{ObstacleSO}}
+
+
+Tile representation of obstacles.  
+
+
+Inheritance diagram for Obstacle\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_obstacle_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ \mbox{\hyperlink{class_obstacle_s_o}{Obstacle\+SO}}, float $>$ \mbox{\hyperlink{class_obstacle_s_o_acce95baf9b630de145a27dec77b5e62b}{Filter\+Tiles}} (Dictionary$<$ \mbox{\hyperlink{class_obstacle_s_o}{Obstacle\+SO}}, float $>$ tiles\+To\+Filter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Filters obstacle possiblities in its particullar neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_i_tile_kind}{ITile\+Kind$<$ Obstacle\+SO $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ T, float $>$ \mbox{\hyperlink{interface_i_tile_kind_a8b13becc9ccab412095749937f9de273}{Filter\+Tiles}} (Dictionary$<$ T, float $>$ tile\+Tofilter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em It filters tiles in certain neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Unity\+Engine.\+Object \mbox{\hyperlink{class_obstacle_s_o_a48bcb8b2175997ebf51f26f51d3035af}{tile}}
+\begin{DoxyCompactList}\small\item\em Obstacle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_obstacle_type_8cs_a9852a22595ceae4debd70f078e037971}{Obstacle\+Type}} \mbox{\hyperlink{class_obstacle_s_o_a340bece980a2384b952708a0d06451e0}{obstacle\+Type}}
+\begin{DoxyCompactList}\small\item\em Type of obstacle. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_obstacle_s_o_a180565a9242b741866578b3355bba0c4}{Up\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to upside adjecent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_obstacle_s_o_abb7501613dcfb83603b5aaa7db199010}{Down\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to left side adjecent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_obstacle_s_o_a67fb91321c806e036aeec92758c93a02}{Left\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to downside adjecent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_obstacle_s_o_a4bbaa4697492888ad56b922801639e66}{Right\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to right side adjecent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_obstacle_s_o_a411ba0da00579927e4343aa759728e0c}{spawnable\+Monsters}}
+\begin{DoxyCompactList}\small\item\em List of monsters spawnrates on the obstacle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tile representation of obstacles. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_obstacle_s_o_acce95baf9b630de145a27dec77b5e62b}\label{class_obstacle_s_o_acce95baf9b630de145a27dec77b5e62b}} 
+\index{ObstacleSO@{ObstacleSO}!FilterTiles@{FilterTiles}}
+\index{FilterTiles@{FilterTiles}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{FilterTiles()}{FilterTiles()}}
+{\footnotesize\ttfamily Dictionary$<$ \mbox{\hyperlink{class_obstacle_s_o}{Obstacle\+SO}}, float $>$ Obstacle\+SO.\+Filter\+Tiles (\begin{DoxyParamCaption}\item[{Dictionary$<$ \mbox{\hyperlink{class_obstacle_s_o}{Obstacle\+SO}}, float $>$}]{tiles\+To\+Filter,  }\item[{\mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Filters obstacle possiblities in its particullar neighbourhood. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles\+To\+Filter} & TObstacles possibilities that needs filtering \\
+\hline
+{\em dir} & Obstacle tile adjency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered obstacles possiblities 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_obstacle_s_o_abb7501613dcfb83603b5aaa7db199010}\label{class_obstacle_s_o_abb7501613dcfb83603b5aaa7db199010}} 
+\index{ObstacleSO@{ObstacleSO}!DownRestrictions@{DownRestrictions}}
+\index{DownRestrictions@{DownRestrictions}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{DownRestrictions}{DownRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}}$>$ Obstacle\+SO.\+Down\+Restrictions}
+
+
+
+Restrictions to left side adjecent tile. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a67fb91321c806e036aeec92758c93a02}\label{class_obstacle_s_o_a67fb91321c806e036aeec92758c93a02}} 
+\index{ObstacleSO@{ObstacleSO}!LeftRestrictions@{LeftRestrictions}}
+\index{LeftRestrictions@{LeftRestrictions}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{LeftRestrictions}{LeftRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}}$>$ Obstacle\+SO.\+Left\+Restrictions}
+
+
+
+Restrictions to downside adjecent tile. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a340bece980a2384b952708a0d06451e0}\label{class_obstacle_s_o_a340bece980a2384b952708a0d06451e0}} 
+\index{ObstacleSO@{ObstacleSO}!obstacleType@{obstacleType}}
+\index{obstacleType@{obstacleType}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{obstacleType}{obstacleType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_obstacle_type_8cs_a9852a22595ceae4debd70f078e037971}{Obstacle\+Type}} Obstacle\+SO.\+obstacle\+Type}
+
+
+
+Type of obstacle. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a4bbaa4697492888ad56b922801639e66}\label{class_obstacle_s_o_a4bbaa4697492888ad56b922801639e66}} 
+\index{ObstacleSO@{ObstacleSO}!RightRestrictions@{RightRestrictions}}
+\index{RightRestrictions@{RightRestrictions}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{RightRestrictions}{RightRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}}$>$ Obstacle\+SO.\+Right\+Restrictions}
+
+
+
+Restrictions to right side adjecent tile. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a411ba0da00579927e4343aa759728e0c}\label{class_obstacle_s_o_a411ba0da00579927e4343aa759728e0c}} 
+\index{ObstacleSO@{ObstacleSO}!spawnableMonsters@{spawnableMonsters}}
+\index{spawnableMonsters@{spawnableMonsters}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{spawnableMonsters}{spawnableMonsters}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}}$>$ Obstacle\+SO.\+spawnable\+Monsters}
+
+
+
+List of monsters spawnrates on the obstacle. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a48bcb8b2175997ebf51f26f51d3035af}\label{class_obstacle_s_o_a48bcb8b2175997ebf51f26f51d3035af}} 
+\index{ObstacleSO@{ObstacleSO}!tile@{tile}}
+\index{tile@{tile}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{tile}{tile}}
+{\footnotesize\ttfamily Unity\+Engine.\+Object Obstacle\+SO.\+tile}
+
+
+
+Obstacle. 
+
+\mbox{\Hypertarget{class_obstacle_s_o_a180565a9242b741866578b3355bba0c4}\label{class_obstacle_s_o_a180565a9242b741866578b3355bba0c4}} 
+\index{ObstacleSO@{ObstacleSO}!UpRestrictions@{UpRestrictions}}
+\index{UpRestrictions@{UpRestrictions}!ObstacleSO@{ObstacleSO}}
+\doxysubsubsection{\texorpdfstring{UpRestrictions}{UpRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_obstacle_dictionary_pair}{Obstacle\+Dictionary\+Pair}}$>$ Obstacle\+SO.\+Up\+Restrictions}
+
+
+
+Restrictions to upside adjecent tile. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+Scripts/\mbox{\hyperlink{_obstacle_s_o_8cs}{Obstacle\+SO.\+cs}}\end{DoxyCompactItemize}

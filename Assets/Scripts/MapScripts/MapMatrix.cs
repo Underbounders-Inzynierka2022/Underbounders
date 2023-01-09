@@ -186,6 +186,7 @@ public class MapMatrix<T> where T : ITileKind<T>
                 List<T> impossiblekeys = map[i, j].Where(t => t.Value <= 0f).Select(t => t.Key).ToList();
                 foreach (var key in impossiblekeys)
                     map[i, j].Remove(key);
+                if (map[i, j].Count == 1 && impossiblekeys.Count > 0) UpdateTilesAround(i, j);
             }
         }
     }

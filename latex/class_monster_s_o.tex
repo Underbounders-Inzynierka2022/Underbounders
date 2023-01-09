@@ -1,0 +1,132 @@
+\hypertarget{class_monster_s_o}{}\doxysection{Monster\+SO Class Reference}
+\label{class_monster_s_o}\index{MonsterSO@{MonsterSO}}
+
+
+Monster scriptable object to hadle their distributions in the room.  
+
+
+Inheritance diagram for Monster\+SO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_monster_s_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ \mbox{\hyperlink{class_monster_s_o}{Monster\+SO}}, float $>$ \mbox{\hyperlink{class_monster_s_o_ac2c630b1972891f1aa19f34c652082b7}{Filter\+Tiles}} (Dictionary$<$ \mbox{\hyperlink{class_monster_s_o}{Monster\+SO}}, float $>$ tiles\+To\+Filter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Tile filtering method changing propability in the certain tiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_i_tile_kind}{ITile\+Kind$<$ Monster\+SO $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ T, float $>$ \mbox{\hyperlink{interface_i_tile_kind_a8b13becc9ccab412095749937f9de273}{Filter\+Tiles}} (Dictionary$<$ T, float $>$ tile\+Tofilter, \mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em It filters tiles in certain neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_monster_s_o_a431c553ff91f6b3933c1f706be90402e}{Monster}}
+\begin{DoxyCompactList}\small\item\em Monster represented by the tile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_monster_type_8cs_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}} \mbox{\hyperlink{class_monster_s_o_a13875491f1dfb0a030c563b237b356e2}{Monster\+Type}}
+\begin{DoxyCompactList}\small\item\em Monster type of the tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_monster_s_o_a9a74e6f8c0cfb7386950b9e71f3955a7}{Up\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to the upward adjacent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_monster_s_o_a736467732e3b5991d901b7b88280da9b}{Down\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to the downward adjacent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_monster_s_o_a43efd6d434a4648d143f7e13b65d0a1b}{Left\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to the left adjacent tile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}} $>$ \mbox{\hyperlink{class_monster_s_o_ab63f06009f84092b0752afaed67381ee}{Right\+Restrictions}}
+\begin{DoxyCompactList}\small\item\em Restrictions to the left adjacent tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Monster scriptable object to hadle their distributions in the room. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_monster_s_o_ac2c630b1972891f1aa19f34c652082b7}\label{class_monster_s_o_ac2c630b1972891f1aa19f34c652082b7}} 
+\index{MonsterSO@{MonsterSO}!FilterTiles@{FilterTiles}}
+\index{FilterTiles@{FilterTiles}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{FilterTiles()}{FilterTiles()}}
+{\footnotesize\ttfamily Dictionary$<$ \mbox{\hyperlink{class_monster_s_o}{Monster\+SO}}, float $>$ Monster\+SO.\+Filter\+Tiles (\begin{DoxyParamCaption}\item[{Dictionary$<$ \mbox{\hyperlink{class_monster_s_o}{Monster\+SO}}, float $>$}]{tiles\+To\+Filter,  }\item[{\mbox{\hyperlink{_direction_8cs_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Tile filtering method changing propability in the certain tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles\+To\+Filter} & Monsters to filter in the neighbourhood \\
+\hline
+{\em dir} & Direction of adjency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered list of monsters in the adjencent tile 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_monster_s_o_a736467732e3b5991d901b7b88280da9b}\label{class_monster_s_o_a736467732e3b5991d901b7b88280da9b}} 
+\index{MonsterSO@{MonsterSO}!DownRestrictions@{DownRestrictions}}
+\index{DownRestrictions@{DownRestrictions}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{DownRestrictions}{DownRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}}$>$ Monster\+SO.\+Down\+Restrictions}
+
+
+
+Restrictions to the downward adjacent tile. 
+
+\mbox{\Hypertarget{class_monster_s_o_a43efd6d434a4648d143f7e13b65d0a1b}\label{class_monster_s_o_a43efd6d434a4648d143f7e13b65d0a1b}} 
+\index{MonsterSO@{MonsterSO}!LeftRestrictions@{LeftRestrictions}}
+\index{LeftRestrictions@{LeftRestrictions}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{LeftRestrictions}{LeftRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}}$>$ Monster\+SO.\+Left\+Restrictions}
+
+
+
+Restrictions to the left adjacent tile. 
+
+\mbox{\Hypertarget{class_monster_s_o_a431c553ff91f6b3933c1f706be90402e}\label{class_monster_s_o_a431c553ff91f6b3933c1f706be90402e}} 
+\index{MonsterSO@{MonsterSO}!Monster@{Monster}}
+\index{Monster@{Monster}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{Monster}{Monster}}
+{\footnotesize\ttfamily Game\+Object Monster\+SO.\+Monster}
+
+
+
+Monster represented by the tile. 
+
+\mbox{\Hypertarget{class_monster_s_o_a13875491f1dfb0a030c563b237b356e2}\label{class_monster_s_o_a13875491f1dfb0a030c563b237b356e2}} 
+\index{MonsterSO@{MonsterSO}!MonsterType@{MonsterType}}
+\index{MonsterType@{MonsterType}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{MonsterType}{MonsterType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_monster_type_8cs_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}} Monster\+SO.\+Monster\+Type}
+
+
+
+Monster type of the tile. 
+
+\mbox{\Hypertarget{class_monster_s_o_ab63f06009f84092b0752afaed67381ee}\label{class_monster_s_o_ab63f06009f84092b0752afaed67381ee}} 
+\index{MonsterSO@{MonsterSO}!RightRestrictions@{RightRestrictions}}
+\index{RightRestrictions@{RightRestrictions}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{RightRestrictions}{RightRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}}$>$ Monster\+SO.\+Right\+Restrictions}
+
+
+
+Restrictions to the left adjacent tile. 
+
+\mbox{\Hypertarget{class_monster_s_o_a9a74e6f8c0cfb7386950b9e71f3955a7}\label{class_monster_s_o_a9a74e6f8c0cfb7386950b9e71f3955a7}} 
+\index{MonsterSO@{MonsterSO}!UpRestrictions@{UpRestrictions}}
+\index{UpRestrictions@{UpRestrictions}!MonsterSO@{MonsterSO}}
+\doxysubsubsection{\texorpdfstring{UpRestrictions}{UpRestrictions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_monster_dictionary_pair}{Monster\+Dictionary\+Pair}}$>$ Monster\+SO.\+Up\+Restrictions}
+
+
+
+Restrictions to the upward adjacent tile. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Monster\+Scripts/\mbox{\hyperlink{_monster_s_o_8cs}{Monster\+SO.\+cs}}\end{DoxyCompactItemize}

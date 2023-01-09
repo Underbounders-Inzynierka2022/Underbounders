@@ -1,0 +1,155 @@
+\hypertarget{class_map_generation}{}\doxysection{Map\+Generation Class Reference}
+\label{class_map_generation}\index{MapGeneration@{MapGeneration}}
+
+
+Controlls room generation.  
+
+
+Inheritance diagram for Map\+Generation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_generation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_map_generation_aeacf60cbbba9973ca757c43f4e6c4261}{Clear\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Clears map from all of the tiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_generation_aee4fccbcbb96e1341c3359d32895aece}{Generate\+Room}} (int \mbox{\hyperlink{class_map_generation_aba02196787ef6f0110d78be2e885c23a}{seed}}, int \mbox{\hyperlink{class_map_generation_a604a156291fbd02759b8bbe803696b9c}{x}}, int \mbox{\hyperlink{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}{y}})
+\begin{DoxyCompactList}\small\item\em Main world generation function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_map_generation_a604a156291fbd02759b8bbe803696b9c}{x}}
+\begin{DoxyCompactList}\small\item\em Size of the room. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}{y}}
+\item 
+int \mbox{\hyperlink{class_map_generation_aba02196787ef6f0110d78be2e885c23a}{seed}} = 23
+\begin{DoxyCompactList}\small\item\em Ramdom generator seed for the room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_map_generation}{Map\+Generation}} \mbox{\hyperlink{class_map_generation_a02cb020d2d080786e157f18d6d100452}{instance}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_room}{Room}} generation instance of singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_map_generation_a1a4818c7a305a6c3a605300bda829bb0}{is\+Done}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Determins if the room generation is done. \end{DoxyCompactList}\item 
+List$<$(int \mbox{\hyperlink{class_map_generation_a604a156291fbd02759b8bbe803696b9c}{x}}, int \mbox{\hyperlink{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}{y}})$>$ \mbox{\hyperlink{class_map_generation_a1afa961fbf8984e0e2cf985359a3fd74}{is\+Chest\+Open}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of chests opened. \end{DoxyCompactList}\item 
+bool\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_map_generation_a67c2f9258c3932240833a4219538cbc1}{Is\+Door\+On\+Side}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Determines on which side the doors should be. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlls room generation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_map_generation_aeacf60cbbba9973ca757c43f4e6c4261}\label{class_map_generation_aeacf60cbbba9973ca757c43f4e6c4261}} 
+\index{MapGeneration@{MapGeneration}!ClearMap@{ClearMap}}
+\index{ClearMap@{ClearMap}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{ClearMap()}{ClearMap()}}
+{\footnotesize\ttfamily void Map\+Generation.\+Clear\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears map from all of the tiles. 
+
+\mbox{\Hypertarget{class_map_generation_aee4fccbcbb96e1341c3359d32895aece}\label{class_map_generation_aee4fccbcbb96e1341c3359d32895aece}} 
+\index{MapGeneration@{MapGeneration}!GenerateRoom@{GenerateRoom}}
+\index{GenerateRoom@{GenerateRoom}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{GenerateRoom()}{GenerateRoom()}}
+{\footnotesize\ttfamily void Map\+Generation.\+Generate\+Room (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Main world generation function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & \mbox{\hyperlink{class_room}{Room}} random generation seed \\
+\hline
+{\em x} & \mbox{\hyperlink{class_room}{Room}} number of collumns \\
+\hline
+{\em y} & \mbox{\hyperlink{class_room}{Room}} number of rows \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_map_generation_a02cb020d2d080786e157f18d6d100452}\label{class_map_generation_a02cb020d2d080786e157f18d6d100452}} 
+\index{MapGeneration@{MapGeneration}!instance@{instance}}
+\index{instance@{instance}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_generation}{Map\+Generation}} Map\+Generation.\+instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{class_room}{Room}} generation instance of singleton. 
+
+\mbox{\Hypertarget{class_map_generation_aba02196787ef6f0110d78be2e885c23a}\label{class_map_generation_aba02196787ef6f0110d78be2e885c23a}} 
+\index{MapGeneration@{MapGeneration}!seed@{seed}}
+\index{seed@{seed}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily int Map\+Generation.\+seed = 23}
+
+
+
+Ramdom generator seed for the room. 
+
+\mbox{\Hypertarget{class_map_generation_a604a156291fbd02759b8bbe803696b9c}\label{class_map_generation_a604a156291fbd02759b8bbe803696b9c}} 
+\index{MapGeneration@{MapGeneration}!x@{x}}
+\index{x@{x}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Map\+Generation.\+x}
+
+
+
+Size of the room. 
+
+\mbox{\Hypertarget{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}\label{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}} 
+\index{MapGeneration@{MapGeneration}!y@{y}}
+\index{y@{y}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Map\+Generation.\+y}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_map_generation_a1afa961fbf8984e0e2cf985359a3fd74}\label{class_map_generation_a1afa961fbf8984e0e2cf985359a3fd74}} 
+\index{MapGeneration@{MapGeneration}!isChestOpen@{isChestOpen}}
+\index{isChestOpen@{isChestOpen}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{isChestOpen}{isChestOpen}}
+{\footnotesize\ttfamily List$<$(int \mbox{\hyperlink{class_map_generation_a604a156291fbd02759b8bbe803696b9c}{x}}, int \mbox{\hyperlink{class_map_generation_a521ad99831941a5da2ab70e064fc8a28}{y}})$>$ Map\+Generation.\+is\+Chest\+Open\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of chests opened. 
+
+\mbox{\Hypertarget{class_map_generation_a1a4818c7a305a6c3a605300bda829bb0}\label{class_map_generation_a1a4818c7a305a6c3a605300bda829bb0}} 
+\index{MapGeneration@{MapGeneration}!isDone@{isDone}}
+\index{isDone@{isDone}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{isDone}{isDone}}
+{\footnotesize\ttfamily bool Map\+Generation.\+is\+Done\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Determins if the room generation is done. 
+
+\mbox{\Hypertarget{class_map_generation_a67c2f9258c3932240833a4219538cbc1}\label{class_map_generation_a67c2f9258c3932240833a4219538cbc1}} 
+\index{MapGeneration@{MapGeneration}!IsDoorOnSide@{IsDoorOnSide}}
+\index{IsDoorOnSide@{IsDoorOnSide}!MapGeneration@{MapGeneration}}
+\doxysubsubsection{\texorpdfstring{IsDoorOnSide}{IsDoorOnSide}}
+{\footnotesize\ttfamily bool \mbox{[}$\,$\mbox{]} Map\+Generation.\+Is\+Door\+On\+Side\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Determines on which side the doors should be. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+Scripts/\mbox{\hyperlink{_map_generation_8cs}{Map\+Generation.\+cs}}\end{DoxyCompactItemize}
