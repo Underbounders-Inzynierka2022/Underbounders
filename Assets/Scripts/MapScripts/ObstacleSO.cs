@@ -92,6 +92,7 @@ public class ObstacleSO : ScriptableObject, ITileKind<ObstacleSO>
                     break;
             }
         }
+        tilesToFilter = filtered;
         return filtered;
     }
 

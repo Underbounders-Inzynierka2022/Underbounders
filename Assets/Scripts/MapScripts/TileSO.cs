@@ -140,6 +140,7 @@ public class TileSO : ScriptableObject, ITileKind<TileSO>
                     break;
             }
         }
+        tileToFilter = filtered;
         return filtered;
     }
 }

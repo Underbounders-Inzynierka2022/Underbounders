@@ -84,6 +84,7 @@ public class MonsterSO : ScriptableObject, ITileKind<MonsterSO>
                     break;
             }
         }
+        tilesToFilter = filtered;
         return filtered;
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19667a6043501e745837edca529c5164, type: 3}
   m_Name: RoomUp
   m_EditorClassIdentifier: 
-  IsDoorUp: 0
+  IsDoorUp: 1
   IsDoorDown: 0
   IsDoorLeft: 0
   IsDoorRight: 0

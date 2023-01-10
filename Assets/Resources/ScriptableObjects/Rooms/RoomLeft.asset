@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDoorUp: 0
   IsDoorDown: 0
-  IsDoorLeft: 0
+  IsDoorLeft: 1
   IsDoorRight: 0

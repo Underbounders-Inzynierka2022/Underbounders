@@ -93,15 +93,15 @@ public class MapGeneration : MonoBehaviour
     /// <summary>
     /// Matrix of floor tiles
     /// </summary>
-    private MapMatrix<TileSO> _matrixOfTiles;
+    private WFCMatrix<TileSO> _matrixOfTiles;
     /// <summary>
     /// Matrix of obstacles
     /// </summary>
-    private MapMatrix<ObstacleSO> _matrixOfObstacles;
+    private WFCMatrix<ObstacleSO> _matrixOfObstacles;
     /// <summary>
     /// Matrix of monsters
     /// </summary>
-    private MapMatrix<MonsterSO> _matrixOfMonsters;
+    private WFCMatrix<MonsterSO> _matrixOfMonsters;
 
     private void Awake()
     {
@@ -263,20 +263,20 @@ public class MapGeneration : MonoBehaviour
     /// </summary>
     private void GenerateInside()
     {
-        
+
         var tilesInit = GetInitialFirstLayer();
-        _matrixOfTiles = new MapMatrix<TileSO>(x, y, tilesInit);
+        _matrixOfTiles = new WFCMatrix<TileSO>(x, y, tilesInit);
 
         _matrixOfTiles.ResolveMatrix();
 
         var initialObstacles = GetInitialSecondLayer();
-        _matrixOfObstacles = new MapMatrix<ObstacleSO>(x, y, initialObstacles);
+        _matrixOfObstacles = new WFCMatrix<ObstacleSO>(x, y, initialObstacles);
 
         _matrixOfObstacles.ResolveMatrix();
 
-        var  initialMonsters = GetInitialThirdLayer();
+        var initialMonsters = GetInitialThirdLayer();
 
-        _matrixOfMonsters = new MapMatrix<MonsterSO>(x, y, initialMonsters);
+        _matrixOfMonsters = new WFCMatrix<MonsterSO>(x, y, initialMonsters);
 
         _matrixOfMonsters.ResolveMatrix();
 
@@ -349,7 +349,7 @@ public class MapGeneration : MonoBehaviour
             for (int j = 0; j < y; j++)
             {
                 if (IsDoorOnPosition(i, j))
-                    initialTiles.Add(doorsTiles.ToDictionary(x => x, x=>1000f/(float)doorsTiles.Count));
+                    initialTiles.Add(doorsTiles.ToDictionary(x => x, x => 1000f / (float)doorsTiles.Count));
                 else
                     initialTiles.Add(tiles.ToDictionary(x => x, x => 1000f / (float)tiles.Count));
             }
@@ -363,7 +363,7 @@ public class MapGeneration : MonoBehaviour
     /// <returns>
     /// Initial state tile possiblities list for the obstacles matrix
     /// </returns>
-    private List<Dictionary<ObstacleSO,float>> GetInitialSecondLayer()
+    private List<Dictionary<ObstacleSO, float>> GetInitialSecondLayer()
     {
 
         List<Dictionary<ObstacleSO, float>> initialObstacles = new List<Dictionary<ObstacleSO, float>>();
@@ -376,8 +376,16 @@ public class MapGeneration : MonoBehaviour
             {
                 if (_matrixOfTiles.GetTile(i, j) != null && !IsDoorOnPosition(i, j))
                 {
-                    var dic = _matrixOfTiles.GetTile(i, j)?.secondLayerRestrictions;
-                    initialObstacles.Add(dic.ToDictionary(x => obstacles.First(y => y.obstacleType == x.obstacle), x => x.chance));
+                    var tileDic = _matrixOfTiles.GetTile(i, j)?.secondLayerRestrictions;
+                    var initialDic = obstacles.ToDictionary(x => x, x => 1000f / (float)obstacles.Count);
+                    var keys = new List<ObstacleSO>(initialDic.Keys);
+                    foreach (var obstacle in keys)
+                    {
+                        float chanceFromTile = tileDic.FirstOrDefault(x => obstacle.obstacleType == x.obstacle)?.chance ?? 1;
+                        initialDic[obstacle] *= chanceFromTile;
+                    }
+
+                    initialObstacles.Add(initialDic);
                 }
                 else
                 {
@@ -406,25 +414,19 @@ public class MapGeneration : MonoBehaviour
         {
             for (int j = 0; j < y; j++)
             {
-                if (_matrixOfTiles.GetTile(i, j) != null && _matrixOfObstacles.GetTile(i, j) != null && !IsDoorOnPosition(i,j))
+                if (_matrixOfTiles.GetTile(i, j) != null && _matrixOfObstacles.GetTile(i, j) != null && !IsDoorOnPosition(i, j))
                 {
                     var dicFromTiles = _matrixOfTiles.GetTile(i, j)?.spawnableMonsters;
                     var dicFromObstacles = _matrixOfObstacles.GetTile(i, j)?.spawnableMonsters;
-                    var initialDic = dicFromTiles.ToDictionary(x => monsters.First(y => y.MonsterType == x.monster), x => x.chance);
-                    foreach (var pair in dicFromObstacles)
+                    var initialDic = monsters.ToDictionary(x => x, x => 1000f / (float)monsters.Count);
+                    var keys = new List<MonsterSO>(initialDic.Keys);
+                    foreach (var monster in keys)
                     {
-                        var monsterObject = monsters.First(y => y.MonsterType == pair.monster);
-                        if (initialDic.ContainsKey(monsterObject))
-                        {
-                            initialDic[monsterObject] = initialDic[monsterObject] * pair.chance;
-                        }
-                        else
-                        {
-                            initialDic.Add(monsterObject, pair.chance);
-                        }
+                        float chanceFromTile = dicFromTiles.FirstOrDefault(x => monster.MonsterType == x.monster)?.chance ?? 1;
+                        float chanceFromObstacle = dicFromObstacles.FirstOrDefault(x => monster.MonsterType == x.monster)?.chance ?? 1;
+                        initialDic[monster] *= chanceFromTile * chanceFromObstacle;
                     }
                     initialMonsters.Add(initialDic);
-
                 }
                 else
                 {
@@ -449,16 +451,16 @@ public class MapGeneration : MonoBehaviour
     /// </returns>
     private bool IsDoorOnPosition(int i, int j)
     {
-        if(j == y / 2 - 1 || j == y / 2 || j == y / 2 + 1 || j == y / 2 + 2)
+        if (j == y / 2 - 1 || j == y / 2 || j == y / 2 + 1 || j == y / 2 + 2)
         {
             if ((i == 0 || i == 1) && IsDoorOnSide[2]) return true;
-            if ((i == x - 1|| i == x-2) && IsDoorOnSide[0]) return true;
+            if ((i == x - 1 || i == x - 2) && IsDoorOnSide[0]) return true;
         }
 
         if (i == x / 2 - 1 || i == x / 2 || i == x / 2 + 1 || i == x / 2 + 2)
         {
             if ((j == 0 || j == 1) && IsDoorOnSide[1]) return true;
-            if ((j == y - 1 || j == x - 2) && IsDoorOnSide[3]) return true;
+            if ((j == y - 1 || j == y - 2) && IsDoorOnSide[3]) return true;
         }
 
         return false;

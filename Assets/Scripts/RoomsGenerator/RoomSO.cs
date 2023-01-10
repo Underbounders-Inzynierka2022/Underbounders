@@ -73,6 +73,7 @@ public class RoomSO : ScriptableObject, ITileKind<RoomSO>
                     break;
             }
         }
+        tilesToFilter = filtered;
         return filtered;
     }
 }

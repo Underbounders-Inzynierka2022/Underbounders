@@ -7,7 +7,7 @@ using System.Linq;
 /// <typeparam name="T">
 /// Tile reference type of possibility group, it has to implement <see cref="ITileKind{T}"/>
 /// </typeparam>
-public class MapMatrix<T> where T : ITileKind<T>
+public class WFCMatrix<T> where T : ITileKind<T>
 {
     /// <summary>
     /// Number of collumns
@@ -36,7 +36,7 @@ public class MapMatrix<T> where T : ITileKind<T>
     /// <param name="intializator">
     /// Collection of tiles possibilities
     /// </param>
-    public MapMatrix(int x, int y, IEnumerable<T> intializator)
+    public WFCMatrix(int x, int y, IEnumerable<T> intializator)
     {
         this.x = x;
         this.y = y;
@@ -67,7 +67,7 @@ public class MapMatrix<T> where T : ITileKind<T>
     /// <param name="initialValues">
     /// List of tiles with its possibilities and its chances
     /// </param>
-    public MapMatrix(int x, int y, List<Dictionary<T,float>> initialValues)
+    public WFCMatrix(int x, int y, List<Dictionary<T,float>> initialValues)
     {
         this.x = x;
         this.y = y;
@@ -76,8 +76,7 @@ public class MapMatrix<T> where T : ITileKind<T>
         {
             for (int j = 0; j < y; j++)
             {
-                map[i, j] = initialValues.First().ToDictionary(x => x.Key, x => x.Value);
-                initialValues.RemoveAt(0);
+                map[i, j] = initialValues.Count > i*y+j ? initialValues[i*y+j]: initialValues.First();
             }
         }
         for (int i = 0; i < x; i++)
@@ -120,13 +119,12 @@ public class MapMatrix<T> where T : ITileKind<T>
     /// </param>
     public void PickTileValue(int i, int j)
     {
-        if (i >= 0 && i < x && j >= 0 && j <= y)
+        if (i >= 0 && i < x && j >= 0 && j < y)
         {
             int chosenTile = HelperFunctions.RandomWeighted(map[i, j].Values.ToList());
             var chosenTileKind = map[i, j].ToList()[chosenTile];
             map[i, j] = new Dictionary<T, float>();
-            map[i, j].Add(chosenTileKind.Key, 1f);
-           UpdateTilesAround(i, j);
+            map[i, j].Add(chosenTileKind.Key, 10000f);
         }
     }
     /// <summary>
@@ -241,6 +239,7 @@ public class MapMatrix<T> where T : ITileKind<T>
         {
             (int i, int j) tileCords = PickRandomTile();
             PickTileValue(tileCords.i, tileCords.j);
+            UpdateTilesAround(tileCords.i, tileCords.j);
             RemoveImposiblePairs();
         }
     }

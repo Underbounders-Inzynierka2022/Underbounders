@@ -247,7 +247,7 @@ public class GameStateController : MonoBehaviour
     private void GenerateWorld()
     {
         Random.InitState(seed);
-        var roomsMap = new MapMatrix<RoomSO>(dungeonWallSize, dungeonWallSize, _initialMatrix);
+        var roomsMap = new WFCMatrix<RoomSO>(dungeonWallSize, dungeonWallSize, _initialMatrix);
         roomsMap.ResolveMatrix();
         rooms = new Room[dungeonWallSize][];
         for (int i = 0; i < dungeonWallSize; i++)

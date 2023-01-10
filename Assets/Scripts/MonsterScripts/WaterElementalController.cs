@@ -87,6 +87,16 @@ public class WaterElementalController : MonoBehaviour
 
     }
 
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && !GameStateController.instance.isPaused && !_detected)
+        {
+            Spawn();
+            _detected = true;
+            _player = col.gameObject;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (GameStateController.instance.isPaused)
@@ -96,7 +106,7 @@ public class WaterElementalController : MonoBehaviour
             Despawn();
             _detected = false;
         }
-
+            
     }
 
     /// <summary>

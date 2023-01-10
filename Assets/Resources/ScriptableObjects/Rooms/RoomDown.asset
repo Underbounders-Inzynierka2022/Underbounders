@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RoomDown
   m_EditorClassIdentifier: 
   IsDoorUp: 0
-  IsDoorDown: 0
+  IsDoorDown: 1
   IsDoorLeft: 0
   IsDoorRight: 0

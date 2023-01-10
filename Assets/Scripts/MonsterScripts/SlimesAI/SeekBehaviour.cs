@@ -9,7 +9,7 @@ public class SeekBehaviour : SteeringBehaviour
     /// <summary>
     /// Threashold for slime to reach player 
     /// </summary>
-    [SerializeField] private float threashold = 0.5f;
+    [SerializeField] private float threashold = 0.1f;
     /// <summary>
     /// Debuging option for displaying gizmos in editor
     /// </summary>
@@ -59,7 +59,7 @@ public class SeekBehaviour : SteeringBehaviour
         if (aiData.CurrentTarget != null && aiData.Targets != null && aiData.Targets.Contains(aiData.CurrentTarget))
             _targetPositionCache = aiData.CurrentTarget.position;
 
-        if(Vector2.Distance(transform.position, _targetPositionCache) < 0.1f)
+        if(Vector2.Distance(transform.position, _targetPositionCache) < threashold)
         {
             _reachedLastTarget = true;
             aiData.CurrentTarget = null;
@@ -71,12 +71,9 @@ public class SeekBehaviour : SteeringBehaviour
         {
             float result = Vector2.Dot(dirToTarget.normalized, HelperFunctions.AllDirections[i]);
 
-            if(result > 0)
-            {
-                float valueToPutIn = result;
-                if (valueToPutIn > intrest[i])
-                    intrest[i] = valueToPutIn;
-            }
+            if(result > 0 && result > intrest[i])
+                intrest[i] = result;
+           
         }
         _interestResultTemp = intrest;
         return (danger, intrest);

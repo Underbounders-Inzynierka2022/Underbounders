@@ -15,4 +15,4 @@ MonoBehaviour:
   IsDoorUp: 0
   IsDoorDown: 0
   IsDoorLeft: 0
-  IsDoorRight: 0
+  IsDoorRight: 1
