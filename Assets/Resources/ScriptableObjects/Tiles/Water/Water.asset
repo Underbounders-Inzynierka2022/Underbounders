@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 968b6b199d61b0f438c150ba3be35ce4, type: 2}
-  tileId: 1
+  KindOfTile: 4
   upSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   leftSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   rightSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}

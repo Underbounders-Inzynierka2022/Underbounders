@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: WaterUp
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 754d71544f0aec148a72615c25b127d1, type: 2}
-  tileId: 0
+  KindOfTile: 3
   upSide: {fileID: 11400000, guid: 8f9d28b8c318d2746bc7fd996241df53, type: 2}
   leftSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
   rightSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
-  downSide: {fileID: 11400000, guid: 905198f8faa400e4781baaaf34f2a680, type: 2}
+  downSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   upLeftCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   upRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   downLeftCorner: {fileID: 11400000, guid: 1ae2bee3cf2e2444d8df3aeab491cb7e, type: 2}

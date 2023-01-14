@@ -86,6 +86,8 @@ public class MapGeneration : MonoBehaviour
     /// </summary>
     [SerializeField] private List<GameObject> doors;
 
+    [SerializeField] private List<KindOfFloorContraint> floorChanceMod;
+
     /// <summary>
     /// Current object to destroy on map unload or reload
     /// </summary>
@@ -102,6 +104,8 @@ public class MapGeneration : MonoBehaviour
     /// Matrix of monsters
     /// </summary>
     private WFCMatrix<MonsterSO> _matrixOfMonsters;
+
+
 
     private void Awake()
     {
@@ -349,9 +353,9 @@ public class MapGeneration : MonoBehaviour
             for (int j = 0; j < y; j++)
             {
                 if (IsDoorOnPosition(i, j))
-                    initialTiles.Add(doorsTiles.ToDictionary(x => x, x => 1000f / (float)doorsTiles.Count));
+                    initialTiles.Add(doorsTiles.ToDictionary(x => x, x => (1000f / (float)doorsTiles.Count) * floorChanceMod.First(y => x.KindOfTile == y.tileKind).chanceMod));
                 else
-                    initialTiles.Add(tiles.ToDictionary(x => x, x => 1000f / (float)tiles.Count));
+                    initialTiles.Add(tiles.ToDictionary(x => x, x => (1000f / (float)doorsTiles.Count) * floorChanceMod.First(y => x.KindOfTile == y.tileKind).chanceMod));
             }
         }
         return initialTiles;

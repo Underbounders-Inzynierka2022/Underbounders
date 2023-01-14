@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CrackedWaterDown
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 86a4b3b276493ad43ac881010b4ead6b, type: 2}
-  tileId: 0
-  upSide: {fileID: 11400000, guid: 10667427ea04f0046ae46aeb3dd75e59, type: 2}
+  KindOfTile: 3
+  upSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   leftSide: {fileID: 11400000, guid: 071b43432f76d4c439753748e986183c, type: 2}
   rightSide: {fileID: 11400000, guid: 071b43432f76d4c439753748e986183c, type: 2}
   downSide: {fileID: 11400000, guid: 60eedea7c2bee1d4e98c599f895ae631, type: 2}

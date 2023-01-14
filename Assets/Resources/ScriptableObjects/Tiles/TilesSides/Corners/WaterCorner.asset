@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4bded6beffeee4f963e9f29cca30b7, type: 3}
   m_Name: WaterCorner
   m_EditorClassIdentifier: 
-  SideName: 3
+  SideName: 2
   sideRestrictions:
-  - kindOfSide: 3
+  - kindOfSide: 2
     chance: 1
-  - kindOfSide: 4
+  - kindOfSide: 3
     chance: 0
-  - kindOfSide: 10
+  - kindOfSide: 7
     chance: 0
-  - kindOfSide: 12
+  - kindOfSide: 8
     chance: 0

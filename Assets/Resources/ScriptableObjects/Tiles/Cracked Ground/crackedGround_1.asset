@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: crackedGround_1
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: bed973b00f9600a42896a65f9cff423d, type: 2}
-  tileId: 0
+  KindOfTile: 1
   upSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   leftSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   rightSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}

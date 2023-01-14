@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: GrassRightUp
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 78743f0f832628a42a43f98af0c59d44, type: 2}
-  tileId: 0
+  KindOfTile: 0
   upSide: {fileID: 11400000, guid: 8236392b3f9fa1247a8a7210a54b4b84, type: 2}
   leftSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   rightSide: {fileID: 11400000, guid: 8236392b3f9fa1247a8a7210a54b4b84, type: 2}
   downSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
-  upLeftCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
+  upLeftCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   upRightCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
   downLeftCorner: {fileID: 11400000, guid: 67294b806a0ac7444a977452b440532f, type: 2}
-  downRightCorner: {fileID: 11400000, guid: 64d91495dd94ed74eb220145856d6c25, type: 2}
+  downRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   secondLayerRestrictions:
   - obstacle: 0
     chance: 0.7

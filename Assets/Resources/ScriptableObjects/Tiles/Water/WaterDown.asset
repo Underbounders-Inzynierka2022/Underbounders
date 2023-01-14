@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WaterDown
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: d6707de82b114754982a3eb60f489ef5, type: 2}
-  tileId: 0
-  upSide: {fileID: 11400000, guid: 905198f8faa400e4781baaaf34f2a680, type: 2}
+  KindOfTile: 3
+  upSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   leftSide: {fileID: 11400000, guid: 071b43432f76d4c439753748e986183c, type: 2}
   rightSide: {fileID: 11400000, guid: 071b43432f76d4c439753748e986183c, type: 2}
   downSide: {fileID: 11400000, guid: 8f9d28b8c318d2746bc7fd996241df53, type: 2}

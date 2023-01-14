@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrackedWaterUpLeftCorner
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 7bd1322981e43cd4799792da231e0942, type: 2}
-  tileId: 1
+  KindOfTile: 4
   upSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
   leftSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
   rightSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
