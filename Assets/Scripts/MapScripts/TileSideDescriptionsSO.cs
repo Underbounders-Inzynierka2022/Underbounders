@@ -14,5 +14,5 @@ public class TileSideDescriptionsSO: ScriptableObject
     /// <summary>
     /// Tile side Restrictions
     /// </summary>
-    public List<TileDictionaryPair> sideRestrictions;
+    public List<SideDescription> sideRestrictions;
 }
