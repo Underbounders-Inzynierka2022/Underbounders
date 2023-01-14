@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CrackedWaterUpLeft
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 3376c25db25969b4d87a6ee7f13e8ad9, type: 2}
-  tileId: 0
+  KindOfTile: 3
   upSide: {fileID: 11400000, guid: 60eedea7c2bee1d4e98c599f895ae631, type: 2}
   leftSide: {fileID: 11400000, guid: 60eedea7c2bee1d4e98c599f895ae631, type: 2}
-  rightSide: {fileID: 11400000, guid: cb0fa721756d047429df175afe68b9cd, type: 2}
-  downSide: {fileID: 11400000, guid: cb0fa721756d047429df175afe68b9cd, type: 2}
+  rightSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
+  downSide: {fileID: 11400000, guid: d63353789a7df874cafc0d5fe4fe44b1, type: 2}
   upLeftCorner: {fileID: 11400000, guid: 67294b806a0ac7444a977452b440532f, type: 2}
   upRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   downLeftCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}

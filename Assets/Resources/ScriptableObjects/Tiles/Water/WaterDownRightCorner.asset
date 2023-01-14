@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterDownRightCorner
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 0a7800835d6483244b27e20ecb22a31b, type: 2}
-  tileId: 1
+  KindOfTile: 4
   upSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   leftSide: {fileID: 11400000, guid: 7e677780b360dd9449b02e6d14a18279, type: 2}
   rightSide: {fileID: 11400000, guid: 071b43432f76d4c439753748e986183c, type: 2}

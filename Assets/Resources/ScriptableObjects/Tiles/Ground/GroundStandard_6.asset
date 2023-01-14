@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GroundStandard_6
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: efea317f55b69ce4a94dc4e555fe5d93, type: 2}
-  tileId: 0
+  KindOfTile: 2
   upSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   leftSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}
   rightSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}

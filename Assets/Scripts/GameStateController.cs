@@ -67,7 +67,7 @@ public class GameStateController : MonoBehaviour
     /// <summary>
     /// World seed
     /// </summary>
-    private int seed = -740281645;
+    private int seed = 1385778666;
     /// <summary>
     /// Current room
     /// </summary>
@@ -256,8 +256,8 @@ public class GameStateController : MonoBehaviour
             for (int j = 0; j < dungeonWallSize; j++)
             {
                 int localSeed = Random.Range(int.MinValue, int.MaxValue);
-                int x = Random.Range(10,41);
-                int y = Random.Range(10, 41);
+                int x = Random.Range(10,31);
+                int y = Random.Range(10, 31);
                 rooms[i][j] = new Room(x, y,roomsMap.GetTile(i,j),localSeed);
             }
         }

@@ -94,7 +94,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c538b084d9191e14aa5c8888dade9ef4, type: 2}
   - {fileID: 11400000, guid: f77c743d5b5c346409f43a1b1c189d2f, type: 2}
   - {fileID: 11400000, guid: 782e724fa69bc0f4ca40cb2299f42575, type: 2}
-  - {fileID: 11400000, guid: cc138584881bfdf468f465b11ec91ce1, type: 2}
   - {fileID: 11400000, guid: d10df9ef1c990304b97deac36e98083c, type: 2}
   - {fileID: 11400000, guid: ba79ea324c6aa2a4f8905bfdccd926d8, type: 2}
   - {fileID: 11400000, guid: 2363e988bbf1315438e6f8327f1f3291, type: 2}
@@ -144,3 +143,14 @@ MonoBehaviour:
   doors:
   - {fileID: 4164935326997379245, guid: e48de9b5acfc0fa4ebf09f6c98032d2d, type: 3}
   - {fileID: 4164935326997379245, guid: e5c4d45c25675f14f99a431c78f2732b, type: 3}
+  floorChanceMod:
+  - tileKind: 0
+    chanceMod: 0.6
+  - tileKind: 1
+    chanceMod: 0.4
+  - tileKind: 2
+    chanceMod: 1
+  - tileKind: 3
+    chanceMod: 0.01
+  - tileKind: 4
+    chanceMod: 0.0001

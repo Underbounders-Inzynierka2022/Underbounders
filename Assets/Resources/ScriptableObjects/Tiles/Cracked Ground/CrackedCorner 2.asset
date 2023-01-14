@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrackedCorner 2
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: b97db6b7f25646549b12355d036d036a, type: 2}
-  tileId: 0
+  KindOfTile: 1
   upSide: {fileID: 11400000, guid: 213ac524f8e39424fa2aacd7751d5092, type: 2}
   leftSide: {fileID: 11400000, guid: 213ac524f8e39424fa2aacd7751d5092, type: 2}
   rightSide: {fileID: 11400000, guid: 54d2d20dab2faa446a90d29127d305d2, type: 2}

@@ -15,6 +15,8 @@ public class TileSO : ScriptableObject, ITileKind<TileSO>
     /// </summary>
     public Tile tile;
 
+    public TileKindName KindOfTile;
+
     /// <summary>
     /// Upside descriptor
     /// </summary>
@@ -80,67 +82,47 @@ public class TileSO : ScriptableObject, ITileKind<TileSO>
         Dictionary<TileSO, float> filtered = new Dictionary<TileSO, float>();
         foreach (var tile in tileToFilter.Keys)
         {
+            float chance = tileToFilter[tile];
             switch (dir)
             {
                 case Direction.down:
+
                     if (downSide.sideRestrictions.Any(r => r.kindOfSide == tile.upSide.SideName))
-                    {
-                        float chance = downSide.sideRestrictions.Where(r => r.kindOfSide == tile.upSide.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= downSide.sideRestrictions.First(r => r.kindOfSide == tile.upSide.SideName).chance;
                     break;
                 case Direction.right:
                     if (rightSide.sideRestrictions.Any(r => r.kindOfSide == tile.leftSide.SideName))
-                    {
-                        float chance = rightSide.sideRestrictions.Where(r => r.kindOfSide == tile.leftSide.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= rightSide.sideRestrictions.First(r => r.kindOfSide == tile.leftSide.SideName).chance;
                     break;
                 case Direction.left:
                     if (leftSide.sideRestrictions.Any(r => r.kindOfSide == tile.rightSide.SideName))
-                    {
-                        float chance = leftSide.sideRestrictions.Where(r => r.kindOfSide == tile.rightSide.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= leftSide.sideRestrictions.First(r => r.kindOfSide == tile.rightSide.SideName).chance;
                     break;
                 case Direction.up:
                     if (upSide.sideRestrictions.Any(r => r.kindOfSide == tile.downSide.SideName))
-                    {
-                        float chance = upSide.sideRestrictions.Where(r => r.kindOfSide == tile.downSide.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= upSide.sideRestrictions.First(r => r.kindOfSide == tile.downSide.SideName).chance;
                     break;
                 case Direction.upRight:
                     if (upRightCorner.sideRestrictions.Any(r => r.kindOfSide == tile.downLeftCorner.SideName))
-                    {
-                        float chance = upRightCorner.sideRestrictions.Where(r => r.kindOfSide == tile.downLeftCorner.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= upRightCorner.sideRestrictions.First(r => r.kindOfSide == tile.downLeftCorner.SideName).chance;
                     break;
                 case Direction.upLeft:
                     if (upLeftCorner.sideRestrictions.Any(r => r.kindOfSide == tile.downRightCorner.SideName))
-                    {
-                        float chance = upLeftCorner.sideRestrictions.Where(r => r.kindOfSide == tile.downRightCorner.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= upLeftCorner.sideRestrictions.First(r => r.kindOfSide == tile.downRightCorner.SideName).chance;
                     break;
                 case Direction.downLeft:
                     if (downLeftCorner.sideRestrictions.Any(r => r.kindOfSide == tile.upRightCorner.SideName))
-                    {
-                        float chance = downLeftCorner.sideRestrictions.Where(r => r.kindOfSide == tile.upRightCorner.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= downLeftCorner.sideRestrictions.First(r => r.kindOfSide == tile.upRightCorner.SideName).chance;
                     break;
                 case Direction.downRight:
                     if (downRightCorner.sideRestrictions.Any(r => r.kindOfSide == tile.upLeftCorner.SideName))
-                    {
-                        float chance = downRightCorner.sideRestrictions.Where(r => r.kindOfSide == tile.upLeftCorner.SideName).First().chance;
-                        filtered.Add(tile, tileToFilter[tile] * chance);
-                    }
+                        chance *= downRightCorner.sideRestrictions.First(r => r.kindOfSide == tile.upLeftCorner.SideName).chance;
                     break;
             }
+            filtered.Add(tile, chance);
         }
         tileToFilter = filtered;
         return filtered;
     }
 }
+
