@@ -271,7 +271,7 @@ public class MapGeneration : MonoBehaviour
         var tilesInit = GetInitialFirstLayer();
         _matrixOfTiles = new WFCMatrix<TileSO>(x, y, tilesInit);
 
-        _matrixOfTiles.ResolveMatrix();
+      _matrixOfTiles.ResolveMatrix();
 
         var initialObstacles = GetInitialSecondLayer();
         _matrixOfObstacles = new WFCMatrix<ObstacleSO>(x, y, initialObstacles);

@@ -2019,14 +2019,6 @@ PrefabInstance:
       propertyPath: borderTileDown.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: c05fdb1fa6ed2164aa30f75d641516e5, type: 2}
-    - target: {fileID: 1050858558291299085, guid: 3e0fcbaed662b3a44b265d4670e66183, type: 3}
-      propertyPath: floorChanceMod.Array.data[3].chanceMod
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050858558291299085, guid: 3e0fcbaed662b3a44b265d4670e66183, type: 3}
-      propertyPath: floorChanceMod.Array.data[4].chanceMod
-      value: 0.0001
-      objectReference: {fileID: 0}
     - target: {fileID: 3861400163723958018, guid: 3e0fcbaed662b3a44b265d4670e66183, type: 3}
       propertyPath: m_Name
       value: RoomGenerator

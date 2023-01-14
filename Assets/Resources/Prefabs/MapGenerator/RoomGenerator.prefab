@@ -145,9 +145,9 @@ MonoBehaviour:
   - {fileID: 4164935326997379245, guid: e5c4d45c25675f14f99a431c78f2732b, type: 3}
   floorChanceMod:
   - tileKind: 0
-    chanceMod: 0.6
+    chanceMod: 0.5
   - tileKind: 1
-    chanceMod: 0.4
+    chanceMod: 0.6
   - tileKind: 2
     chanceMod: 1
   - tileKind: 3
