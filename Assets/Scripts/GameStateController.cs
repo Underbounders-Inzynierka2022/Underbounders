@@ -67,7 +67,7 @@ public class GameStateController : MonoBehaviour
     /// <summary>
     /// World seed
     /// </summary>
-    private int seed = 1385778666;
+    private int seed = 757662750;
     /// <summary>
     /// Current room
     /// </summary>
