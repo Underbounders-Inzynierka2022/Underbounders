@@ -1,28 +1,32 @@
+using PlayerScripts;
 using UnityEngine;
 
-/// <summary>
-/// Ice rune behaviour controller
-/// </summary>
-public class IceRuneControler : MonoBehaviour
+namespace MapScripts.Obstacles
 {
     /// <summary>
-    /// Player statistics
+    /// Ice rune behaviour controller
     /// </summary>
-    [SerializeField] private PlayerSO player;
-
-    private void OnTriggerEnter2D(Collider2D col)
+    public class IceRuneControler : MonoBehaviour
     {
-        if (col.CompareTag("Player"))
+        /// <summary>
+        /// Player statistics
+        /// </summary>
+        [SerializeField] private PlayerSO player;
+
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            player.speed = player.speed / 2;
+            if (col.CompareTag("Player"))
+            {
+                player.speed = player.speed / 2;
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
+        private void OnTriggerExit2D(Collider2D col)
         {
-            player.speed = player.speed * 2;
+            if (col.CompareTag("Player"))
+            {
+                player.speed = player.speed * 2;
+            }
         }
     }
 }

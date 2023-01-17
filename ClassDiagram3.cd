@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="UnderBounders.GameStateController">
+    <Position X="0.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AkQCUgJAADAQQJAAAAIAAEAADAAoEQAQYIAAAAoYcME=</HashCode>
+      <FileName>Assets\Scripts\GameStateController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnderBounders.HelperFunctions">
+    <Position X="5.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HelperFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomGeneration.Room">
+    <Position X="5.5" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABBAEAIAAAAAAAAAAAAAABhAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RoomsGeneration\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="UnderBounders.Direction">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAICAAAAAAAAAAAAAAAIAAAAAAAAAgAAgCA=</HashCode>
+      <FileName>Assets\Scripts\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

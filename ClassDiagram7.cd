@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MapScripts.Obstacles.IceRuneControler">
+    <Position X="9.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\IceRuneControler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.SpriteSwitcherOnStep">
+    <Position X="5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACBAAAAAAAAAAAAAAAAEEAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\SpriteSwitcherOnStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ItemSpawnRate">
+    <Position X="5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ItemSpawnRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ChestController">
+    <Position X="7" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQBQAQACAAAAAAAAgAAAAEIEAAAAAAAIAAEAAAgEA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ChestController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.HealthPickUp">
+    <Position X="3" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\HealthPickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.AmmoPickUp">
+    <Position X="0.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\AmmoPickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.PickUp">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\PickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

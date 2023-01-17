@@ -16,45 +16,45 @@ MonoBehaviour:
   MonsterType: 3
   UpRestrictions:
   - monster: 3
-    chance: 0.8
+    chance: 1
   - monster: 4
-    chance: 0.7
+    chance: 1
   - monster: 2
-    chance: 0.1
+    chance: 0
   - monster: 1
-    chance: 0.1
+    chance: 0
   - monster: 0
-    chance: 0.5
+    chance: 0
   DownRestrictions:
   - monster: 3
-    chance: 0.8
+    chance: 1
   - monster: 4
-    chance: 0.7
+    chance: 1
   - monster: 2
-    chance: 0.1
+    chance: 0
   - monster: 1
-    chance: 0.1
+    chance: 0
   - monster: 0
-    chance: 0.5
+    chance: 0
   LeftRestrictions:
   - monster: 3
-    chance: 0.8
+    chance: 1
   - monster: 4
-    chance: 0.7
+    chance: 1
   - monster: 2
-    chance: 0.1
+    chance: 0
   - monster: 1
-    chance: 0.1
+    chance: 0
   - monster: 0
-    chance: 0.5
+    chance: 0
   RightRestrictions:
   - monster: 3
-    chance: 0.8
+    chance: 1
   - monster: 4
-    chance: 0.7
+    chance: 1
   - monster: 2
-    chance: 0.1
+    chance: 0
   - monster: 1
-    chance: 0.1
+    chance: 0
   - monster: 0
-    chance: 0.5
+    chance: 0

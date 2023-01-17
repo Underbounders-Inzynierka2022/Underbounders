@@ -13,12 +13,4 @@ MonoBehaviour:
   m_Name: CrackedGroundCorner
   m_EditorClassIdentifier: 
   SideName: 5
-  sideRestrictions:
-  - kindOfSide: 3
-    chance: 1
-  - kindOfSide: 5
-    chance: 1
-  - kindOfSide: 7
-    chance: 1
-  - kindOfSide: 2
-    chance: 0
+  sideRestrictions: 050000000300000007000000

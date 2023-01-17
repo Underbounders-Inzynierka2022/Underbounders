@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="PlayerScripts.PlayerDamage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAAQAACAAAEAAAAFAAAAAACAIggg=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerDamage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.283" />
+  </Class>
+  <Class Name="MonsterScripts.MonsterDamage" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAIIACAAAAAAAAQAACAAAAAAAAFCAAAAACAIggg=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\MonsterDamage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CommonInterfaces.IDammageable">
+    <Position X="3.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CommonIntefaces\IDammageable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

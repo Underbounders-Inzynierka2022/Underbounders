@@ -1,12 +1,15 @@
-/// <summary>
-/// Enum for counting monster types
-/// </summary>
-public enum MonsterType 
+namespace MonsterScripts
 {
-   WaterElemental,
-   GrassSlime,
-   IceSlime,
-   FireSlime,
-   Empty
-    
+    /// <summary>
+    /// Enum for counting monster types
+    /// </summary>
+    public enum MonsterType
+    {
+        WaterElemental,
+        GrassSlime,
+        IceSlime,
+        FireSlime,
+        Empty
+
+    }
 }

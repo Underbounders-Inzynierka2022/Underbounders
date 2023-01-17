@@ -1,15 +1,17 @@
 using UnityEngine;
-
-/// <summary>
-/// Detectors abstraction layer
-/// </summary>
-public abstract class Detector : MonoBehaviour
+namespace MonstersScripts.SlimesAI
 {
     /// <summary>
-    /// Detects targets in vasinity
+    /// Detectors abstraction layer
     /// </summary>
-    /// <param name="ai">
-    /// Data holding curent targets and rest of the data 
-    /// </param>
-    public abstract void Detect(AIData ai);
+    public abstract class Detector : MonoBehaviour
+    {
+        /// <summary>
+        /// Detects targets in vasinity
+        /// </summary>
+        /// <param name="ai">
+        /// Data holding curent targets and rest of the data 
+        /// </param>
+        public abstract void Detect(AIData ai);
+    }
 }

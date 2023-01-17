@@ -24,7 +24,7 @@ MonoBehaviour:
   downRightCorner: {fileID: 11400000, guid: 71e43c4d90019a142913b317c95275a0, type: 2}
   secondLayerRestrictions:
   - obstacle: 0
-    chance: 0.6
+    chance: 1
   - obstacle: 1
     chance: 0.05
   - obstacle: 2

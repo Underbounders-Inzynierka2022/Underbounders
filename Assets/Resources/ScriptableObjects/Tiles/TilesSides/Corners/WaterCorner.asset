@@ -13,12 +13,4 @@ MonoBehaviour:
   m_Name: WaterCorner
   m_EditorClassIdentifier: 
   SideName: 2
-  sideRestrictions:
-  - kindOfSide: 2
-    chance: 1
-  - kindOfSide: 3
-    chance: 0
-  - kindOfSide: 7
-    chance: 0
-  - kindOfSide: 8
-    chance: 0
+  sideRestrictions: 02000000

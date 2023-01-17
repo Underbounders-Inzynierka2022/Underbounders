@@ -1,34 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnderBounders;
 using UnityEngine;
 
-/// <summary>
-/// Checks if player was hit
-/// </summary>
-public class EnemyHitChecker : MonoBehaviour
+namespace PlayerScripts
 {
     /// <summary>
-    /// Player damage controller
+    /// Checks if player was hit
     /// </summary>
-    [SerializeField] private PlayerDamage playerDamage;
-    /// <summary>
-    /// Sword collider, that gives protection
-    /// </summary>
-    [SerializeField] private Collider2D swordCollider;
-
-    private void OnTriggerEnter2D(Collider2D col)
+    public class EnemyHitChecker : MonoBehaviour
     {
-        if (GameStateController.instance.isPaused || swordCollider.enabled)
-            return;
-        if (col.CompareTag("Projectile"))
+        /// <summary>
+        /// Player damage controller
+        /// </summary>
+        [SerializeField] private PlayerDamage playerDamage;
+        /// <summary>
+        /// Sword collider, that gives protection
+        /// </summary>
+        [SerializeField] private Collider2D swordCollider;
+
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            Vector2 knockback = (transform.position - col.gameObject.transform.position).normalized;
-            playerDamage.OnHit(0f, knockback * 0.1f);
-        }
-        if (col.CompareTag("MeleeEnemy"))
-        {
-            Vector2 knockback = (transform.position - col.gameObject.transform.position).normalized;
-            playerDamage.OnHit(0f, knockback * 0.1f);
+            if (GameStateController.Instance.isPaused || swordCollider.enabled)
+                return;
+            if (col.CompareTag("Projectile"))
+            {
+                Vector2 knockback = (transform.position - col.gameObject.transform.position).normalized;
+                playerDamage.OnHit(0f, knockback * 0.1f);
+            }
+            if (col.CompareTag("MeleeEnemy"))
+            {
+                Vector2 knockback = (transform.position - col.gameObject.transform.position).normalized;
+                playerDamage.OnHit(0f, knockback * 0.1f);
+            }
         }
     }
 }

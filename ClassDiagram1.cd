@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BarsElements.Bar" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="2.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BarsElements.Bar.UxmlFactory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\CustomUIElelements\Bar.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="BarsElements.Bar.UxmlTraits" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\CustomUIElelements\Bar.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAQgAAAAAAAAAAAAAAAAAAAAAQAECACACABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CustomUIElelements\Bar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnderBounders.GameStateController">
+    <Position X="20.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkQCUgJAADAQQJAAAAIAAEAADAAoEQAQYIAAAAoYcME=</HashCode>
+      <FileName>Assets\Scripts\GameStateController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnderBounders.HelperFunctions">
+    <Position X="22.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HelperFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.AmmoPickUp" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\AmmoPickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.HealthPickUp" Collapsed="true">
+    <Position X="15.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\HealthPickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Items.PickUp" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\ItemsScripts\PickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.DoorsController">
+    <Position X="11" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAABAAAAAAAAEAAAAAAAAACACAAgAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\DoorsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.MapGeneration">
+    <Position X="13" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IASAHgGgQCQAQBwAAAgEAEAAAiBBFCMEgABiQAIAAEQ=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\MapGeneration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.WFCMatrix&lt;T&gt;">
+    <Position X="11" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAAAAQAAAAAEACAAAQAAEAAAACAAAABgAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\WFCMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ChestController" Collapsed="true">
+    <Position X="13.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBQAQACAAAAAAAAgAAAAEIEAAAAAAAIAAEAAAgEA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ChestController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.IceRuneControler" Collapsed="true">
+    <Position X="13.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\IceRuneControler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ItemSpawnRate" Collapsed="true">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ItemSpawnRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ObstacleDictionaryPair">
+    <Position X="1" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ObstacleDictionaryPair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Obstacles.ObstacleSO" BaseTypeListCollapsed="true">
+    <Position X="7" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAAAAAAAAAAACAAAQAAAgAAAAAACAAAEQAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ObstacleSO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MapScripts.Obstacles.SpriteSwitcherOnStep" Collapsed="true">
+    <Position X="15.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACBAAAAAAAAAAAAAAAAEEAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\SpriteSwitcherOnStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Tiles.KindOfFloorConstraint">
+    <Position X="11" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Tiles\KindOfFloorConstraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Tiles.TileSideDescriptionsSO">
+    <Position X="1" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Tiles\TileSideDescriptionsSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapScripts.Tiles.TileSO" BaseTypeListCollapsed="true">
+    <Position X="3" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiBAQQAAACAAAAAAGAACIAABCAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Tiles\TileSO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MonsterScripts.MonsterDictionaryPair">
+    <Position X="1" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\MonsterDictionaryPair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterScripts.MonsterSO" BaseTypeListCollapsed="true">
+    <Position X="5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAGAAAQAAAgAAAAgACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\MonsterSO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MonsterScripts.SpawnRate">
+    <Position X="1" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABBAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SpawnRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.AIData">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAEAAAEAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\AIData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ContextSolver">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ContextSolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.Detector" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\Detector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ObstacleAvoidingBehaviour" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAACEAAAAAAAAAAAAAAAAACAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ObstacleAvoidingBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ObstaclesDetector" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAAIAAAAAAAAAAAIAAAAAAAAAAAAEAQAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ObstaclesDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.SeekBehaviour" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAQIACAAAAAAACAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SeekBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.SlimesAI">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DQQAABAAgKCAoAAAAAAAAAgQAAQAAQQAAABIgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SlimesAI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.SteeringBehaviour">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SteeringBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.TargetDetector" Collapsed="true">
+    <Position X="10.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAAIAAAAAAAAAEAIAAAAAAAAAAgAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\TargetDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterScripts.WaterElemental.ProjectileController">
+    <Position X="31.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAACAAgAAAAAAAAAAACAAAEAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\WaterElemental\ProjectileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterScripts.WaterElemental.WaterElementalController">
+    <Position X="34" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAACAAiBCoAAAAAEAGAAAAEAAQAAAAAAAQAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\WaterElemental\WaterElementalController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.EnemyHitChecker" Collapsed="true">
+    <Position X="24.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAACAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\EnemyHitChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.ItemSO" Collapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgABABAMAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\ItemSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.PlayerController" Collapsed="true">
+    <Position X="24.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYQEAAAIiAAAAAAAQBEADAAAAAAAAABIEAIADAAAkA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.PlayerSO" Collapsed="true">
+    <Position X="26.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAEiAAAACAAAAQAAAAEAQDCBEAAAAAIAIA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.PlayerStatsController" Collapsed="true">
+    <Position X="24.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQSAACAAEICAAAEAAAIAAAAAAAEAQAAACDAgAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerStatsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.SecondaryAttack" Collapsed="true">
+    <Position X="24.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQAGCAAgAAAAAAAAAAAAAAAAAKAAAAAAAAAgAg=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\SecondaryAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.SwordHitbox" Collapsed="true">
+    <Position X="24.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEQAACAAAAEQAAEAAAAEAMAAAAAAAEAAEEAEAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\SwordHitbox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomGeneration.Room">
+    <Position X="22.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABBAEAIAAAAAAAAAAAAAABhAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RoomsGeneration\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomGeneration.RoomSO" BaseTypeListCollapsed="true">
+    <Position X="9" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAggAAACAAAAAAAAAAAACAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\RoomsGeneration\RoomSO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SaveSystem.PlayerDataSave">
+    <Position X="7.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAwAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SaveSystem\PlayerDataSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem.RoomsDataSave">
+    <Position X="9" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAgAAAABAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\SaveSystem\RoomsDataSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem.SaveData">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAECAAAACAAAAAAAAAgAAEQAEAAA=</HashCode>
+      <FileName>Assets\Scripts\SaveSystem\SaveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem.SerializationManager">
+    <Position X="3.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SaveSystem\SerializationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScripts.PlayerDamage" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAAQAACAAAEAAAAFAAAAAACAIggg=</HashCode>
+      <FileName>Assets\Scripts\PlayerScripts\PlayerDamage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.283" />
+  </Class>
+  <Class Name="MonsterScripts.MonsterDamage" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAIIACAAAAAAAAQAACAAAAAAAAFCAAAAACAIggg=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\MonsterDamage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MapScripts.ITileKind&lt;T&gt;">
+    <Position X="9" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\ITileKind.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CommonInterfaces.IDammageable">
+    <Position X="29.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CommonIntefaces\IDammageable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="UnderBounders.Direction">
+    <Position X="22.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAICAAAAAAAAAAAAAAAIAAAAAAAAAgAAgCA=</HashCode>
+      <FileName>Assets\Scripts\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MapScripts.Obstacles.ObstacleType">
+    <Position X="7" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAkAAABAIABAAAAIAAgAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Obstacles\ObstacleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MapScripts.Tiles.SideDescription">
+    <Position X="3" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAEIAAAAAAAAAAAgAgAAAAAAAAIgEAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Tiles\SideDescription.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MapScripts.Tiles.TileKindName">
+    <Position X="3" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAQACAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\MapScripts\Tiles\TileKindName.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MonsterScripts.MonsterType">
+    <Position X="5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAACAIAAAAAAAIAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\MonsterType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

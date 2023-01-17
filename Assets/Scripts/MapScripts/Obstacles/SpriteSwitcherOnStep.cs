@@ -1,32 +1,35 @@
 using UnityEngine;
 
-/// <summary>
-/// Switches sprites when stepped on by player
-/// </summary>
-public class SpriteSwitcherOnStep : MonoBehaviour
+namespace MapScripts.Obstacles
 {
     /// <summary>
-    /// Rune sprite in off state
+    /// Switches sprites when stepped on by player
     /// </summary>
-    [SerializeField] private Sprite _offRune;
-    /// <summary>
-    /// Rune sprite if its working
-    /// </summary>
-    [SerializeField] private Sprite _onRune;
-    /// <summary>
-    /// Rune sprite renderer
-    /// </summary>
-    [SerializeField] private SpriteRenderer _renderer;
-
-    void OnTriggerEnter2D(Collider2D col)
+    public class SpriteSwitcherOnStep : MonoBehaviour
     {
-       if(col.CompareTag("Player"))
-        _renderer.sprite = _onRune;
-    }
+        /// <summary>
+        /// Rune sprite in off state
+        /// </summary>
+        [SerializeField] private Sprite _offRune;
+        /// <summary>
+        /// Rune sprite if its working
+        /// </summary>
+        [SerializeField] private Sprite _onRune;
+        /// <summary>
+        /// Rune sprite renderer
+        /// </summary>
+        [SerializeField] private SpriteRenderer _renderer;
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-            _renderer.sprite = _offRune;
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+                _renderer.sprite = _onRune;
+        }
+
+        void OnTriggerExit2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+                _renderer.sprite = _offRune;
+        }
     }
 }
