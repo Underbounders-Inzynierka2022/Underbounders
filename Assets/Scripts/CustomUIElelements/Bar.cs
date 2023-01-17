@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -38,11 +37,24 @@ namespace BarsElements
             }
         }
 
+        /// <summary>
+        /// Name of spirte sheet
+        /// </summary>
         public string spriteBaseName { set; get; }
 
+        /// <summary>
+        /// Name of sprite in sprite sheet
+        /// </summary>
         public string spriteName { set; get; }
 
+        /// <summary>
+        /// Curent value of status bar
+        /// </summary>
         private int m_value = 0;
+
+        /// <summary>
+        /// VisualElement displaying the proper sprite
+        /// </summary>
         private VisualElement hbParent;
 
         /// <summary>

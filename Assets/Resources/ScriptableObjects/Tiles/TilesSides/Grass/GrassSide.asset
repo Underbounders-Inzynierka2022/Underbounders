@@ -13,22 +13,4 @@ MonoBehaviour:
   m_Name: GrassSide
   m_EditorClassIdentifier: 
   SideName: 7
-  sideRestrictions:
-  - kindOfSide: 7
-    chance: 1
-  - kindOfSide: 6
-    chance: 1
-  - kindOfSide: 8
-    chance: 0
-  - kindOfSide: 4
-    chance: 0
-  - kindOfSide: 3
-    chance: 0
-  - kindOfSide: 5
-    chance: 0
-  - kindOfSide: 2
-    chance: 0
-  - kindOfSide: 0
-    chance: 0
-  - kindOfSide: 1
-    chance: 0
+  sideRestrictions: 0700000006000000

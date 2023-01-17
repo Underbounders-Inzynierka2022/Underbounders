@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MonstersScripts.SlimesAI.SlimesAI">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>DQQAABAAgKCAoAAAAAAAAAgQAAQAAQQAAABIgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SlimesAI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ContextSolver">
+    <Position X="4.25" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ContextSolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.AIData">
+    <Position X="8" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAEAAAEAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\AIData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.SteeringBehaviour">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SteeringBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ObstacleAvoidingBehaviour">
+    <Position X="4.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAACEAAAAAAAAAAAAAAAAACAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ObstacleAvoidingBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.SeekBehaviour">
+    <Position X="7.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAQIACAAAAAAACAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\SeekBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.Detector">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\Detector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.ObstaclesDetector">
+    <Position X="9.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAAIAAAAAAAAAAAIAAAAAAAAAAAAEAQAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\ObstaclesDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonstersScripts.SlimesAI.TargetDetector">
+    <Position X="12.25" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAAIAAAAAAAAAEAIAAAAAAAAAAgAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterScripts\SlimesAI\TargetDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

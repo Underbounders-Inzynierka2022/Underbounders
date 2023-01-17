@@ -18,43 +18,43 @@ MonoBehaviour:
   - monster: 4
     chance: 1
   - monster: 0
-    chance: 0.9
+    chance: 1
   - monster: 2
-    chance: 0.9
+    chance: 1
   - monster: 1
-    chance: 0.9
+    chance: 1
   - monster: 3
-    chance: 0.9
+    chance: 1
   DownRestrictions:
   - monster: 4
     chance: 1
   - monster: 0
-    chance: 0.9
+    chance: 1
   - monster: 2
-    chance: 0.9
+    chance: 1
   - monster: 1
-    chance: 0.9
+    chance: 1
   - monster: 3
-    chance: 0.9
+    chance: 1
   LeftRestrictions:
   - monster: 4
     chance: 1
   - monster: 0
-    chance: 0.9
+    chance: 1
   - monster: 2
-    chance: 0.9
+    chance: 1
   - monster: 1
-    chance: 0.9
+    chance: 1
   - monster: 3
-    chance: 0.9
+    chance: 1
   RightRestrictions:
   - monster: 4
     chance: 1
   - monster: 0
-    chance: 0.9
+    chance: 1
   - monster: 2
-    chance: 0.9
+    chance: 1
   - monster: 1
-    chance: 0.9
+    chance: 1
   - monster: 3
-    chance: 0.9
+    chance: 1

@@ -1,14 +1,17 @@
-﻿/// <summary>
-/// Directions descriptions
-/// </summary>
-public enum Direction
+﻿namespace UnderBounders
 {
-    up,
-    left,
-    down,
-    right,
-    upRight,
-    upLeft,
-    downLeft,
-    downRight
+    /// <summary>
+    /// Directions descriptions
+    /// </summary>
+    public enum Direction
+    {
+        up,
+        left,
+        down,
+        right,
+        upRight,
+        upLeft,
+        downLeft,
+        downRight
+    }
 }

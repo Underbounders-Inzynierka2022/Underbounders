@@ -1,71 +1,74 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Detector implementation for targets
-/// </summary>
-public class TargetDetector : Detector
+namespace MonstersScripts.SlimesAI
 {
     /// <summary>
-    /// Target detection radius
+    /// Detector implementation for targets
     /// </summary>
-    [SerializeField] private float detectionRadius = 2;
-    /// <summary>
-    /// Layers of objects containing obstacles
-    /// </summary>
-    [SerializeField] private LayerMask obstacleLayerMask, playerLayerMask;
-    /// <summary>
-    /// Debugging option if the editor should shwo gizmos
-    /// </summary>
-    [SerializeField] private bool showGizmos = false;
-
-    /// <summary>
-    /// Current list of targets
-    /// </summary>
-    private List<Transform> _targets;
-
-    /// <summary>
-    /// Detects player in monster vicinity
-    /// </summary>
-    /// <param name="aiData">
-    /// Data stored for the ai
-    /// </param>
-    public override void Detect(AIData aiData)
+    public class TargetDetector : Detector
     {
-        Collider2D playerColl  = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayerMask);
+        /// <summary>
+        /// Target detection radius
+        /// </summary>
+        [SerializeField] private float detectionRadius = 2;
+        /// <summary>
+        /// Layers of objects containing obstacles
+        /// </summary>
+        [SerializeField] private LayerMask obstacleLayerMask, playerLayerMask;
+        /// <summary>
+        /// Debugging option if the editor should shwo gizmos
+        /// </summary>
+        [SerializeField] private bool showGizmos = false;
 
-        if(playerColl != null)
+        /// <summary>
+        /// Current list of targets
+        /// </summary>
+        private List<Transform> _targets;
+
+        /// <summary>
+        /// Detects player in monster vicinity
+        /// </summary>
+        /// <param name="aiData">
+        /// Data stored for the ai
+        /// </param>
+        public override void Detect(AIData aiData)
         {
-            Vector2 dir = (playerColl.transform.position - transform.position).normalized;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detectionRadius, obstacleLayerMask);
+            Collider2D playerColl = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayerMask);
 
-            if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+            if (playerColl != null)
             {
-                _targets = new List<Transform>() { playerColl.transform };
+                Vector2 dir = (playerColl.transform.position - transform.position).normalized;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, detectionRadius, obstacleLayerMask);
+
+                if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+                {
+                    _targets = new List<Transform>() { playerColl.transform };
+                }
+                else
+                {
+                    _targets = null;
+                }
+
             }
             else
             {
                 _targets = null;
             }
-
+            aiData.Targets = _targets;
         }
-        else
-        {
-            _targets = null;
-        }
-        aiData.Targets = _targets;
-    }
 
-    private void OnDrawGizmos()
-    {
-        if (!showGizmos)
-            return;
-        if (Application.isPlaying && _targets != null && _targets.Count > 0)
+        private void OnDrawGizmos()
         {
-            Gizmos.color = Color.magenta;
-            foreach (var col in _targets)
+            if (!showGizmos)
+                return;
+            if (Application.isPlaying && _targets != null && _targets.Count > 0)
             {
-                Gizmos.DrawSphere(col.transform.position, 0.002f);
+                Gizmos.color = Color.magenta;
+                foreach (var col in _targets)
+                {
+                    Gizmos.DrawSphere(col.transform.position, 0.002f);
+                }
             }
         }
     }
